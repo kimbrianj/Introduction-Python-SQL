@@ -35,8 +35,8 @@ footer_text               : This page was created by <a href="https://github.com
 # Sidebar settings
 show_sidebar              : true  # Show the sidebar. Only set to false if your only wish to host a single page.
 collapse_inactive_chapters: true  # Whether to collapse the inactive chapters in the sidebar
-textbook_logo             : images/logo/logo.png  # A logo to be displayed at the top of your textbook sidebar. Should be square
-textbook_logo_link        : https://jupyterbook.org/intro.html  # A link for the logo.
+#textbook_logo             : images/logo/logo.png  # A logo to be displayed at the top of your textbook sidebar. Should be square
+#textbook_logo_link        : https://jupyterbook.org/intro.html  # A link for the logo.
 sidebar_footer_text       : 'Powered by <a href="https://jupyterbook.org">Jupyter Book</a>'
 number_toc_chapters       : true  # Whether to add numbers to chapterse in your Table of Contents. If true, you can control this at the Chapter level in _data/toc.yml
 
@@ -57,14 +57,14 @@ jupyterhub_interact_text         : "Interact"  # The text that interact buttons 
 # Binder link settings
 use_binder_button                : true  # If 'true', add a binder button for interactive links
 binderhub_url                    : "https://mybinder.org"  # The URL for your BinderHub. If no URL, use ""
-binder_repo_base                 : "https://github.com/"  # The site on which the textbook repository is hosted
-binder_repo_org                  : "jupyter"  # The username or organization that owns this repository
-binder_repo_name                 : "jupyter-book"  # The name of the repository on the web
+binder_repo_base                 : "https://github.com/kimbrianj/Introduction-Python-SQL"  # The site on which the textbook repository is hosted
+binder_repo_org                  : "kimbrianj"  # The username or organization that owns this repository
+binder_repo_name                 : "Introduction-Python-SQL"  # The name of the repository on the web
 binder_repo_branch               : "gh-pages"  # The branch on which your textbook is hosted.
 binderhub_interact_text          : "Interact"  # The text that interact buttons will contain.
 
 # Thebelab settings
-use_thebelab_button              : true  # If 'true', display a button to allow in-page running code cells with Thebelab
+use_thebelab_button              : false  # If 'true', display a button to allow in-page running code cells with Thebelab
 thebelab_button_text             : "Thebelab"  # The text to display inside the Thebelab initialization button
 codemirror_theme                 : "abcdef"  # Theme for codemirror cells, for options see https://codemirror.net/doc/manual.html#config
 
@@ -80,15 +80,15 @@ download_page_header             : "Made with Jupyter Book" # A header that will
 # Jupyter book extensions and additional features
 
 # Bibliography and citation settings. See https://github.com/inukshuk/jekyll-scholar#configuration for options
-scholar:
-  style: apa
+#scholar:
+#  style: apa
 
 #######################################################################################
 # Option to add a Goggle analytics tracking code
 
 # Navigate to https://analytics.google.com, add a new property for your jupyter book and copy the tracking id here.
-google_analytics:
-  mytrackingcode:
+#google_analytics:
+#  mytrackingcode:
 
 #######################################################################################
 # Jupyter book settings you probably don't need to change
