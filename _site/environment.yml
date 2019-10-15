@@ -1,7 +1,0 @@
-name: ada-intro-python
-channels:
-  - conda-forge
-dependencies:
-  - matplotlib
-  - ipywidgets
-  - beakerx
