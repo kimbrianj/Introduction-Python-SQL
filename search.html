@@ -8,14 +8,14 @@
   <title>Search the site</title>
   <meta name="description" content="        ">
 
-  <link rel="canonical" href="/search">
-  <link rel="alternate" type="application/rss+xml" title="Introduction to Python and SQL for Data Analysis" href="/feed.xml">
+  <link rel="canonical" href="https://kimbrianj.github.io/Introduction-Python-SQL/search">
+  <link rel="alternate" type="application/rss+xml" title="Introduction to Python and SQL for Data Analysis" href="https://kimbrianj.github.io/Introduction-Python-SQL/feed.xml">
 
-  <meta property="og:url"         content="/search" />
+  <meta property="og:url"         content="https://kimbrianj.github.io/Introduction-Python-SQL/search" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Search the site" />
 <meta property="og:description" content="        " />
-<meta property="og:image"       content="/images/logo/logo.png" />
+<meta property="og:image"       content="" />
 
 <meta name="twitter:card" content="summary">
 
@@ -24,10 +24,10 @@
   {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "/search",
+  "mainEntityOfPage": "https://kimbrianj.github.io/Introduction-Python-SQL/search",
   "headline": "Search the site",
-  "datePublished": "2019-10-15T09:23:43-04:00",
-  "dateModified": "2019-10-15T09:23:43-04:00",
+  "datePublished": "2019-10-15T10:22:55-04:00",
+  "dateModified": "2019-10-15T10:22:55-04:00",
   "description": "        ",
   "author": {
     "@type": "Person",
@@ -38,21 +38,21 @@
     "name": "Data 100 at UC Berkeley",
     "logo": {
       "@type": "ImageObject",
-      "url": "",
+      "url": "https://kimbrianj.github.io/Introduction-Python-SQL",
       "width": 60,
       "height": 60
     }
   },
   "image": {
     "@type": "ImageObject",
-    "url": "",
+    "url": "https://kimbrianj.github.io/Introduction-Python-SQL",
     "height": 60,
     "width": 60
   }
 }
 
   </script>
-  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/Introduction-Python-SQL/assets/css/styles.css">
 
   <!-- <link rel="manifest" href="/manifest.json"> -->
   <!-- <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#efae0a"> -->
@@ -61,7 +61,7 @@
   <meta name="theme-color" content="#233947">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="/images/logo/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="/Introduction-Python-SQL/images/logo/favicon.ico">
 
   <!-- MathJax Config -->
   <!-- Allow inline math using $ and automatically break long math lines -->
@@ -88,19 +88,19 @@ MathJax.Hub.Config({
 
 
   <!-- DOM updating function -->
-  <script src="/assets/js/page/dom-update.js"></script>
+  <script src="/Introduction-Python-SQL/assets/js/page/dom-update.js"></script>
 
   <!-- Selectors for elements on the page -->
-  <script src="/assets/js/page/documentSelectors.js"></script>
+  <script src="/Introduction-Python-SQL/assets/js/page/documentSelectors.js"></script>
 
   <!-- Define some javascript variables that will be useful in other javascript -->
   <script>
-    const site_basename = '';
+    const site_basename = '/Introduction-Python-SQL';
   </script>
 
   <!-- Add AnchorJS to let headers be linked -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js" async></script>
-  <script src="/assets/js/page/anchors.js" async></script>
+  <script src="/Introduction-Python-SQL/assets/js/page/anchors.js" async></script>
 
   <!-- Include Turbolinks to make page loads fast -->
   <!-- https://github.com/turbolinks/turbolinks -->
@@ -114,169 +114,24 @@ MathJax.Hub.Config({
   <!-- Include Thebelab for interactive code if it's enabled -->
 
 
-<!-- Display Thebelab button in each code cell -->
-<script>
-/**
- * Set up thebelab button for code blocks
- */
-
-const thebelabCellButton = id =>
-  `<a id="thebelab-cell-button-${id}" class="btn thebebtn o-tooltip--left" data-tooltip="Interactive Mode">
-    <img src="/assets/images/edit-button.svg" alt="Start thebelab interactive mode">
-  </a>`
-
-
-const addThebelabButtonToCodeCells =  () => {
-
-  const codeCells = document.querySelectorAll('div.input_area > div.highlight:not(.output) pre')
-  codeCells.forEach((codeCell, index) => {
-    const id = codeCellId(index)
-    codeCell.setAttribute('id', id)
-    if (document.getElementById("thebelab-cell-button-" + id) == null) {
-      codeCell.insertAdjacentHTML('afterend', thebelabCellButton(id));
-    }
-  })
-}
-
-initFunction(addThebelabButtonToCodeCells);
-</script>
-
-
-
-<script type="text/x-thebe-config">
-    {
-      requestKernel: true,
-      binderOptions: {
-        repo: 'jupyter/jupyter-book',
-        ref: 'gh-pages',
-      },
-      codeMirrorConfig: {
-        theme: "abcdef"
-      },
-      kernelOptions: {
-        name: 'python3',
-      }
-    }
-</script>
-<script src="https://unpkg.com/thebelab@0.4.0/lib/index.js" async></script>
-<script>
-    /**
-     * Add attributes to Thebelab blocks
-     */
-
-    const initThebelab = () => {
-        const addThebelabToCodeCells = () => {
-            console.log("Adding thebelab to code cells...");
-            // If Thebelab hasn't loaded, wait a bit and try again. This
-            // happens because we load ClipboardJS asynchronously.
-            if (window.thebelab === undefined) {
-                setTimeout(addThebelabToCodeCells, 250)
-            return
-            }
-
-            // If we already detect a Thebelab cell, don't re-run
-            if (document.querySelectorAll('div.thebelab-cell').length > 0) {
-                return;
-            }
-
-            // Find all code cells, replace with Thebelab interactive code cells
-            const codeCells = document.querySelectorAll('.input_area pre')
-            codeCells.forEach((codeCell, index) => {
-                const id = codeCellId(index)
-                codeCell.setAttribute('data-executable', 'true')
-
-                // Figure out the language it uses and add this too
-                var parentDiv = codeCell.parentElement.parentElement;
-                var arrayLength = parentDiv.classList.length;
-                for (var ii = 0; ii < arrayLength; ii++) {
-                    var parts = parentDiv.classList[ii].split('language-');
-                    if (parts.length === 2) {
-                        // If found, assign dataLanguage and break the loop
-                        var dataLanguage = parts[1];
-                        break;
-                    }
-                }
-                codeCell.setAttribute('data-language', dataLanguage)
-
-                // If the code cell is hidden, show it
-                var inputCheckbox = document.querySelector(`input#hidebtn${codeCell.id}`);
-                if (inputCheckbox !== null) {
-                    setCodeCellVisibility(inputCheckbox, 'visible');
-                }
-            });
-
-            // Remove the event listener from the page so keyboard press doesn't
-            // Change page
-            document.removeEventListener('keydown', initPageNav)
-            keyboardListener = false;
-
-            // Init thebelab
-            thebelab.bootstrap();
-
-            // Remove copy buttons since they won't work anymore
-            const copyAndThebeButtons = document.querySelectorAll('.copybtn, .thebebtn')
-            copyAndThebeButtons.forEach((button, index) => {
-                button.remove();
-            });
-
-            // Remove outputs since they'll be stale
-            const outputs = document.querySelectorAll('.output *, .output')
-            outputs.forEach((output, index) => {
-                output.remove();
-            });
-
-            // Find any cells with an initialization tag and ask ThebeLab to run them when ready
-            var thebeInitCells = document.querySelectorAll('div.tag_thebelab-init');
-            thebeInitCells.forEach((cell) => {
-                console.log("Initializing ThebeLab with cell: " + cell.id);
-                cell.querySelector('.thebelab-run-button').click();
-            });
-        }
-
-        // Add event listener for the function to modify code cells
-        const thebelabButtons = document.querySelectorAll('[id^=thebelab], [id$=thebelab]')
-        thebelabButtons.forEach((thebelabButton,index) => {
-            if (thebelabButton === null) {
-                setTimeout(initThebelab, 250)
-                return
-            };
-            thebelabButton.addEventListener('click', addThebelabToCodeCells);
-        });
-    }
-
-    // Initialize Thebelab
-    initFunction(initThebelab);
-</script>
-
-
 
   <!-- Load the auto-generating TOC (non-async otherwise the TOC won't load w/ turbolinks) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js" async></script>
-  <script src="/assets/js/page/tocbot.js"></script>
+  <script src="/Introduction-Python-SQL/assets/js/page/tocbot.js"></script>
 
   <!-- Google analytics -->
   
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-52617120-7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-52617120-7');
-</script>
-
 
 
   <!-- Clipboard copy button -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" async></script>
 
   <!-- Load custom website scripts -->
-  <script src="/assets/js/scripts.js" async></script>
+  <script src="/Introduction-Python-SQL/assets/js/scripts.js" async></script>
 
   <!-- Load custom user CSS and JS  -->
-  <script src="/assets/custom/custom.js" async></script>
-  <link rel="stylesheet" href="/assets/custom/custom.css">
+  <script src="/Introduction-Python-SQL/assets/custom/custom.js" async></script>
+  <link rel="stylesheet" href="/Introduction-Python-SQL/assets/custom/custom.css">
 
   <!-- Update interact links w/ REST param, is defined in includes so we can use templates -->
   
@@ -340,7 +195,7 @@ function addParamToInternalLinks(hub) {
   var links = document.querySelectorAll("a").forEach(function(link) {
     var href = link.href;
     // If the link is an internal link...
-    if (href.search("") !== -1 || href.startsWith('/') || href.search("127.0.0.1:") !== -1) {
+    if (href.search("https://kimbrianj.github.io") !== -1 || href.startsWith('/') || href.search("127.0.0.1:") !== -1) {
       // Assume we're an internal link, add the hub param to it
       var params = getJsonFromUrl(href);
       if (params !== false) {
@@ -511,10 +366,10 @@ initFunction(initQuery);
 </script>
 
   <!-- Load JS that depends on site variables -->
-  <script src="/assets/js/page/copy-button.js" async></script>
+  <script src="/Introduction-Python-SQL/assets/js/page/copy-button.js" async></script>
 
   <!-- Hide cell code -->
-  <script src="/assets/js/page/hide-cell.js" async></script>
+  <script src="/Introduction-Python-SQL/assets/js/page/hide-cell.js" async></script>
 
   <!-- Printing the screen -->
   <!-- Include nbinteract for interactive widgets -->
@@ -534,7 +389,7 @@ printContent = () => {
     printJS({
         printable: 'textbook_content',
         type: 'html',
-        css: "/assets/css/styles.css",
+        css: "/Introduction-Python-SQL/assets/css/styles.css",
         style: "#textbook_content {padding-top: 40px};",
         scanStyles: false,
         targetStyles: ["*"],
@@ -560,7 +415,7 @@ initFunction(initPrint)
 
 
 <nav id="js-sidebar" class="c-textbook__sidebar">
-  <a href="https://jupyterbook.org/intro.html"><img src="/images/logo/logo.png" class="textbook_logo" id="sidebar-logo" alt="textbook logo" data-turbolinks-permanent/></a>
+  
   <h2 class="c-sidebar__title">Introduction to Python and SQL for Data Analysis</h2>
   <ul class="c-sidebar__chapters">
     
@@ -574,7 +429,7 @@ initFunction(initPrint)
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="/intro.html"
+          href="/Introduction-Python-SQL/intro.html"
         >
           
           Introduction to Python and SQL for Data Analysis
@@ -595,7 +450,7 @@ initFunction(initPrint)
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="/01-intro-sql/intro.html"
+          href="/Introduction-Python-SQL/01-intro-sql/intro.html"
         >
           
           Introduction to SQL
@@ -617,7 +472,7 @@ initFunction(initPrint)
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/01-intro-sql/queries.html"
+                  href="/Introduction-Python-SQL/01-intro-sql/queries.html"
                 >
                   
                   Constructing an SQL Query
@@ -634,7 +489,7 @@ initFunction(initPrint)
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/01-intro-sql/counting.html"
+                  href="/Introduction-Python-SQL/01-intro-sql/counting.html"
                 >
                   
                   Jupyter notebooks
@@ -651,7 +506,7 @@ initFunction(initPrint)
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/01-intro-sql/conditionals.html"
+                  href="/Introduction-Python-SQL/01-intro-sql/conditionals.html"
                 >
                   
                   Using Conditional Statements
@@ -668,7 +523,7 @@ initFunction(initPrint)
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/01-intro-sql/aggregating.html"
+                  href="/Introduction-Python-SQL/01-intro-sql/aggregating.html"
                 >
                   
                   Aggregating
@@ -696,7 +551,7 @@ initFunction(initPrint)
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="/02-joins/intro.html"
+          href="/Introduction-Python-SQL/02-joins/intro.html"
         >
           
           Joins in SQL
@@ -718,7 +573,7 @@ initFunction(initPrint)
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/02-joins/joins.html"
+                  href="/Introduction-Python-SQL/02-joins/joins.html"
                 >
                   
                   Joins
@@ -735,7 +590,7 @@ initFunction(initPrint)
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/02-joins/other-joins.html"
+                  href="/Introduction-Python-SQL/02-joins/other-joins.html"
                 >
                   
                   Left, Right, and Outer Joins
@@ -752,7 +607,7 @@ initFunction(initPrint)
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/02-joins/joins-aggregation.html"
+                  href="/Introduction-Python-SQL/02-joins/joins-aggregation.html"
                 >
                   
                   Joins with Aggregation
@@ -769,7 +624,7 @@ initFunction(initPrint)
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/02-joins/creating-tables.html"
+                  href="/Introduction-Python-SQL/02-joins/creating-tables.html"
                 >
                   
                   Creating Tables
@@ -797,7 +652,7 @@ initFunction(initPrint)
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="/03-intro-python/intro.html"
+          href="/Introduction-Python-SQL/03-intro-python/intro.html"
         >
           
           Python for Data Analysis
@@ -819,7 +674,7 @@ initFunction(initPrint)
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/03-intro-python/data.html"
+                  href="/Introduction-Python-SQL/03-intro-python/data.html"
                 >
                   
                   Bring in a Dataset
@@ -836,7 +691,7 @@ initFunction(initPrint)
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/03-intro-python/data-exploration.html"
+                  href="/Introduction-Python-SQL/03-intro-python/data-exploration.html"
                 >
                   
                   Exploring the Data Frame
@@ -853,7 +708,7 @@ initFunction(initPrint)
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/03-intro-python/subsetting.html"
+                  href="/Introduction-Python-SQL/03-intro-python/subsetting.html"
                 >
                   
                   Subsetting
@@ -870,7 +725,7 @@ initFunction(initPrint)
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/03-intro-python/missing.html"
+                  href="/Introduction-Python-SQL/03-intro-python/missing.html"
                 >
                   
                   Missing Values
@@ -898,7 +753,7 @@ initFunction(initPrint)
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="/04-functions-loops/intro.html"
+          href="/Introduction-Python-SQL/04-functions-loops/intro.html"
         >
           
           Functions, Loops and Visualizations
@@ -920,7 +775,7 @@ initFunction(initPrint)
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/04-functions-loops/functions.html"
+                  href="/Introduction-Python-SQL/04-functions-loops/functions.html"
                 >
                   
                   Functions
@@ -937,7 +792,7 @@ initFunction(initPrint)
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/04-functions-loops/loops.html"
+                  href="/Introduction-Python-SQL/04-functions-loops/loops.html"
                 >
                   
                   Loops
@@ -954,7 +809,7 @@ initFunction(initPrint)
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/04-functions-loops/visualizations.html"
+                  href="/Introduction-Python-SQL/04-functions-loops/visualizations.html"
                 >
                   
                   Visualizations
@@ -971,7 +826,7 @@ initFunction(initPrint)
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/04-functions-loops/multiple-years.html"
+                  href="/Introduction-Python-SQL/04-functions-loops/multiple-years.html"
                 >
                   
                   Visualizing Multiple Years
@@ -999,7 +854,7 @@ initFunction(initPrint)
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="/05-python-sql/intro.html"
+          href="/Introduction-Python-SQL/05-python-sql/intro.html"
         >
           
           Using Python with SQL
@@ -1021,7 +876,7 @@ initFunction(initPrint)
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/05-python-sql/connecting.html"
+                  href="/Introduction-Python-SQL/05-python-sql/connecting.html"
                 >
                   
                   Connecting to the Database
@@ -1038,7 +893,7 @@ initFunction(initPrint)
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/05-python-sql/tables-df.html"
+                  href="/Introduction-Python-SQL/05-python-sql/tables-df.html"
                 >
                   
                   Bringing in Tables as Data Frames
@@ -1074,7 +929,7 @@ initFunction(initPrint)
     </button>
     <div class="buttons">
 <div class="download-buttons-dropdown">
-    <button id="dropdown-button-trigger" class="interact-button"><img src="/assets/images/download-solid.svg" alt="Download" /></button>
+    <button id="dropdown-button-trigger" class="interact-button"><img src="/Introduction-Python-SQL/assets/images/download-solid.svg" alt="Download" /></button>
     <div class="download-buttons">
         
         <a id="interact-button-print"><button id="interact-button-download" class="interact-button">.pdf</button></a>
@@ -1087,12 +942,12 @@ initFunction(initPrint)
   </div>
   <!-- Empty sidebar placeholder that we'll auto-fill with javascript -->
   <aside class="sidebar__right">
-    <header><h4 class="nav__title"><img src="/assets/images/list-solid.svg" alt="Search" />   On this page</h4></header>
+    <header><h4 class="nav__title"><img src="/Introduction-Python-SQL/assets/images/list-solid.svg" alt="Search" />   On this page</h4></header>
     <nav class="onthispage">
     </nav>
   </aside>
-  <a href="/search.html" class="topbar-right-button" id="search-button">
-    <img src="/assets/images/search-solid.svg" alt="Search" />
+  <a href="/Introduction-Python-SQL/search.html" class="topbar-right-button" id="search-button">
+    <img src="/Introduction-Python-SQL/assets/images/search-solid.svg" alt="Search" />
   </a>
 </div>
 
@@ -1112,7 +967,7 @@ initFunction(initPrint)
             "                     %defaultDatasource jdbc:sqlite:lodes.db                           ",
         "categories": [],
         "tags": [],
-        "url": "/01-intro-sql/aggregating.html",
+        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/01-intro-sql/aggregating.html",
         "teaser":null},{
         "title": "Using Conditional Statements",
         
@@ -1120,7 +975,7 @@ initFunction(initPrint)
             "                     %defaultDatasource jdbc:sqlite:lodes.db                           ",
         "categories": [],
         "tags": [],
-        "url": "/01-intro-sql/conditionals.html",
+        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/01-intro-sql/conditionals.html",
         "teaser":null},{
         "title": "Jupyter notebooks",
         
@@ -1128,7 +983,7 @@ initFunction(initPrint)
             "                     %defaultDatasource jdbc:sqlite:lodes.db                           ",
         "categories": [],
         "tags": [],
-        "url": "/01-intro-sql/counting.html",
+        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/01-intro-sql/counting.html",
         "teaser":null},{
         "title": "Introduction to SQL",
         
@@ -1136,7 +991,7 @@ initFunction(initPrint)
             "Introduction to SQL and Relational Databases SQL is a language designed for a very specific purpose: to interact with relational databases. Database: A database is a structured collection of data. There are various different ways of structuring the database, and there may or may not be information about the relationship between entities in the database. Query: A query is a request for data from the database. Database Management System (DBMS): A DBMS is a system of storing and managing databases, including querying the database. Relational Database Management System (RDBMS): In an RDBMS, data records are stored in tables, each of...",
         "categories": [],
         "tags": [],
-        "url": "/01-intro-sql/intro.html",
+        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/01-intro-sql/intro.html",
         "teaser":null},{
         "title": "Constructing an SQL Query",
         
@@ -1144,7 +999,7 @@ initFunction(initPrint)
             "Writing a Basic Query (VIDEO) In order to analyze the data in a database, we need to query it, or request specific information about the data. Before we do that, run the following cell to establish a connection to the database: %defaultDatasource jdbc:sqlite:lodes.db Now, let's start with some basics. We'll start by retrieving all columns from the California Workplace Area Characteristic (ca_wac_2015) table. Try running the following query: SELECT * FROM ca_wac_2015 LIMIT 10; You should see 10 rows of the ca_wac_2015 dataset. Let's go over the basics of this SQL command. SELECT: We start out with the SELECT statement....",
         "categories": [],
         "tags": [],
-        "url": "/01-intro-sql/queries.html",
+        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/01-intro-sql/queries.html",
         "teaser":null},{
         "title": "Creating Tables",
         
@@ -1152,7 +1007,7 @@ initFunction(initPrint)
             "                       ",
         "categories": [],
         "tags": [],
-        "url": "/02-joins/creating-tables.html",
+        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/creating-tables.html",
         "teaser":null},{
         "title": "Joins in SQL",
         
@@ -1160,7 +1015,7 @@ initFunction(initPrint)
             "                       ",
         "categories": [],
         "tags": [],
-        "url": "/02-joins/intro.html",
+        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/intro.html",
         "teaser":null},{
         "title": "Joins with Aggregation",
         
@@ -1168,7 +1023,7 @@ initFunction(initPrint)
             "                       ",
         "categories": [],
         "tags": [],
-        "url": "/02-joins/joins-aggregation.html",
+        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/joins-aggregation.html",
         "teaser":null},{
         "title": "Joins",
         
@@ -1176,7 +1031,7 @@ initFunction(initPrint)
             "                       ",
         "categories": [],
         "tags": [],
-        "url": "/02-joins/joins.html",
+        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/joins.html",
         "teaser":null},{
         "title": "Left, Right, and Outer Joins",
         
@@ -1184,7 +1039,7 @@ initFunction(initPrint)
             "                       ",
         "categories": [],
         "tags": [],
-        "url": "/02-joins/other-joins.html",
+        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/other-joins.html",
         "teaser":null},{
         "title": "Exploring the Data Frame",
         
@@ -1192,7 +1047,7 @@ initFunction(initPrint)
             "                       ",
         "categories": [],
         "tags": [],
-        "url": "/03-intro-python/data-exploration.html",
+        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/03-intro-python/data-exploration.html",
         "teaser":null},{
         "title": "Bring in a Dataset",
         
@@ -1200,7 +1055,7 @@ initFunction(initPrint)
             "                       ",
         "categories": [],
         "tags": [],
-        "url": "/03-intro-python/data.html",
+        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/03-intro-python/data.html",
         "teaser":null},{
         "title": "Python for Data Analysis",
         
@@ -1208,7 +1063,7 @@ initFunction(initPrint)
             "                       ",
         "categories": [],
         "tags": [],
-        "url": "/03-intro-python/intro.html",
+        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/03-intro-python/intro.html",
         "teaser":null},{
         "title": "Missing Values",
         
@@ -1216,7 +1071,7 @@ initFunction(initPrint)
             "                       ",
         "categories": [],
         "tags": [],
-        "url": "/03-intro-python/missing.html",
+        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/03-intro-python/missing.html",
         "teaser":null},{
         "title": "Subsetting",
         
@@ -1224,7 +1079,7 @@ initFunction(initPrint)
             "                       ",
         "categories": [],
         "tags": [],
-        "url": "/03-intro-python/subsetting.html",
+        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/03-intro-python/subsetting.html",
         "teaser":null},{
         "title": "Functions",
         
@@ -1232,7 +1087,7 @@ initFunction(initPrint)
             "                       ",
         "categories": [],
         "tags": [],
-        "url": "/04-functions-loops/functions.html",
+        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/04-functions-loops/functions.html",
         "teaser":null},{
         "title": "Functions, Loops and Visualizations",
         
@@ -1240,7 +1095,7 @@ initFunction(initPrint)
             "                       ",
         "categories": [],
         "tags": [],
-        "url": "/04-functions-loops/intro.html",
+        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/04-functions-loops/intro.html",
         "teaser":null},{
         "title": "Loops",
         
@@ -1248,7 +1103,7 @@ initFunction(initPrint)
             "                       ",
         "categories": [],
         "tags": [],
-        "url": "/04-functions-loops/loops.html",
+        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/04-functions-loops/loops.html",
         "teaser":null},{
         "title": "Visualizing Multiple Years",
         
@@ -1256,7 +1111,7 @@ initFunction(initPrint)
             "                       ",
         "categories": [],
         "tags": [],
-        "url": "/04-functions-loops/multiple-years.html",
+        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/04-functions-loops/multiple-years.html",
         "teaser":null},{
         "title": "Visualizations",
         
@@ -1264,7 +1119,7 @@ initFunction(initPrint)
             "                       ",
         "categories": [],
         "tags": [],
-        "url": "/04-functions-loops/visualizations.html",
+        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/04-functions-loops/visualizations.html",
         "teaser":null},{
         "title": "Connecting to the Database",
         
@@ -1272,7 +1127,7 @@ initFunction(initPrint)
             "                       ",
         "categories": [],
         "tags": [],
-        "url": "/05-python-sql/connecting.html",
+        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/05-python-sql/connecting.html",
         "teaser":null},{
         "title": "Using Python with SQL",
         
@@ -1280,7 +1135,7 @@ initFunction(initPrint)
             "                       ",
         "categories": [],
         "tags": [],
-        "url": "/05-python-sql/intro.html",
+        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/05-python-sql/intro.html",
         "teaser":null},{
         "title": "Bringing in Tables as Data Frames",
         
@@ -1288,7 +1143,7 @@ initFunction(initPrint)
             "                       ",
         "categories": [],
         "tags": [],
-        "url": "/05-python-sql/tables-df.html",
+        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/05-python-sql/tables-df.html",
         "teaser":null},{
         "title": "Introduction to Python and SQL for Data Analysis",
         
@@ -1296,7 +1151,7 @@ initFunction(initPrint)
             "Introduction to SQL and Python for Data Analysis This book provides a brief and gentle introduction to using Python and SQL for data analysis. In this book, we will use a set of public datasets from the Longitudinal Employer Household Dynamic (LEHD) data provided by the United States Census Bureau. In particular, we will use the LEHD Origin-Destination Employment Statistics (LODES) data. These data are based on tabulated administrative data and give information about workplaces and residences of workers at the census block level. For more information about the datasets used in the examples, please refer to the data documentation...",
         "categories": [],
         "tags": [],
-        "url": "/intro.html",
+        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/intro.html",
         "teaser":null},]
 </script>
             </div>
