@@ -23,44 +23,38 @@
 
 - title: Introduction to SQL
   url: /01-intro-sql/intro
-  not_numbered: true
-  expand_sections: true
   sections:
   - title: Constructing an SQL Query
     url: /01-intro-sql/queries
-    not_numbered: true
+
   - title: Jupyter notebooks
     url: /01-intro-sql/counting
-    not_numbered: true
+
   - title: Using Conditional Statements
     url: /01-intro-sql/conditionals
-    not_numbered: true
+
   - title: Aggregating
     url: /01-intro-sql/aggregating
-    not_numbered: true
+
 
 - title: Joins in SQL
   url: /02-joins/intro
-  not_numbered: true
-  expand_sections: true
   sections:
   - title: Joins
     url: /02-joins/joins
-    not_numbered: true
+
   - title: Left, Right, and Outer Joins
     url: /02-joins/other-joins
-    not_numbered: true
+
   - title: Joins with Aggregation
     url: /02-joins/joins-aggregation
-    not_numbered: true
+
   - title: Creating Tables
     url: /02-joins/creating-tables
-    not_numbered: true
+
 
 - title: Python for Data Analysis
   url: /03-intro-python/intro
-  not_numbered: true
-  expand_sections: true
   sections:
   - title: Bring in a Dataset
     url: /03-intro-python/data
@@ -73,30 +67,25 @@
 
 - title: Functions, Loops and Visualizations
   url: /04-functions-loops/intro
-  not_numbered: true
-  expand_sections: true
   sections:
   - title: Functions
     url: /04-functions-loops/functions
-    not_numbered: true
+
   - title: Loops
     url: /04-functions-loops/loops
-    not_numbered: true
+
   - title: Visualizations
     url: /04-functions-loops/visualizations
-    not_numbered: true
+
   - title: Visualizing Multiple Years
     url: /04-functions-loops/multiple-years
-    not_numbered: true
+
 
 - title: Using Python with SQL
   url: /05-python-sql/intro
-  not_numbered: true
-  expand_sections: true
   sections:
   - title: Connecting to the Database
     url: /05-python-sql/connecting
-    not_numbered: true
+
   - title: Bringing in Tables as Data Frames
     url: /05-python-sql/tables-df
-    not_numbered: true
