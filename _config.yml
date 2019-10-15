@@ -20,7 +20,7 @@ title: Introduction to Python and SQL for Data Analysis
 author: Brian Kim
 email: kimbrian@umd.edu
 description: >- # this means to ignore newlines until "baseurl:"
-  Introduction to Python and SQL for data analysis. 
+  Introduction to Python and SQL for data analysis.
 
 baseurl: "" # the subpath of your site, e.g. /blog. If there is no subpath for your site, use an empty string ""
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
@@ -88,7 +88,7 @@ scholar:
 
 # Navigate to https://analytics.google.com, add a new property for your jupyter book and copy the tracking id here.
 google_analytics:
-  mytrackingcode: UA-52617120-7
+  mytrackingcode:
 
 #######################################################################################
 # Jupyter book settings you probably don't need to change
