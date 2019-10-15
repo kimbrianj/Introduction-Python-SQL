@@ -1,0 +1,102 @@
+# This file contains the order and numbering for all sections in the book.
+#
+# Each entry has the following schema:
+#
+# - title: mytitle   # Title of chapter or section
+#   url: /myurl  # URL of section relative to the /content/ folder.
+#   sections:  # Contains a list of more entries that make up the chapter's sections
+#   not_numbered: true  # if the section shouldn't have a number in the sidebar
+#     (e.g. Introduction or appendices)
+#   expand_sections: true  # if you'd like the sections of this chapter to always
+#     be expanded in the sidebar.
+#   external: true  # Whether the URL is an external link or points to content in the book
+#
+# Below are some special values that trigger specific behavior:
+# - search: true  # Will provide a link to a search page
+# - divider: true  # Will insert a divider in the sidebar
+# - header: My Header  # Will insert a header with no link in the sidebar
+
+
+- title: Introduction to Python and SQL for Data Analysis
+  url: /intro
+  not_numbered: true
+
+- title: Introduction to SQL
+  url: /01-intro-sql/intro
+  not_numbered: true
+  expand_sections: true
+  sections:
+  - title: Constructing an SQL Query
+    url: /01-intro-sql/queries
+    not_numbered: true
+  - title: Jupyter notebooks
+    url: /01-intro-sql/counting
+    not_numbered: true
+  - title: Using Conditional Statements
+    url: /01-intro-sql/conditionals
+    not_numbered: true
+  - title: Aggregating
+    url: /01-intro-sql/aggregating
+    not_numbered: true
+
+- title: Joins in SQL
+  url: /02-joins/intro
+  not_numbered: true
+  expand_sections: true
+  sections:
+  - title: Joins
+    url: /02-joins/joins
+    not_numbered: true
+  - title: Left, Right, and Outer Joins
+    url: /02-joins/other-joins
+    not_numbered: true
+  - title: Joins with Aggregation
+    url: /02-joins/joins-aggregation
+    not_numbered: true
+  - title: Creating Tables
+    url: /02-joins/creating-tables
+    not_numbered: true
+
+- title: Python for Data Analysis
+  url: /03-intro-python/intro
+  not_numbered: true
+  expand_sections: true
+  sections:
+  - title: Bring in a Dataset
+    url: /03-intro-python/data
+  - title: Exploring the Data Frame
+    url: /03-intro-python/data-exploration
+  - title: Subsetting
+    url: /03-intro-python/subsetting
+  - title: Missing Values
+    url: /03-intro-python/missing
+
+- title: Functions, Loops and Visualizations
+  url: /04-functions-loops/intro
+  not_numbered: true
+  expand_sections: true
+  sections:
+  - title: Functions
+    url: /04-functions-loops/functions
+    not_numbered: true
+  - title: Loops
+    url: /04-functions-loops/loops
+    not_numbered: true
+  - title: Visualizations
+    url: /04-functions-loops/visualizations
+    not_numbered: true
+  - title: Visualizing Multiple Years
+    url: /04-functions-loops/multiple-years
+    not_numbered: true
+
+- title: Using Python with SQL
+  url: /05-python-sql/intro
+  not_numbered: true
+  expand_sections: true
+  sections:
+  - title: Connecting to the Database
+    url: /05-python-sql/connecting
+    not_numbered: true
+  - title: Bringing in Tables as Data Frames
+    url: /05-python-sql/tables-df
+    not_numbered: true
