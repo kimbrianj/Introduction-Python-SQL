@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>Using Python with SQL</title>
-  <meta name="description" content="                 ">
+  <meta name="description" content="        Using SQL and Python Together Many times, we have large datasets that we want to manipulate and explore in SQL. However, SQL isn't able to do some of...">
 
   <link rel="canonical" href="https://kimbrianj.github.io/Introduction-Python-SQL/05-python-sql/intro.html">
   <link rel="alternate" type="application/rss+xml" title="Introduction to Python and SQL for Data Analysis" href="https://kimbrianj.github.io/Introduction-Python-SQL/feed.xml">
@@ -14,7 +14,7 @@
   <meta property="og:url"         content="https://kimbrianj.github.io/Introduction-Python-SQL/05-python-sql/intro.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Using Python with SQL" />
-<meta property="og:description" content="                 " />
+<meta property="og:description" content="        Using SQL and Python Together Many times, we have large datasets that we want to manipulate and explore in SQL. However, SQL isn't able to do some of..." />
 <meta property="og:image"       content="" />
 
 <meta name="twitter:card" content="summary">
@@ -26,9 +26,9 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "https://kimbrianj.github.io/Introduction-Python-SQL/05-python-sql/intro.html",
   "headline": "Using Python with SQL",
-  "datePublished": "2019-10-18T13:58:19-04:00",
-  "dateModified": "2019-10-18T13:58:19-04:00",
-  "description": "                 ",
+  "datePublished": "2019-10-24T23:51:25-04:00",
+  "dateModified": "2019-10-24T23:51:25-04:00",
+  "description": "        Using SQL and Python Together Many times, we have large datasets that we want to manipulate and explore in SQL. However, SQL isn't able to do some of...",
   "author": {
     "@type": "Person",
     "name": "Brian Kim"
@@ -878,6 +878,25 @@ initFunction(initPrint)
               </li>
               
             
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/Introduction-Python-SQL/04-functions-loops/documentation.html"
+                >
+                  
+                    4.5
+                  
+                  Error Messages and Documentation
+                </a>
+
+                
+                
+
+              </li>
+              
+            
           </ul>
         
       </li>
@@ -1017,6 +1036,60 @@ initFunction(initPrint)
             <div class="c-textbook__content" id="textbook_content">
                   <main class="jupyter-page">
     
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Using-SQL-and-Python-Together">Using SQL and Python Together<a class="anchor-link" href="#Using-SQL-and-Python-Together"> </a></h1>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Many times, we have large datasets that we want to manipulate and explore in SQL. However, SQL isn't able to do some of the more powerful analyses, such as text analysis, network analysis, machine learning, and more. In order to do this, we need to bring the data into Python.</p>
+<p>In this chapter, we'll go over some code to use an SQL query to bring in a table from a relational database into a pandas DataFrame.</p>
+<p>First, we start as usual by loading the appropriate packages.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="k">import</span> <span class="n">create_engine</span>
+<span class="kn">import</span> <span class="nn">sqlite3</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We're going to be using the <code>connect</code> function in <code>sqlite3</code> to connect to the database. Then, we'll use <code>pandas</code>, which has some of the SQL reading functionality built into it already, to bring in a table as a DataFrame.</p>
+
+</div>
+</div>
+</div>
+</div>
+
  
 
 
@@ -1027,8 +1100,8 @@ initFunction(initPrint)
               <nav class="c-page__nav">
   
     
-    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/Introduction-Python-SQL/04-functions-loops/multiple-years.html">
-      〈 <span class="u-margin-right-tiny"></span> Visualizing Multiple Years
+    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/Introduction-Python-SQL/04-functions-loops/documentation.html">
+      〈 <span class="u-margin-right-tiny"></span> Error Messages and Documentation
     </a>
   
 

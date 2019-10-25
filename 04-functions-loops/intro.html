@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>Functions, Loops and Visualizations</title>
-  <meta name="description" content="                 ">
+  <meta name="description" content="        Python Workbook 2: What is the Difference by Year? In previous workbook, we looked at how to bring in a dataset in a Pandas Data Frame and explore it...">
 
   <link rel="canonical" href="https://kimbrianj.github.io/Introduction-Python-SQL/04-functions-loops/intro.html">
   <link rel="alternate" type="application/rss+xml" title="Introduction to Python and SQL for Data Analysis" href="https://kimbrianj.github.io/Introduction-Python-SQL/feed.xml">
@@ -14,7 +14,7 @@
   <meta property="og:url"         content="https://kimbrianj.github.io/Introduction-Python-SQL/04-functions-loops/intro.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Functions, Loops and Visualizations" />
-<meta property="og:description" content="                 " />
+<meta property="og:description" content="        Python Workbook 2: What is the Difference by Year? In previous workbook, we looked at how to bring in a dataset in a Pandas Data Frame and explore it..." />
 <meta property="og:image"       content="" />
 
 <meta name="twitter:card" content="summary">
@@ -26,9 +26,9 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "https://kimbrianj.github.io/Introduction-Python-SQL/04-functions-loops/intro.html",
   "headline": "Functions, Loops and Visualizations",
-  "datePublished": "2019-10-18T13:58:19-04:00",
-  "dateModified": "2019-10-18T13:58:19-04:00",
-  "description": "                 ",
+  "datePublished": "2019-10-24T23:51:25-04:00",
+  "dateModified": "2019-10-24T23:51:25-04:00",
+  "description": "        Python Workbook 2: What is the Difference by Year? In previous workbook, we looked at how to bring in a dataset in a Pandas Data Frame and explore it...",
   "author": {
     "@type": "Person",
     "name": "Brian Kim"
@@ -878,6 +878,25 @@ initFunction(initPrint)
               </li>
               
             
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/Introduction-Python-SQL/04-functions-loops/documentation.html"
+                >
+                  
+                    4.5
+                  
+                  Error Messages and Documentation
+                </a>
+
+                
+                
+
+              </li>
+              
+            
           </ul>
         
       </li>
@@ -1017,6 +1036,88 @@ initFunction(initPrint)
             <div class="c-textbook__content" id="textbook_content">
                   <main class="jupyter-page">
     
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Python-Workbook-2:-What-is-the-Difference-by-Year?">Python Workbook 2: What is the Difference by Year?<a class="anchor-link" href="#Python-Workbook-2:-What-is-the-Difference-by-Year?"> </a></h1><p>In previous workbook, we looked at how to bring in a dataset in a Pandas Data Frame and explore it. In this workbook, we'll explore more of how we can use Python to automate and speed up analysis. In addition, we'll look at using basic visualizations.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Motivating-Question"><span style="color:green">Motivating Question</span><a class="anchor-link" href="#Motivating-Question"> </a></h2><p>So far, we've only looked at data from 2015. However, part of what makes the LODES data so useful is the availability of the data over many years. The data are available in multiple CSV files. There are many insights we might find from analyzing data over years, so we want to be able to bring them all together. In this notebook, we'll explore how to do that as we try to answer the following questions:</p>
+<p><strong>What is the difference in the number of jobs by age group and by year? What are the different trends across years?</strong></p>
+<p>To answer these, we'll introduce you to creating Python functions to make reading datasets easier. Then, we'll use them within loops to automate reading in datasets. Finally, we'll show some basic visualizations with the data that we get to bring it all together.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Starting-Out">Starting Out<a class="anchor-link" href="#Starting-Out"> </a></h2><p>As before, we'll start by loading libraries. We have a few more commands we'll be running in the beginning since we're also going to be doing some visualizations.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Start (as usual) by loading libraries</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mplib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># For inline graphics</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Matplotlib is the new library here, giving us access to visualization tools that we'll use in the second half of this notebook. In addition, notice that we've included a line with <code>%matplotlib inline</code>. This is something called a <strong>magic function</strong>, and this magic function allows us to see plots "inline," or within the text of the Jupyter notebook. Don't worry too much about how it works -- just make sure to include it whenever you want to plot in Jupyter notebooks.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Looking-at-Multiple-Years">Looking at Multiple Years<a class="anchor-link" href="#Looking-at-Multiple-Years"> </a></h2><p>In the previous workbook, we looked at the 2015 dataset. We might want to look at multiple years to see what happens across years and the difference in industries by year. However, it can get quite tedious if we want to bring in the different csv files one by one. To speed up the whole process, we can use Python to automate the process of bringing in datasets and make the whole task much easier to manage.</p>
+<p>In the following sections, we'll go over how to automate the downloading of the LODES files by creating functions and for loops. To set everything up, refer to page 2 in the LODES data documentation (you can access it <a href="https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.3.pdf">here</a>). This describes the directory tree as well as explaining that the CSV files are compressed using a GZip algorithm. You don't need to worry too much about the details here, but we use this information in determining how exactly we'll automate the downloading process.</p>
+
+</div>
+</div>
+</div>
+</div>
+
  
 
 

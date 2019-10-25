@@ -26,8 +26,8 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "https://kimbrianj.github.io/Introduction-Python-SQL/01-intro-sql/intro.html",
   "headline": "Introduction to SQL",
-  "datePublished": "2019-10-18T13:58:19-04:00",
-  "dateModified": "2019-10-18T13:58:19-04:00",
+  "datePublished": "2019-10-24T23:51:25-04:00",
+  "dateModified": "2019-10-24T23:51:25-04:00",
   "description": "        Introduction to SQL and Relational Databases SQL is a language designed for a very specific purpose: to interact with relational databases.Database: ...",
   "author": {
     "@type": "Person",
@@ -108,7 +108,7 @@ MathJax.Hub.Config({
   <meta name="turbolinks-cache-control" content="no-cache">
 
   <!-- Load nbinteract for widgets -->
-
+  
 
   <!-- Load Thebelab for interactive widgets -->
   <!-- Include Thebelab for interactive code if it's enabled -->
@@ -120,7 +120,7 @@ MathJax.Hub.Config({
   <script src="/Introduction-Python-SQL/assets/js/page/tocbot.js"></script>
 
   <!-- Google analytics -->
-
+  
 
 
   <!-- Clipboard copy button -->
@@ -134,7 +134,7 @@ MathJax.Hub.Config({
   <link rel="stylesheet" href="/Introduction-Python-SQL/assets/custom/custom.css">
 
   <!-- Update interact links w/ REST param, is defined in includes so we can use templates -->
-
+  
 <script>
 /**
   * To auto-embed hub URLs in interact links if given in a RESTful fashion
@@ -155,7 +155,7 @@ function getJsonFromUrl(url) {
   });
   return result;
 }
-
+    
 function dict2param(dict) {
     params = Object.keys(dict).map(function(k) {
         return encodeURIComponent(k) + '=' + encodeURIComponent(dict[k])
@@ -410,558 +410,577 @@ initFunction(initPrint)
   <body>
     <!-- .js-show-sidebar shows sidebar by default -->
     <div id="js-textbook" class="c-textbook js-show-sidebar">
-
+      
 
 
 
 <nav id="js-sidebar" class="c-textbook__sidebar">
-
+  
   <h2 class="c-sidebar__title">Introduction to Python and SQL for Data Analysis</h2>
   <ul class="c-sidebar__chapters">
+    
+      
+      
 
+      
+      
 
-
-
-
-
-
-
-
+      
+      
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry c-sidebar__entry--active"
           href="/Introduction-Python-SQL/intro.html"
         >
-
+          
           Introduction to Python and SQL for Data Analysis
         </a>
 
-
+        
       </li>
 
+      
+    
+      
+      
 
+      
+      
 
-
-
-
-
-
-
-
-
+      
+      
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry c-sidebar__entry--active"
           href="/Introduction-Python-SQL/01-intro-sql/intro.html"
         >
-
+          
             1.
-
+          
           Introduction to SQL
         </a>
 
+        
 
+          
+          
+          
+          
 
-
-
-
-
-
-
+          
 
           <ul class="c-sidebar__sections ">
-
-
-
+            
+              
+              
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
                   href="/Introduction-Python-SQL/01-intro-sql/queries.html"
                 >
-
+                  
                     1.1
-
+                  
                   Constructing an SQL Query
                 </a>
 
-
-
+                
+                
 
               </li>
-
-
-
-
+              
+            
+              
+              
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
                   href="/Introduction-Python-SQL/01-intro-sql/counting.html"
                 >
-
+                  
                     1.2
-
+                  
                   Jupyter notebooks
                 </a>
 
-
-
+                
+                
 
               </li>
-
-
-
-
+              
+            
+              
+              
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
                   href="/Introduction-Python-SQL/01-intro-sql/conditionals.html"
                 >
-
+                  
                     1.3
-
+                  
                   Using Conditional Statements
                 </a>
 
-
-
+                
+                
 
               </li>
-
-
-
-
+              
+            
+              
+              
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
                   href="/Introduction-Python-SQL/01-intro-sql/aggregating.html"
                 >
-
+                  
                     1.4
-
+                  
                   Aggregating
                 </a>
 
-
-
+                
+                
 
               </li>
-
-
+              
+            
           </ul>
-
+        
       </li>
 
+      
+    
+      
+      
 
+      
+      
 
-
-
-
-
-
-
-
-
+      
+      
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
           href="/Introduction-Python-SQL/02-joins/intro.html"
         >
-
+          
             2.
-
+          
           Joins in SQL
         </a>
 
+        
 
+          
+          
+          
+          
 
-
-
-
-
-
-
+          
 
           <ul class="c-sidebar__sections u-hidden-visually">
-
-
-
+            
+              
+              
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
                   href="/Introduction-Python-SQL/02-joins/joins.html"
                 >
-
+                  
                     2.1
-
+                  
                   Joins
                 </a>
 
-
-
+                
+                
 
               </li>
-
-
-
-
+              
+            
+              
+              
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
                   href="/Introduction-Python-SQL/02-joins/other-joins.html"
                 >
-
+                  
                     2.2
-
+                  
                   Left, Right, and Outer Joins
                 </a>
 
-
-
+                
+                
 
               </li>
-
-
-
-
+              
+            
+              
+              
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
                   href="/Introduction-Python-SQL/02-joins/joins-aggregation.html"
                 >
-
+                  
                     2.3
-
+                  
                   Joins with Aggregation
                 </a>
 
-
-
+                
+                
 
               </li>
-
-
-
-
+              
+            
+              
+              
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
                   href="/Introduction-Python-SQL/02-joins/creating-tables.html"
                 >
-
+                  
                     2.4
-
+                  
                   Creating Tables
                 </a>
 
-
-
+                
+                
 
               </li>
-
-
+              
+            
           </ul>
-
+        
       </li>
 
+      
+    
+      
+      
 
+      
+      
 
-
-
-
-
-
-
-
-
+      
+      
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
           href="/Introduction-Python-SQL/03-intro-python/intro.html"
         >
-
+          
             3.
-
+          
           Python for Data Analysis
         </a>
 
+        
 
+          
+          
+          
+          
 
-
-
-
-
-
-
+          
 
           <ul class="c-sidebar__sections u-hidden-visually">
-
-
-
+            
+              
+              
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
                   href="/Introduction-Python-SQL/03-intro-python/data.html"
                 >
-
+                  
                     3.1
-
+                  
                   Bring in a Dataset
                 </a>
 
-
-
+                
+                
 
               </li>
-
-
-
-
+              
+            
+              
+              
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
                   href="/Introduction-Python-SQL/03-intro-python/data-exploration.html"
                 >
-
+                  
                     3.2
-
+                  
                   Exploring the Data Frame
                 </a>
 
-
-
+                
+                
 
               </li>
-
-
-
-
+              
+            
+              
+              
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
                   href="/Introduction-Python-SQL/03-intro-python/subsetting.html"
                 >
-
+                  
                     3.3
-
+                  
                   Subsetting
                 </a>
 
-
-
+                
+                
 
               </li>
-
-
-
-
+              
+            
+              
+              
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
                   href="/Introduction-Python-SQL/03-intro-python/missing.html"
                 >
-
+                  
                     3.4
-
+                  
                   Missing Values
                 </a>
 
-
-
+                
+                
 
               </li>
-
-
+              
+            
           </ul>
-
+        
       </li>
 
+      
+    
+      
+      
 
+      
+      
 
-
-
-
-
-
-
-
-
+      
+      
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
           href="/Introduction-Python-SQL/04-functions-loops/intro.html"
         >
-
+          
             4.
-
+          
           Functions, Loops and Visualizations
         </a>
 
+        
 
+          
+          
+          
+          
 
-
-
-
-
-
-
+          
 
           <ul class="c-sidebar__sections u-hidden-visually">
-
-
-
+            
+              
+              
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
                   href="/Introduction-Python-SQL/04-functions-loops/functions.html"
                 >
-
+                  
                     4.1
-
+                  
                   Functions
                 </a>
 
-
-
+                
+                
 
               </li>
-
-
-
-
+              
+            
+              
+              
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
                   href="/Introduction-Python-SQL/04-functions-loops/loops.html"
                 >
-
+                  
                     4.2
-
+                  
                   Loops
                 </a>
 
-
-
+                
+                
 
               </li>
-
-
-
-
+              
+            
+              
+              
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
                   href="/Introduction-Python-SQL/04-functions-loops/visualizations.html"
                 >
-
+                  
                     4.3
-
+                  
                   Visualizations
                 </a>
 
-
-
+                
+                
 
               </li>
-
-
-
-
+              
+            
+              
+              
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
                   href="/Introduction-Python-SQL/04-functions-loops/multiple-years.html"
                 >
-
+                  
                     4.4
-
+                  
                   Visualizing Multiple Years
                 </a>
 
-
-
+                
+                
 
               </li>
+              
+            
+              
+              
 
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/Introduction-Python-SQL/04-functions-loops/documentation.html"
+                >
+                  
+                    4.5
+                  
+                  Error Messages and Documentation
+                </a>
 
+                
+                
+
+              </li>
+              
+            
           </ul>
-
+        
       </li>
 
+      
+    
+      
+      
 
+      
+      
 
-
-
-
-
-
-
-
-
+      
+      
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
           href="/Introduction-Python-SQL/05-python-sql/intro.html"
         >
-
+          
             5.
-
+          
           Using Python with SQL
         </a>
 
+        
 
+          
+          
+          
+          
 
-
-
-
-
-
-
+          
 
           <ul class="c-sidebar__sections u-hidden-visually">
-
-
-
+            
+              
+              
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
                   href="/Introduction-Python-SQL/05-python-sql/connecting.html"
                 >
-
+                  
                     5.1
-
+                  
                   Connecting to the Database
                 </a>
 
-
-
+                
+                
 
               </li>
-
-
-
-
+              
+            
+              
+              
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
                   href="/Introduction-Python-SQL/05-python-sql/tables-df.html"
                 >
-
+                  
                     5.2
-
+                  
                   Bringing in Tables as Data Frames
                 </a>
 
-
-
+                
+                
 
               </li>
-
-
+              
+            
           </ul>
-
+        
       </li>
 
-
-
+      
+    
   </ul>
   <p class="sidebar_footer">Powered by <a href="https://jupyterbook.org">Jupyter Book</a></p>
 </nav>
 
-
+      
       <div class="c-topbar" id="top-navbar">
   <!-- We show the sidebar by default so we use .is-active -->
   <div class="c-topbar__buttons">
@@ -980,15 +999,15 @@ initFunction(initPrint)
         <a href="/Introduction-Python-SQL/content/01-intro-sql/intro.ipynb" download>
         <button id="interact-button-download" class="interact-button">.ipynb</button>
         </a>
-
+        
         <a id="interact-button-print"><button id="interact-button-download" class="interact-button">.pdf</button></a>
     </div>
 </div>
 
 
-
-
-
+  
+  
+  
 
 
 
@@ -996,7 +1015,7 @@ initFunction(initPrint)
 
 
 <a href="https://mybinder.org/v2/gh/kimbrianj/Introduction-Python-SQL/gh-pages?filepath=content%2F01-intro-sql%2Fintro.ipynb"><button class="interact-button" id="interact-button-binder"><img class="interact-button-logo" src="/Introduction-Python-SQL/assets/images/logo_binder.svg" alt="Interact" />Interact</button></a>
-
+  
 
 
 </div>
@@ -1016,7 +1035,7 @@ initFunction(initPrint)
       <main class="c-textbook__page" tabindex="-1">
             <div class="c-textbook__content" id="textbook_content">
                   <main class="jupyter-page">
-
+    
 <div class="jb_cell">
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
@@ -1035,7 +1054,44 @@ initFunction(initPrint)
 </div>
 </div>
 </div>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Wewb1_YR1Ik" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%HTML</span>
+
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/Wewb1_YR1Ik&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; encrypted-media; gyroscope; picture-in-picture&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Wewb1_YR1Ik" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
 <div class="jb_cell">
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
@@ -1055,63 +1111,27 @@ initFunction(initPrint)
 </div>
 </div>
 
-<div class="jb_cell">
-
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">HTML</span>
-
-<span class="c1"># Youtube</span>
-<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/Wewb1_YR1Ik&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="jb_output_wrapper }}">
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Wewb1_YR1Ik" frameborder="0" allowfullscreen></iframe>
-</div>
-
-</div>
-</div>
-</div>
-</div>
-
-</div>
-</div>
-
-
+ 
 
 
     </main>
-
+    
             </div>
             <div class="c-textbook__footer" id="textbook_footer">
               <nav class="c-page__nav">
-
-
+  
+    
     <a id="js-page__nav__prev" class="c-page__nav__prev" href="/Introduction-Python-SQL/intro.html">
       〈 <span class="u-margin-right-tiny"></span> Introduction to Python and SQL for...
     </a>
+  
 
-
-
-
+  
+    
     <a id="js-page__nav__next" class="c-page__nav__next" href="/Introduction-Python-SQL/01-intro-sql/queries.html">
       Constructing an SQL Query <span class="u-margin-right-tiny"></span> 〉
     </a>
-
+  
 </nav>
 
               <footer>

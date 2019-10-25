@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>Exploring the Data Frame</title>
-  <meta name="description" content="                 ">
+  <meta name="description" content="            # First, we import packages# Note that everything after a &quot;#&quot; in Python will be ignored, so you can use it to write commentsimport nump...">
 
   <link rel="canonical" href="https://kimbrianj.github.io/Introduction-Python-SQL/03-intro-python/data-exploration.html">
   <link rel="alternate" type="application/rss+xml" title="Introduction to Python and SQL for Data Analysis" href="https://kimbrianj.github.io/Introduction-Python-SQL/feed.xml">
@@ -14,7 +14,7 @@
   <meta property="og:url"         content="https://kimbrianj.github.io/Introduction-Python-SQL/03-intro-python/data-exploration.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Exploring the Data Frame" />
-<meta property="og:description" content="                 " />
+<meta property="og:description" content="            # First, we import packages# Note that everything after a &quot;#&quot; in Python will be ignored, so you can use it to write commentsimport nump..." />
 <meta property="og:image"       content="" />
 
 <meta name="twitter:card" content="summary">
@@ -26,9 +26,9 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "https://kimbrianj.github.io/Introduction-Python-SQL/03-intro-python/data-exploration.html",
   "headline": "Exploring the Data Frame",
-  "datePublished": "2019-10-18T13:58:19-04:00",
-  "dateModified": "2019-10-18T13:58:19-04:00",
-  "description": "                 ",
+  "datePublished": "2019-10-24T23:51:25-04:00",
+  "dateModified": "2019-10-24T23:51:25-04:00",
+  "description": "            # First, we import packages# Note that everything after a &quot;#&quot; in Python will be ignored, so you can use it to write commentsimport nump...",
   "author": {
     "@type": "Person",
     "name": "Brian Kim"
@@ -878,6 +878,25 @@ initFunction(initPrint)
               </li>
               
             
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/Introduction-Python-SQL/04-functions-loops/documentation.html"
+                >
+                  
+                    4.5
+                  
+                  Error Messages and Documentation
+                </a>
+
+                
+                
+
+              </li>
+              
+            
           </ul>
         
       </li>
@@ -1017,6 +1036,357 @@ initFunction(initPrint)
             <div class="c-textbook__content" id="textbook_content">
                   <main class="jupyter-page">
     
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># First, we import packages</span>
+<span class="c1"># Note that everything after a &quot;#&quot; in Python will be ignored, so you can use it to write comments</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># NumPy (Numerical Python) for scientific computing</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># Pandas, for data analysis tools </span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exploring-the-Data-Frame-(VIDEO)"><span style="color:green">Exploring the Data Frame (VIDEO)</span><a class="anchor-link" href="#Exploring-the-Data-Frame-(VIDEO)"> </a></h2><p>Now that we've loaded in the data set as a Data Frame, let's check the number of rows and columns. We can do this by looking at the <code>shape</code> attribute of a data frame.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It looks like there are 243,462 rows and 53 columns.</p>
+<p>Let's also find out the names of all the variables in this data set.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can use the <code>head</code> and <code>tail</code> methods in order to look at the first or last few rows of the data frame.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># Default is to show first 5 rows.</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># We can specify how many rows we want to see.</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># Same as head, except the last 10 instead of first 10</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote><h4 id="Side-Note:-Instance-variables-and-Methods">Side Note: Instance variables and Methods<a class="anchor-link" href="#Side-Note:-Instance-variables-and-Methods"> </a></h4><p>Note that we used <code>head()</code>, with parentheses, while we used just <code>shape</code> or <code>column</code>, without parentheses. This is because <code>shape</code> and <code>column</code> are <strong>instance variables</strong> and head is a <strong>method</strong>. To put it another way, <code>shape</code> and <code>columns</code> are variables that each Data Frame object has, and we're just displaying the values in those variables. On the other hand, <code>head</code> is a method, or a function that you perform specifically on a certain type of object (in this case, a Data Frame object).</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Accessing-the-Data-Frame">Accessing the Data Frame<a class="anchor-link" href="#Accessing-the-Data-Frame"> </a></h3><p>What if we want to only look at certain cells, or certain columns? We can use a variety of commands to do just that.</p>
+<p>To access individual columns, we can use square brackets or we can simply use dot notation.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Look at just total number of jobs (C000)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;C000&quot;</span><span class="p">]</span> 
+
+<span class="c1"># This does the same thing</span>
+<span class="n">df</span><span class="o">.</span><span class="n">C000</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What if we want to get certain rows? We can also use <code>loc</code> with square brackets. We use a colon to indicate that we want a series of indices with a start and end. We can also leave one side of the colon empty to indicate that we want the rest of the values on that end.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Show rows 10 - 20. Remember, the first row is row 0</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:]</span> <span class="c1"># This gives all rows</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In addition, we can use <code>loc</code> to access certain columns as well as certain indices in the Data Frame.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Look at rows 10 - 20 for total number of jobs (C000)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="s2">&quot;C000&quot;</span><span class="p">]</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Look at rows 10 - 20 for total number of jobs (C000) and jobs by age group</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">,[</span><span class="s1">&#39;C000&#39;</span><span class="p">,</span><span class="s1">&#39;CA01&#39;</span><span class="p">,</span><span class="s1">&#39;CA02&#39;</span><span class="p">,</span><span class="s1">&#39;CA03&#39;</span><span class="p">]</span> <span class="p">]</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here, we wanted to select 4 variables to look at. Notice that we replaced <code>"C000"</code> with <code>['C000','CA01','CA02','CA03']</code>. The square brackets create a list with 4 elements, <code>'C000'</code>,<code>'CA01'</code>,<code>'CA02'</code>, and <code>'CA03'</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">([</span><span class="s1">&#39;C000&#39;</span><span class="p">,</span><span class="s1">&#39;CA01&#39;</span><span class="p">,</span><span class="s1">&#39;CA02&#39;</span><span class="p">,</span><span class="s1">&#39;CA03&#39;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vars_to_show</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CA01&#39;</span><span class="p">,</span><span class="s1">&#39;CA02&#39;</span><span class="p">,</span><span class="s1">&#39;CA03&#39;</span><span class="p">]</span> <span class="c1"># A list of strings containing names of variables (jobs by age group)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:][</span><span class="n">vars_to_show</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this case, we were able to use the "<code>-5:</code>" to indicate that we want the last 5 rows of the data frame. Note that we can't do the same with <code>.loc</code>. This is because <code>.loc</code> retrieves the rows from a particular <em>label</em> in the Data Frame, while <code>.iloc</code> retrieves them from particular <em>positions</em>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
  
 
 

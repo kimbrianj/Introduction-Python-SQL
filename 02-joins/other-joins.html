@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>Left, Right, and Outer Joins</title>
-  <meta name="description" content="                 ">
+  <meta name="description" content="        Different Types of Joins (VIDEO) We've so far done only one type of join, an inner join. This is the default join (which is why we didn't need to spe...">
 
   <link rel="canonical" href="https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/other-joins.html">
   <link rel="alternate" type="application/rss+xml" title="Introduction to Python and SQL for Data Analysis" href="https://kimbrianj.github.io/Introduction-Python-SQL/feed.xml">
@@ -14,7 +14,7 @@
   <meta property="og:url"         content="https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/other-joins.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Left, Right, and Outer Joins" />
-<meta property="og:description" content="                 " />
+<meta property="og:description" content="        Different Types of Joins (VIDEO) We've so far done only one type of join, an inner join. This is the default join (which is why we didn't need to spe..." />
 <meta property="og:image"       content="" />
 
 <meta name="twitter:card" content="summary">
@@ -26,9 +26,9 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/other-joins.html",
   "headline": "Left, Right, and Outer Joins",
-  "datePublished": "2019-10-18T13:58:19-04:00",
-  "dateModified": "2019-10-18T13:58:19-04:00",
-  "description": "                 ",
+  "datePublished": "2019-10-24T23:51:25-04:00",
+  "dateModified": "2019-10-24T23:51:25-04:00",
+  "description": "        Different Types of Joins (VIDEO) We've so far done only one type of join, an inner join. This is the default join (which is why we didn't need to spe...",
   "author": {
     "@type": "Person",
     "name": "Brian Kim"
@@ -878,6 +878,25 @@ initFunction(initPrint)
               </li>
               
             
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/Introduction-Python-SQL/04-functions-loops/documentation.html"
+                >
+                  
+                    4.5
+                  
+                  Error Messages and Documentation
+                </a>
+
+                
+                
+
+              </li>
+              
+            
           </ul>
         
       </li>
@@ -1017,6 +1036,273 @@ initFunction(initPrint)
             <div class="c-textbook__content" id="textbook_content">
                   <main class="jupyter-page">
     
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Different-Types-of-Joins-(VIDEO)"><span style="color:green">Different Types of Joins (VIDEO)</span><a class="anchor-link" href="#Different-Types-of-Joins-(VIDEO)"> </a></h2><p>We've so far done only one type of join, an inner join. This is the default join (which is why we didn't need to specify anything more in the code). However, there are different types of joins.</p>
+<h3 id="Left-and-Right-Joins-in-SQL">Left and Right Joins in SQL<a class="anchor-link" href="#Left-and-Right-Joins-in-SQL"> </a></h3><p>Suppose we want to look at every single census block in one table, only filling in information from the second table if it exists. We'll illustrate this using Table A and Table B from before. Recall that our <code>JOIN</code> created Table C:</p>
+<table>
+<thead><tr>
+<th>blockid</th>
+<th>C000</th>
+<th>CA01</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>10</td>
+<td>2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>22</td>
+<td>4</td>
+</tr>
+<tr>
+<td>6</td>
+<td>9</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>Instead, we want to create the following table:</p>
+<table>
+<thead><tr>
+<th>blockid</th>
+<th>C000</th>
+<th>CA01</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>5</td>
+<td><em>null</em></td>
+</tr>
+<tr>
+<td>2</td>
+<td>10</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td><em>null</em></td>
+</tr>
+<tr>
+<td>4</td>
+<td>6</td>
+<td><em>null</em></td>
+</tr>
+<tr>
+<td>5</td>
+<td>22</td>
+<td>4</td>
+</tr>
+<tr>
+<td>6</td>
+<td>9</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>Here, we've kept every single row in Table A, and simply filled in the information from Table B if it existed for that <code>blockid</code>. This is called a <strong>LEFT JOIN</strong>, since we're taking the table on the left (that is, Table A) and adding the information from Table B onto that. We could have also done a <strong>RIGHT JOIN</strong>, which does the same thing, except flipping the tables, giving us something that looks like:</p>
+<table>
+<thead><tr>
+<th>blockid</th>
+<th>C000</th>
+<th>CA01</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>10</td>
+<td>2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>22</td>
+<td>4</td>
+</tr>
+<tr>
+<td>6</td>
+<td>9</td>
+<td>1</td>
+</tr>
+<tr>
+<td>7</td>
+<td><em>null</em></td>
+<td>2</td>
+</tr>
+<tr>
+<td>8</td>
+<td><em>null</em></td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Applying-Left-Joins">Applying Left Joins<a class="anchor-link" href="#Applying-Left-Joins"> </a></h3><p>When might you use left or right joins? Suppose you want to know which census blocks don't have any jobs. Then, we'd want to make sure that we keep all of the census blocks in the geography crosswalk, even if they aren't present in the workplace area characteristics tables, and add in the workplace area characteristics. This would mean that any blocks with a <code>null</code> value in the <code>C000</code> column would be blocks without any jobs.</p>
+<p>To do this <code>JOIN</code>, we can use the <code>LEFT JOIN</code> statement.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-SQL"><pre><span></span><span class="k">SELECT</span> <span class="n">w_geocode</span><span class="p">,</span> <span class="n">tabblk2010</span><span class="p">,</span> <span class="n">c000</span><span class="p">,</span> <span class="n">ca01</span><span class="p">,</span> <span class="n">ca02</span><span class="p">,</span> <span class="n">ca03</span><span class="p">,</span> <span class="n">ctyname</span><span class="p">,</span> <span class="n">cbsaname</span>  <span class="k">FROM</span> <span class="n">ca_wac_2015</span>
+<span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">ca_xwalk</span> 
+<span class="k">ON</span> <span class="n">ca_wac_2015</span><span class="p">.</span><span class="n">w_geocode</span> <span class="o">=</span> <span class="n">ca_xwalk</span><span class="p">.</span><span class="n">tabblk2010</span>
+<span class="k">LIMIT</span> <span class="mi">1000</span><span class="p">;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is very similar to what we've done already with <code>JOIN</code>, except we add the word <code>LEFT</code> to it. When doing <code>LEFT</code> and <code>RIGHT JOIN</code>s, make sure to keep track of which one is first. Here, <code>lodes.ca_wac</code> comes first, so that's the table on the "left" side.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Outer-Join">Outer Join<a class="anchor-link" href="#Outer-Join"> </a></h3><p>An outer join keeps all unique ids, then puts <code>NULL</code> if it isn't part of that table. This is similar to a <code>LEFT</code> or <code>RIGHT JOIN</code>, except instead of only keeping all IDs from one table, it keeps them from both tables. Consider our example with Table A and Table B. We want to join them such that we get a table that looks like:</p>
+<table>
+<thead><tr>
+<th>blockid</th>
+<th>C000</th>
+<th>CA01</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>5</td>
+<td><em>null</em></td>
+</tr>
+<tr>
+<td>2</td>
+<td>10</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td><em>null</em></td>
+</tr>
+<tr>
+<td>4</td>
+<td>6</td>
+<td><em>null</em></td>
+</tr>
+<tr>
+<td>5</td>
+<td>22</td>
+<td>4</td>
+</tr>
+<tr>
+<td>6</td>
+<td>9</td>
+<td>1</td>
+</tr>
+<tr>
+<td>7</td>
+<td><em>null</em></td>
+<td>2</td>
+</tr>
+<tr>
+<td>8</td>
+<td><em>null</em></td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>In a way, it's like combining the <code>LEFT</code> and <code>RIGHT JOIN</code>s so that we have all information from both tables.</p>
+<h3 id="Applying-Outer-Joins">Applying Outer Joins<a class="anchor-link" href="#Applying-Outer-Joins"> </a></h3><p>Suppose we want to know which census blocks that contain either the residences of people with jobs in the state or the census blocks of the location of the workplace, but not both. We use <code>OUTER JOIN</code> for that. Unfortunately, we aren't able to show the outer join here, as it isn't supported by SQLite. We've provided the code here, but it won't run, so just make sure to keep it in mind for the future.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-SQL"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">ca_wac_2015</span>
+<span class="k">OUTER</span> <span class="k">JOIN</span> <span class="n">ca_rac_2015</span> 
+<span class="k">ON</span> <span class="n">ca_wac_2015</span><span class="p">.</span><span class="n">w_geocode</span> <span class="o">=</span> <span class="n">ca_rac_2015</span><span class="p">.</span><span class="n">h_geocode</span> 
+<span class="k">LIMIT</span> <span class="mi">1000</span><span class="p">;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This will let us see which census blocks contain values for both workplace characteristics and residence characteristics.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Checkpoint:-Types-of-Joins"><span style="color:red">Checkpoint: Types of Joins</span><a class="anchor-link" href="#Checkpoint:-Types-of-Joins"> </a></h2><p>Consider the following situations. How would you answer the question posed? What type of join should you use for each one? Which tables do you need to join? Try doing the join.</p>
+<ul>
+<li>How many census blocks in the state contain a workplace and how many don't? Recall that the geography crosswalk table contains information about the census blocks in the state.</li>
+<li>Which county contains the most census blocks containing a workplace?</li>
+<li>Which metropolitan/micropolitan area had the most census blocks containing a residence of a worker in the state?</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
  
 
 

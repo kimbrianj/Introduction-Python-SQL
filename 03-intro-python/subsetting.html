@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>Subsetting</title>
-  <meta name="description" content="                 ">
+  <meta name="description" content="            # First, we import packages# Note that everything after a &quot;#&quot; in Python will be ignored, so you can use it to write commentsimport nump...">
 
   <link rel="canonical" href="https://kimbrianj.github.io/Introduction-Python-SQL/03-intro-python/subsetting.html">
   <link rel="alternate" type="application/rss+xml" title="Introduction to Python and SQL for Data Analysis" href="https://kimbrianj.github.io/Introduction-Python-SQL/feed.xml">
@@ -14,7 +14,7 @@
   <meta property="og:url"         content="https://kimbrianj.github.io/Introduction-Python-SQL/03-intro-python/subsetting.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Subsetting" />
-<meta property="og:description" content="                 " />
+<meta property="og:description" content="            # First, we import packages# Note that everything after a &quot;#&quot; in Python will be ignored, so you can use it to write commentsimport nump..." />
 <meta property="og:image"       content="" />
 
 <meta name="twitter:card" content="summary">
@@ -26,9 +26,9 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "https://kimbrianj.github.io/Introduction-Python-SQL/03-intro-python/subsetting.html",
   "headline": "Subsetting",
-  "datePublished": "2019-10-18T13:58:19-04:00",
-  "dateModified": "2019-10-18T13:58:19-04:00",
-  "description": "                 ",
+  "datePublished": "2019-10-24T23:51:25-04:00",
+  "dateModified": "2019-10-24T23:51:25-04:00",
+  "description": "            # First, we import packages# Note that everything after a &quot;#&quot; in Python will be ignored, so you can use it to write commentsimport nump...",
   "author": {
     "@type": "Person",
     "name": "Brian Kim"
@@ -878,6 +878,25 @@ initFunction(initPrint)
               </li>
               
             
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/Introduction-Python-SQL/04-functions-loops/documentation.html"
+                >
+                  
+                    4.5
+                  
+                  Error Messages and Documentation
+                </a>
+
+                
+                
+
+              </li>
+              
+            
           </ul>
         
       </li>
@@ -1017,6 +1036,165 @@ initFunction(initPrint)
             <div class="c-textbook__content" id="textbook_content">
                   <main class="jupyter-page">
     
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># First, we import packages</span>
+<span class="c1"># Note that everything after a &quot;#&quot; in Python will be ignored, so you can use it to write comments</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># NumPy (Numerical Python) for scientific computing</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># Pandas, for data analysis tools </span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Creating-Subsets-of-the-Data-(VIDEO)"><span style="color:green">Creating Subsets of the Data (VIDEO)</span><a class="anchor-link" href="#Creating-Subsets-of-the-Data-(VIDEO)"> </a></h2><p>Let's look at how many census blocks had more than 50 jobs. We can do this by including a conditional statement inside brackets.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_over50</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;C000&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">]</span>
+<span class="n">df_over50</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To see how exactly this works, let's see what happens when we run only what's inside the brackets.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;C000&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">50</span> <span class="c1"># This will be a pandas Series with True and False values</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The above code evaluates whether the value in <code>C000</code> is above 50 for each row in the data frame, creating a Series with length equal to the number of rows with "True" or "False" depending on whether that row had a value above 50 in <code>C000</code>. By putting this conditional statement into the brackets, we are telling Python which rows we want to include in our subsetted data frame using <code>True</code> and <code>False</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can also use more complicated subsets. For example, let's say we wanted to look at the census blocks with between 50 and 100 jobs.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_50to100</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;C000&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;C000&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">)]</span>
+<span class="n">df_50to100</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Notice that we replaced our conditional statement from before with <code>(df['C000'] &gt; 50) &amp; (df['C000'] &lt; 100)</code>. This says that we want each row that meets both conditions, <code>(df['C000'] &gt; 50)</code> and <code>(df['C000'] &lt; 100)</code>.</p>
+<p>What about the rest? Well, we can find the rows with less than or equal to 50 jobs OR greater than or equal to 100 jobs.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_not50to100</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;C000&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">50</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;C000&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">100</span><span class="p">)]</span>
+<span class="n">df_not50to100</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2><span style="color:red">Checkpoint 2: Explore Your Data</h2>
+<p>Now look at the data frame you loaded earlier using the tools we've just covered. Do the number of rows and columns make sense? Try subsetting the data set. How does it compare to the results from California? Does it make sense?</p>
+
+</div>
+</div>
+</div>
+</div>
+
  
 
 
