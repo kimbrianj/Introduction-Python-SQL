@@ -70,16 +70,14 @@
   sections:
   - title: Functions
     url: /04-functions-loops/functions
-
   - title: Loops
     url: /04-functions-loops/loops
-
   - title: Visualizations
     url: /04-functions-loops/visualizations
-
   - title: Visualizing Multiple Years
     url: /04-functions-loops/multiple-years
-
+  - title: Error Messages and Documentation
+    url: /04-functions-loops/documentation
 
 - title: Using Python with SQL
   url: /05-python-sql/intro

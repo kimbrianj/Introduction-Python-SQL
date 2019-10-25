@@ -19,6 +19,383 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
     <main class="jupyter-page">
     
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># First, we import packages</span>
+<span class="c1"># Note that everything after a &quot;#&quot; in Python will be ignored, so you can use it to write comments</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># NumPy (Numerical Python) for scientific computing</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># Pandas, for data analysis tools </span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Checking-for-Missing-Values">Checking for Missing Values<a class="anchor-link" href="#Checking-for-Missing-Values"> </a></h2><p>Now that we have our data set, let's do a quick check for missing values. This is typically one of the first things you'll want to do when exploring a new data set.</p>
+<p>Below, we've shown two different ways of writing the same thing. Using <code>isnull()</code> gives us a data frame of the same size with <code>True</code> and <code>False</code> values depending on whether it was a missing value or not. Then, <code>sum()</code> sums each column. Since Python treats <code>True</code> as <code>1</code> and <code>False</code> as <code>0</code>, the sum of each column gives us the total number of missing values for each variable.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_null</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
+<span class="n">df_null</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We did this in two separate lines, but that's actually not necessary. In fact, we can do it all in one go:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can also drop any duplicated rows.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_no_dups</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+<span class="n">df_no_dups</span><span class="o">.</span><span class="n">shape</span> <span class="c1"># Check how many rows there are after dropping duplicates</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Checking-for-Inconsistencies-(VIDEO)"><span style="color:green">Checking for Inconsistencies (VIDEO)</span><a class="anchor-link" href="#Checking-for-Inconsistencies-(VIDEO)"> </a></h2><p>If you check the data documentation, you'll see that <code>C000</code> is the total number of jobs. Therefore, it would make sense for the other groups to columns to add up to the values in <code>C000</code>. For example, you'd expect <code>CA01</code>, <code>CA02</code>, and <code>CA03</code> to add up to <code>C000</code> for each row. Let's check to see if this is true.</p>
+<p>We'll first take the sum of <code>CA01</code>, <code>CA02</code>, and <code>CA03</code> in each row and put that in a new column called <code>CA_sum</code>. Then, we'll compare our new <code>CA_sum</code> column to the existing <code>C000</code> column to see if they match. We'll first show all the code, then explain each section.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create a list with the columns we want to add up</span>
+<span class="n">vars_to_check</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CA01&#39;</span><span class="p">,</span><span class="s1">&#39;CA02&#39;</span><span class="p">,</span><span class="s1">&#39;CA03&#39;</span><span class="p">]</span>
+
+<span class="c1"># Using apply to sum the columns for each row</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;CA_sum&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">vars_to_check</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">sum</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Check how many rows don&#39;t match</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">CA_sum</span> <span class="o">!=</span> <span class="n">df</span><span class="o">.</span><span class="n">C000</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We first created a list called <code>vars_to_check</code>, which contains the columns that we want to add up. Then, we took those columns from <code>df</code> and used the <code>apply()</code> method, which applies the same function to each row (or column, if we used <code>0</code> in the second argument instead of <code>1</code>). In this case, we want to find the sum of each row, so the first argument is <code>sum</code>. We want to create a new column that contains this sum, so we assign that to a new column in <code>df</code>, <code>CA_sum</code>. Notice that this is the first place we see <code>'CA_sum'</code>, because this is where we are creating it.</p>
+<p>Lastly, we want to check how many rows in which <code>C000</code> and <code>CA_sum</code> differ. We do this by using</p>
+
+<pre><code>df.CA_sum != df.C000
+
+</code></pre>
+<p>which outputs a Series of <code>True</code> and <code>False</code> values: <code>True</code> if the value in <code>CA_sum</code> is not equal to the value in <code>C000</code> for that row, and <code>False</code> otherwise. In other words, this is a Series of <code>True</code>s and <code>False</code>s indicating whether the values for the row didn't match. We can then use the <code>sum</code> function from NumPy to add up how many times they didn't match. If there are no errors, the sum should be 0.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Checking-for-Outliers">Checking for Outliers<a class="anchor-link" href="#Checking-for-Outliers"> </a></h2><p>Suppose we want to check if there are any outliers in total number of jobs by census block. We can sort the values in <code>C000</code> in order to figure this out. Let's say we want to find the top ten census blocks by total number of jobs.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;C000&quot;</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's break this down piece by piece. First, we use the <code>sort_values()</code> method to sort the Data Frame by <code>C000</code>. We use <code>ascending=False</code> so that the highest values are at the top (the default is to sort in ascending order). This would give us</p>
+
+<pre><code>df.sort_values("C000",ascending=False)
+
+</code></pre>
+<p>However, we don't want to look at everything. Here, we use <code>head()</code> to give us only the top ten values after sorting. This gives us the final code, <code>df.sort_values("C000",ascending=False).head(10)</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Descriptive-Statistics">Descriptive Statistics<a class="anchor-link" href="#Descriptive-Statistics"> </a></h2><p>Let's try to get some useful summary statistics of the variables in the data set. We use <code>describe()</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As you can see, this gives us the count, mean, standard deviation, minimum, 25th percentile (first quartile), 50th percentile (median), 75th percentile (third quartile), and maximum. Notice that it gives us these summaries even for the variables that don't make sense (the geocode variables).</p>
+<p>This gives a lot more information than you might want. What if we just wanted to look at a few columns? You might do something like the following.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;C000&quot;</span><span class="p">,</span><span class="s2">&quot;CA01&quot;</span><span class="p">,</span><span class="s2">&quot;CA02&quot;</span><span class="p">,</span><span class="s2">&quot;CA03&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You might also decide that you only want to find certain values, like the mean. You can do that too.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;C000&quot;</span><span class="p">,</span><span class="s2">&quot;CA01&quot;</span><span class="p">,</span><span class="s2">&quot;CA02&quot;</span><span class="p">,</span><span class="s2">&quot;CA03&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="More-Descriptive-Statistics">More Descriptive Statistics<a class="anchor-link" href="#More-Descriptive-Statistics"> </a></h2><p>Before we answer the question posed at the beginning of the workbook, we want to do a little more exploration of the data set. Many times, this is where we might find out how exactly the question should be framed. For example, we might want to know the distribution of jobs by age group for blocks with greater than 50 jobs. How would we do this?</p>
+<p>Recall that we made a subset of the <code>df</code> Data Frame earlier called <code>df_over50</code>. We can use <code>describe()</code> on this subsetted Data Frame.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_over50</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can also create new variables. Here, we're going to create an indicator for whether a census block has more than 50 jobs in it.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;over50&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">C000</span> <span class="o">&gt;</span> <span class="mi">50</span>
+<span class="n">df</span><span class="p">[[</span><span class="s2">&quot;C000&quot;</span><span class="p">,</span><span class="s2">&quot;over50&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that we don't have a variable in <code>df</code> called <code>over50</code> before we run the first line in the above cell. What we're doing with that one line is creating a new column called <code>over50</code> and filling it with the values in the conditional statement <code>df.C000 &gt; 50</code>. We've then printed out the first few rows using <code>head()</code> to see that it's working properly.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Checkpoint-3:-Descriptive-Statistics-on-Your-Data"><span style="color:red">Checkpoint 3: Descriptive Statistics on Your Data</span><a class="anchor-link" href="#Checkpoint-3:-Descriptive-Statistics-on-Your-Data"> </a></h2><p>Using the tools described above, look at the data you loaded in earlier. Make sure you know the answers to each of the following questions:</p>
+<ul>
+<li>Are there any missing values?</li>
+<li>What is the mean of each variable?</li>
+<li>Are there any inconsistencies in the data? </li>
+<li>Are there missing values that may not have been coded as missing?</li>
+<li>Are there any interesting outliers?</li>
+</ul>
+<p>In addition, try to think about the distribution of jobs by different characteristics like age group and industry. Which age group had the most jobs in the state? Which industry?</p>
+
+</div>
+</div>
+</div>
+</div>
+
  
 
 

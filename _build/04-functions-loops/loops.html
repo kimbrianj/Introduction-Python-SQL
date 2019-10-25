@@ -19,6 +19,326 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
     <main class="jupyter-page">
     
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Start (as usual) by loading libraries</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mplib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># For inline graphics</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Using-Loops-(VIDEO)"><span style="color:green">Using Loops (VIDEO)</span><a class="anchor-link" href="#Using-Loops-(VIDEO)"> </a></h2><p>Sometimes, we want to run the same code many times over. In these case, we can use loops so that we don't have to copy and paste the code over and over. To demonstrate how loops work, we'll first look at a basic <code>for</code> loop.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here, we are looping through the numbers 0 to 9 and printing them out. Let's break down how each part works.</p>
+<p>First, consider the first line.</p>
+
+<pre><code>for i in range(0,10):
+
+</code></pre>
+<p>This indicates that we will be looping through the values of 0 to 9, incrementing <code>i</code> in each iteration. That is, the code will use <code>i=0</code> for one iteration. Then, it will go back and do everything again, except using <code>i=1</code>. This keeps going until it hits <code>i=9</code>, after which it stops.</p>
+<p>Notice that the second line is indented. In Python, we use the indentation to delineate when the loop starts and ends. Everything after the colon that is indented is part of the <code>for</code> loop. The <code>for</code> loop ends when a line isn't indented.</p>
+<p>Consider the following code and think about what you expect it to print out before running it.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;We&#39;re done now.&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Since the line with <code>print("We're done now.")</code> isn't indented, it isn't repeated. The <code>for</code> loop goes through the loop with just <code>print(i)</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Using-a-For-Loop-to-Read-In-CSV-Files">Using a For Loop to Read In CSV Files<a class="anchor-link" href="#Using-a-For-Loop-to-Read-In-CSV-Files"> </a></h2><p>Now that we've gone over the basics of how a for loop works, let's apply it to reading in multiple CSV files. We've already created a function that takes a year and reads a CSV file. We want to do this for multiple years automatically, so that we don't need to keep on changing the year and running the code again (if, for example, we want to do this for many years). So, in other words, we want to create a loop that runs the same code multiple times, with only the year changed.</p>
+<p>Part of our task is a bit easier, since we've already created a function that does what we want. Now, all we need to do is loop through the years we want, calling that function with a different argument for the year.</p>
+<h3 id="Using-Python-Dictionaries">Using Python Dictionaries<a class="anchor-link" href="#Using-Python-Dictionaries"> </a></h3><p>There's one small complication though: how will we automate storage of these Data Frame objects? There's multiple possibilities, but the way we'll do it is using a Python <strong>dictionary</strong>. A <strong>dictionary</strong> is like a list, except it doesn't have an order in which <strong>values</strong> (which can be any Python object) are stored, and you access the elements of a dictionary using a <strong>key</strong>. Think of a dictionary like a bag of objects, from which we can find the object we want by using the appropriate label. In our case, we'll create a dictionary that has the year as the key and the Data Frame for that year as the value. This give us an easy way of both storing and accessing the Data Frames that we want to get.</p>
+<p>To create a dictionary, we can use curly braces, with colons separating key-value pairs. For example, we can create a dictionary called <code>example_dict</code> with three keys (<code>2009</code>, <code>"2010"</code>, <code>2011</code>) with some values. We can access the values we assigned to the keys using square brackets.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Creating a dictionary called example_dict</span>
+<span class="n">example_dict</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2009</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;2010&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2011</span><span class="p">:</span><span class="kc">None</span><span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Our <code>example_dict</code> dictionary is storing three values: <code>5</code>, <code>2</code>, and <code>None</code>. The keys associated with these three values are <code>2009</code>, <code>"2010"</code>, and <code>2011</code>. Notice that <code>"2010"</code> is in quotes, indicating that it is a string, as opposed to <code>2009</code> or <code>2011</code>, which are integers. This is important, because we need to make sure to use the correct type to access the dictionary values.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># What do you think this will output?</span>
+<span class="n">example_dict</span><span class="p">[</span><span class="mi">2009</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Since keys can be any type, we need to make sure to use the appropriate type</span>
+<span class="n">example_dict</span><span class="p">[</span><span class="s2">&quot;2010&quot;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Using-Loops-and-Functions-to-Bring-in-Multiple-Datasets--(VIDEO)"><span style="color:green">Using Loops and Functions to Bring in Multiple Datasets  (VIDEO)</span><a class="anchor-link" href="#Using-Loops-and-Functions-to-Bring-in-Multiple-Datasets--(VIDEO)"> </a></h3><p>We'll start by creating an empty dictionary in which we'll store the Data Frames that we read in. Then, we're going to loop through a few years (here, we'll do 2009 to 2015), calling the <code>get_wac</code> function we created earlier to store the appropriate dataset in the dictionary. We'll also make sure to provide the proper key when storing the dataset, so that we can easily access it.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Initialize an empty dictionary.</span>
+<span class="n">wac_all_years</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># This loop might take a little bit of time.</span>
+<span class="c1"># If you want to see progress while it runs, uncomment the second line in the loop.</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2009</span><span class="p">,</span><span class="mi">2016</span><span class="p">):</span>
+    <span class="n">wac_all_years</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_wac</span><span class="p">(</span><span class="n">year</span> <span class="o">=</span> <span class="n">i</span><span class="p">)</span>
+    <span class="c1"># print(&quot;WAC for &quot; + str(i) + &quot; obtained.&quot;)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>After running the loop, <code>wac_all_years</code> should contain seven Data Frames, each accessible using the year as the key.</p>
+<p>Let's look at one of the years.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wac_all_years</span><span class="p">[</span><span class="mi">2009</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here, we're looking at the value in the dictionary <code>wac_all_years</code> that has the key <code>2009</code>, then using the <code>head()</code> method on that Data Frame object to take a peek at what the first few lines of the data looks like.</p>
+<p>If we wanted to work more extensively with one of the years (rather than just looking at it as we've done here), we might want to use something like</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wac_09</span> <span class="o">=</span> <span class="n">wac_all_years</span><span class="p">[</span><span class="mi">2009</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>That way, we can just use <code>wac_09</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Checkpoint-2:-Use-Functions-and-Loops-to-Bring-in-Your-Data-for-Multiple-Years"><span style="color:red">Checkpoint 2: Use Functions and Loops to Bring in Your Data for Multiple Years</span><a class="anchor-link" href="#Checkpoint-2:-Use-Functions-and-Loops-to-Bring-in-Your-Data-for-Multiple-Years"> </a></h2><p>Using what we've learned above, try to apply the same methods to bring in multiple years' worth of data for a different state. Remember to name objects differently so that you don't overwrite anything.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Start (as usual) by loading libraries</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mplib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># For inline graphics</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
  
 
 

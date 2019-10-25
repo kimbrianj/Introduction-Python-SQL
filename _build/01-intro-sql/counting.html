@@ -36,6 +36,135 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 </div>
 </div>
 
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Checking-Number-of-Rows-and-Duplicates-(VIDEO)"><span style="color:green">Checking Number of Rows and Duplicates (VIDEO)</span><a class="anchor-link" href="#Checking-Number-of-Rows-and-Duplicates-(VIDEO)"> </a></h2><p>Let's say we want to find out how many rows there are. You can do this by using a <code>COUNT</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-SQL"><pre><span></span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> 
+<span class="k">FROM</span> <span class="n">ca_wac_2015</span><span class="p">;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here, we used <code>COUNT(*)</code>, which does a count of all rows, regardless of <code>NULL</code> values. We can instead do a count of all non-<code>NULL</code> values of a certain variable by including that variable instead of <code>*</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-SQL"><pre><span></span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="n">w_geocode</span><span class="p">)</span> 
+<span class="k">FROM</span> <span class="n">ca_wac_2015</span><span class="p">;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>But wait; what if there are duplicates in the data? We can check for them by using <code>DISTINCT</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-SQL"><pre><span></span><span class="k">SELECT</span> <span class="k">DISTINCT</span><span class="p">(</span><span class="n">w_geocode</span><span class="p">)</span> 
+<span class="k">FROM</span> <span class="n">ca_wac_2015</span>
+<span class="k">LIMIT</span> <span class="mi">1000</span><span class="p">;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This shows us all of the rows with distinct <code>w_geocode</code> values; that is, all of the distinct census block ids. Let's count how many there are. To count them, all we have to do is put <code>COUNT()</code> around the <code>DISTINCT</code> part.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-SQL"><pre><span></span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="p">(</span><span class="n">w_geocode</span><span class="p">))</span> 
+<span class="k">FROM</span> <span class="n">ca_wac_2015</span><span class="p">;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote><h3 id="Building-Up-a-Query">Building Up a Query<a class="anchor-link" href="#Building-Up-a-Query"> </a></h3><p>Notice that we wanted to count the number of distinct rows, but we first started from querying the rows with distinct <code>w_geocode</code> first before adding in the <code>COUNT</code>. Though this is a simple example, this process of building up a query as we go is important, especially when we get to more complicated tasks. When writing a query, try to think about the basic parts first, and feel free to run intermediate steps (making sure to include <code>LIMIT</code>) as you go.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+</div>
+
  
 
 

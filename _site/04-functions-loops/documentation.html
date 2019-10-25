@@ -5,16 +5,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Search the site</title>
-  <meta name="description" content="        ">
+  <title>Error Messages and Documentation</title>
+  <meta name="description" content="            # Start (as usual) by loading librariesimport numpy as npimport pandas as pdimport matplotlib as mplibimport matplotlib.pyplot as plt# For inline...">
 
-  <link rel="canonical" href="https://kimbrianj.github.io/Introduction-Python-SQL/search">
+  <link rel="canonical" href="https://kimbrianj.github.io/Introduction-Python-SQL/04-functions-loops/documentation.html">
   <link rel="alternate" type="application/rss+xml" title="Introduction to Python and SQL for Data Analysis" href="https://kimbrianj.github.io/Introduction-Python-SQL/feed.xml">
 
-  <meta property="og:url"         content="https://kimbrianj.github.io/Introduction-Python-SQL/search" />
+  <meta property="og:url"         content="https://kimbrianj.github.io/Introduction-Python-SQL/04-functions-loops/documentation.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Search the site" />
-<meta property="og:description" content="        " />
+<meta property="og:title"       content="Error Messages and Documentation" />
+<meta property="og:description" content="            # Start (as usual) by loading librariesimport numpy as npimport pandas as pdimport matplotlib as mplibimport matplotlib.pyplot as plt# For inline..." />
 <meta property="og:image"       content="" />
 
 <meta name="twitter:card" content="summary">
@@ -24,11 +24,11 @@
   {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "https://kimbrianj.github.io/Introduction-Python-SQL/search",
-  "headline": "Search the site",
+  "mainEntityOfPage": "https://kimbrianj.github.io/Introduction-Python-SQL/04-functions-loops/documentation.html",
+  "headline": "Error Messages and Documentation",
   "datePublished": "2019-10-24T23:51:25-04:00",
   "dateModified": "2019-10-24T23:51:25-04:00",
-  "description": "        ",
+  "description": "            # Start (as usual) by loading librariesimport numpy as npimport pandas as pdimport matplotlib as mplibimport matplotlib.pyplot as plt# For inline...",
   "author": {
     "@type": "Person",
     "name": "Brian Kim"
@@ -800,7 +800,7 @@ initFunction(initPrint)
 
           
 
-          <ul class="c-sidebar__sections u-hidden-visually">
+          <ul class="c-sidebar__sections ">
             
               
               
@@ -882,7 +882,7 @@ initFunction(initPrint)
               
 
               <li class="c-sidebar__section">
-                <a class="c-sidebar__entry "
+                <a class="c-sidebar__entry c-sidebar__entry--active"
                   href="/Introduction-Python-SQL/04-functions-loops/documentation.html"
                 >
                   
@@ -996,10 +996,26 @@ initFunction(initPrint)
 <div class="download-buttons-dropdown">
     <button id="dropdown-button-trigger" class="interact-button"><img src="/Introduction-Python-SQL/assets/images/download-solid.svg" alt="Download" /></button>
     <div class="download-buttons">
+        <a href="/Introduction-Python-SQL/content/04-functions-loops/documentation.ipynb" download>
+        <button id="interact-button-download" class="interact-button">.ipynb</button>
+        </a>
         
         <a id="interact-button-print"><button id="interact-button-download" class="interact-button">.pdf</button></a>
     </div>
 </div>
+
+
+  
+  
+  
+
+
+
+
+
+
+<a href="https://mybinder.org/v2/gh/kimbrianj/Introduction-Python-SQL/gh-pages?filepath=content%2F04-functions-loops%2Fdocumentation.ipynb"><button class="interact-button" id="interact-button-binder"><img class="interact-button-logo" src="/Introduction-Python-SQL/assets/images/logo_binder.svg" alt="Interact" />Interact</button></a>
+  
 
 
 </div>
@@ -1018,220 +1034,189 @@ initFunction(initPrint)
 
       <main class="c-textbook__page" tabindex="-1">
             <div class="c-textbook__content" id="textbook_content">
-              <div class="search-content__inner-wrap">
-    <input type="text" id="lunr_search" class="search-input" tabindex="-1" placeholder="'Enter your search term...''" />
-    <div id="results" class="results"></div>
+                  <main class="jupyter-page">
+    
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Start (as usual) by loading libraries</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mplib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># For inline graphics</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+
+    </div>
+</div>
 </div>
 
-<script>
-    // Add the lunr store since we will now search it
-    var store = [{
-        "title": "Aggregating",
-        
-        "excerpt":
-            "%defaultDatasource jdbc:sqlite:lodes.db Using Aggregation Functions (VIDEO) We've created a variable that indicates whether the census block had over 100 jobs or not. What if we wanted to know how many blocks had over 100 jobs and how many didn't? We can now use the GROUP BY statement. SELECT over100, COUNT(over100) FROM ca_wac_2015 GROUP BY over100 LIMIT 1000; Here, the GROUP BY statement groups it into the categories of the variable. Since we've chosen to display the count, we can see the counts. We can also change the order in which the results are displayed so that it's in increasing order....",
-        "categories": [],
-        "tags": [],
-        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/01-intro-sql/aggregating.html",
-        "teaser":null},{
-        "title": "Using Conditional Statements",
-        
-        "excerpt":
-            "%defaultDatasource jdbc:sqlite:lodes.db Using Conditional Statements Suppose we want to look at a subset of the data. We can use conditional statements to do this. SELECT * FROM ca_wac_2015 WHERE c000 &lt; 100 LIMIT 1000; Using a query like the one above can be useful for finding if there are any data entry errors or missing values. Since it's not possible to have an age less 0, if there are any rows with negative age, this is likely an error or the method used to code missing values (e.g. -1). We can also use more complicated conditional statements. SELECT count(*) FROM...",
-        "categories": [],
-        "tags": [],
-        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/01-intro-sql/conditionals.html",
-        "teaser":null},{
-        "title": "Jupyter notebooks",
-        
-        "excerpt":
-            "%defaultDatasource jdbc:sqlite:lodes.db Checking Number of Rows and Duplicates (VIDEO) Let's say we want to find out how many rows there are. You can do this by using a COUNT. SELECT COUNT(*) FROM ca_wac_2015; Here, we used COUNT(*), which does a count of all rows, regardless of NULL values. We can instead do a count of all non-NULL values of a certain variable by including that variable instead of *. SELECT COUNT(w_geocode) FROM ca_wac_2015; But wait; what if there are duplicates in the data? We can check for them by using DISTINCT. SELECT DISTINCT(w_geocode) FROM ca_wac_2015 LIMIT 1000; This shows us...",
-        "categories": [],
-        "tags": [],
-        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/01-intro-sql/counting.html",
-        "teaser":null},{
-        "title": "Introduction to SQL",
-        
-        "excerpt":
-            "Introduction to SQL and Relational Databases SQL is a language designed for a very specific purpose: to interact with relational databases. Database: A database is a structured collection of data. There are various different ways of structuring the database, and there may or may not be information about the relationship between entities in the database. Query: A query is a request for data from the database. Database Management System (DBMS): A DBMS is a system of storing and managing databases, including querying the database. Relational Database Management System (RDBMS): In an RDBMS, data records are stored in tables, each of...",
-        "categories": [],
-        "tags": [],
-        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/01-intro-sql/intro.html",
-        "teaser":null},{
-        "title": "Constructing an SQL Query",
-        
-        "excerpt":
-            "Writing a Basic Query (VIDEO) In order to analyze the data in a database, we need to query it, or request specific information about the data. Before we do that, run the following cell to establish a connection to the database: %defaultDatasource jdbc:sqlite:../../lodes.db Now, let's start with some basics. We'll start by retrieving all columns from the California Workplace Area Characteristic (ca_wac_2015) table. Try running the following query: SELECT * FROM ca_wac_2015 LIMIT 10; You should see 10 rows of the ca_wac_2015 dataset. Let's go over the basics of this SQL command. SELECT: We start out with the SELECT statement....",
-        "categories": [],
-        "tags": [],
-        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/01-intro-sql/queries.html",
-        "teaser":null},{
-        "title": "Creating Tables",
-        
-        "excerpt":
-            "Creating New Tables for Future Use (VIDEO) So far, we've mostly just been exploring the data without making any changes to the database. However, there might be times when we might want to create new tables. We can do this using CREATE TABLE. Let's use a previous example to create a new table. CREATE TABLE joinedtable AS SELECT * FROM ca_wac_2015 LEFT JOIN ca_xwalk ON ca_wac_2015.w_geocode = ca_xwalk.tabblk2010 LIMIT 1000; This should look mostly familiar, since everything after the first line is stuff we've already done. The first line creates a new table called joinedtable from the output. This is...",
-        "categories": [],
-        "tags": [],
-        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/creating-tables.html",
-        "teaser":null},{
-        "title": "Joins in SQL",
-        
-        "excerpt":
-            "Workbook 2: What are the Distributions of Jobs by County and by Metropolitan/Micropolitan Area? So far in Workbook 1, we've just looked at the data by census block, with each row representing one census block. We also have a geography crosswalk table, containing information about the census blocks, including information about county and zip codes. What if we wanted to look at the jobs dataset within the context of the county they were in? We'd need to somehow combine the information from these two datasets together. We do that using JOINs. Motivating Question In the previous workbook, we explored a...",
-        "categories": [],
-        "tags": [],
-        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/intro.html",
-        "teaser":null},{
-        "title": "Joins with Aggregation",
-        
-        "excerpt":
-            "Using Joins With Aggregation Functions (VIDEO) Suppose we wanted to know the distribution of the total number of jobs in California by county. The employment information is in one table, and county information is in another table. We need to join them, then aggregate the jobs, by county. Even though this seems like a complicated multi-step process, we can actually do it all in one query. Let's break it down into two parts: the join and the aggregation. The Join We need to join the ca_wac_2015 table and the ca_xwalk table. Since we aren't worried about counties that have no...",
-        "categories": [],
-        "tags": [],
-        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/joins-aggregation.html",
-        "teaser":null},{
-        "title": "Joins",
-        
-        "excerpt":
-            "Joins (VIDEO) One of the nice things about relational databases is organization using multiple tables that are linked together in some way. For example, suppose we have one table with 6 rows called Table A: blockid C000 1 5 2 10 3 2 4 6 5 22 6 9 And another table with 5 rows called Table B: blockid CA01 2 2 5 4 6 1 7 2 8 0 Let's say we want to combine Table A and Table B so that we have one table that contains information about blockid, C000, and CA01. We want to do this...",
-        "categories": [],
-        "tags": [],
-        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/joins.html",
-        "teaser":null},{
-        "title": "Left, Right, and Outer Joins",
-        
-        "excerpt":
-            "Different Types of Joins (VIDEO) We've so far done only one type of join, an inner join. This is the default join (which is why we didn't need to specify anything more in the code). However, there are different types of joins. Left and Right Joins in SQL Suppose we want to look at every single census block in one table, only filling in information from the second table if it exists. We'll illustrate this using Table A and Table B from before. Recall that our JOIN created Table C: blockid C000 CA01 2 10 2 5 22 4 6...",
-        "categories": [],
-        "tags": [],
-        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/other-joins.html",
-        "teaser":null},{
-        "title": "Exploring the Data Frame",
-        
-        "excerpt":
-            "# First, we import packages # Note that everything after a &quot;#&quot; in Python will be ignored, so you can use it to write comments import numpy as np # NumPy (Numerical Python) for scientific computing import pandas as pd # Pandas, for data analysis tools Exploring the Data Frame (VIDEO) Now that we've loaded in the data set as a Data Frame, let's check the number of rows and columns. We can do this by looking at the shape attribute of a data frame. df.shape It looks like there are 243,462 rows and 53 columns. Let's also find out...",
-        "categories": [],
-        "tags": [],
-        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/03-intro-python/data-exploration.html",
-        "teaser":null},{
-        "title": "Bring in a Dataset",
-        
-        "excerpt":
-            "Loading Libraries We first load a few libraries. These libraries are essentially bundles of useful tools that can help us do specific tasks. In this case, we're going to be bringing in NumPy and Pandas, which are specifically useful for computing and data analysis. Don't worry too much about the specifics of libraries for now, just that we need to include the first few lines of code below if we want to use many of the tools described in this workbook. If you'd like to read more about the libraries that we're loading here, see the following links: for NumPy...",
-        "categories": [],
-        "tags": [],
-        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/03-intro-python/data.html",
-        "teaser":null},{
-        "title": "Python for Data Analysis",
-        
-        "excerpt":
-            "Python Workbook 1: What are the characteristics in the number of jobs by census block? In these workbooks, we will start with a motivating question, then walk through the process we need to go through in order to answer the motivating question. Along the way, we will walk through various Python commands and develop skills as we work towards answering the question. As you work, there will be headers that are in GREEN. These indicate locations where there is an accompanying video. This video may walk through the steps or expand on the topics discussed in that section. Though it...",
-        "categories": [],
-        "tags": [],
-        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/03-intro-python/intro.html",
-        "teaser":null},{
-        "title": "Missing Values",
-        
-        "excerpt":
-            "# First, we import packages # Note that everything after a &quot;#&quot; in Python will be ignored, so you can use it to write comments import numpy as np # NumPy (Numerical Python) for scientific computing import pandas as pd # Pandas, for data analysis tools Checking for Missing Values Now that we have our data set, let's do a quick check for missing values. This is typically one of the first things you'll want to do when exploring a new data set. Below, we've shown two different ways of writing the same thing. Using isnull() gives us a data...",
-        "categories": [],
-        "tags": [],
-        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/03-intro-python/missing.html",
-        "teaser":null},{
-        "title": "Subsetting",
-        
-        "excerpt":
-            "# First, we import packages # Note that everything after a &quot;#&quot; in Python will be ignored, so you can use it to write comments import numpy as np # NumPy (Numerical Python) for scientific computing import pandas as pd # Pandas, for data analysis tools Creating Subsets of the Data (VIDEO) Let's look at how many census blocks had more than 50 jobs. We can do this by including a conditional statement inside brackets. df_over50 = df[df[&#39;C000&#39;] &gt; 50] df_over50.shape To see how exactly this works, let's see what happens when we run only what's inside the brackets. df[&#39;C000&#39;]...",
-        "categories": [],
-        "tags": [],
-        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/03-intro-python/subsetting.html",
-        "teaser":null},{
-        "title": "Error Messages and Documentation",
-        
-        "excerpt":
-            "# Start (as usual) by loading libraries import numpy as np import pandas as pd import matplotlib as mplib import matplotlib.pyplot as plt # For inline graphics %matplotlib inline Error Messages and Documentation (VIDEO) We've discussed many basics for using Python for data analysis, but there is so much more that Python can do. It would be extremely difficult, even impossible, to memorize all of the different functions and remember how to do everything. Luckily, there is plenty of documentation available so that you can figure out what to do even if you don't remember it. Error Messages Let's start...",
-        "categories": [],
-        "tags": [],
-        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/04-functions-loops/documentation.html",
-        "teaser":null},{
-        "title": "Functions",
-        
-        "excerpt":
-            "# Start (as usual) by loading libraries import numpy as np import pandas as pd import matplotlib as mplib import matplotlib.pyplot as plt # For inline graphics %matplotlib inline Creating Functions (VIDEO) First, we start off by creating a function. You're familiar with functions in general already, since you've used them to do various things like determining the type of an object (by using type()) or finding the mean of a list of numbers (using mean()). Here, we'll walk through creating your own function. This helps simplify your code make it much more readable if you're going to be doing...",
-        "categories": [],
-        "tags": [],
-        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/04-functions-loops/functions.html",
-        "teaser":null},{
-        "title": "Functions, Loops and Visualizations",
-        
-        "excerpt":
-            "Python Workbook 2: What is the Difference by Year? In previous workbook, we looked at how to bring in a dataset in a Pandas Data Frame and explore it. In this workbook, we'll explore more of how we can use Python to automate and speed up analysis. In addition, we'll look at using basic visualizations. Motivating Question So far, we've only looked at data from 2015. However, part of what makes the LODES data so useful is the availability of the data over many years. The data are available in multiple CSV files. There are many insights we might find...",
-        "categories": [],
-        "tags": [],
-        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/04-functions-loops/intro.html",
-        "teaser":null},{
-        "title": "Loops",
-        
-        "excerpt":
-            "# Start (as usual) by loading libraries import numpy as np import pandas as pd import matplotlib as mplib import matplotlib.pyplot as plt # For inline graphics %matplotlib inline Using Loops (VIDEO) Sometimes, we want to run the same code many times over. In these case, we can use loops so that we don't have to copy and paste the code over and over. To demonstrate how loops work, we'll first look at a basic for loop. for i in range(0,10): print(i) Here, we are looping through the numbers 0 to 9 and printing them out. Let's break down how...",
-        "categories": [],
-        "tags": [],
-        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/04-functions-loops/loops.html",
-        "teaser":null},{
-        "title": "Visualizing Multiple Years",
-        
-        "excerpt":
-            "# Start (as usual) by loading libraries import numpy as np import pandas as pd import matplotlib as mplib import matplotlib.pyplot as plt # For inline graphics %matplotlib inline Using a Line Chart to Show Jobs by Year for Each Age Group (VIDEO) In this last section, we'll look at a line chart while incorporating all the other methods we've gone over in this notebook. Here, we want to look at the change in number of jobs by year, separating them into each age group so that we can look at the trends for each age group as well as...",
-        "categories": [],
-        "tags": [],
-        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/04-functions-loops/multiple-years.html",
-        "teaser":null},{
-        "title": "Visualizations",
-        
-        "excerpt":
-            "# Start (as usual) by loading libraries import numpy as np import pandas as pd import matplotlib as mplib import matplotlib.pyplot as plt # For inline graphics %matplotlib inline Visualizations (VIDEO) Visualizations can help us look at summaries of the data. They can also aid in providing good presentation aids. In this section, we'll look at a few basic types of visualizations: histograms, boxplots, lineplots. In practice, there are many more types of visualizations. Furthermore, there are many different packages that can help you create these different visualizations. While we'll focus only on the basics here with the matplotlib package,...",
-        "categories": [],
-        "tags": [],
-        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/04-functions-loops/visualizations.html",
-        "teaser":null},{
-        "title": "Connecting to the Database",
-        
-        "excerpt":
-            "Creating a Connection import pandas as pd import numpy as np from sqlalchemy import create_engine import sqlite3 We start by creating a connection to the database. The code below doesn't actually connect just yet -- we're just creating the engine with which we will connect to the database. conn = sqlite3.connect(&quot;lodes.db&quot;) Similar to when we read in CSV files, we're just pointing to a file path containing our database, lodes.db. In this case, we have it conveniently located in the same folder as this notebook, so you just need to specify the name of the database. If we were to...",
-        "categories": [],
-        "tags": [],
-        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/05-python-sql/connecting.html",
-        "teaser":null},{
-        "title": "Using Python with SQL",
-        
-        "excerpt":
-            "Using SQL and Python Together Many times, we have large datasets that we want to manipulate and explore in SQL. However, SQL isn't able to do some of the more powerful analyses, such as text analysis, network analysis, machine learning, and more. In order to do this, we need to bring the data into Python. In this chapter, we'll go over some code to use an SQL query to bring in a table from a relational database into a pandas DataFrame. First, we start as usual by loading the appropriate packages. import pandas as pd import numpy as np from...",
-        "categories": [],
-        "tags": [],
-        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/05-python-sql/intro.html",
-        "teaser":null},{
-        "title": "Bringing in Tables as Data Frames",
-        
-        "excerpt":
-            "import pandas as pd import numpy as np from sqlalchemy import create_engine import sqlite3 Reading SQL tables using Pandas Now that we've created our engine to connect to the database, we can use the read_sql function in pandas to write SQL queries and get tables out as DataFrames. df = pd.read_sql(&quot;SELECT * FROM ca_wac_2015&quot;,conn) Here, pd.read_sql() outputs the table that the SQL query that we wrote as a string would return. In this case, it's simply the ca_wac_2015 table. Of course, you can include more complicated queries, such as joins, if you'd like. Let's look at the data to make...",
-        "categories": [],
-        "tags": [],
-        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/05-python-sql/tables-df.html",
-        "teaser":null},{
-        "title": "Introduction to Python and SQL for Data Analysis",
-        
-        "excerpt":
-            "Introduction to SQL and Python for Data Analysis This book provides a brief and gentle introduction to using Python and SQL for data analysis. In this book, we will use a set of public datasets from the Longitudinal Employer Household Dynamic (LEHD) data provided by the United States Census Bureau. In particular, we will use the LEHD Origin-Destination Employment Statistics (LODES) data. These data are based on tabulated administrative data and give information about workplaces and residences of workers at the census block level. For more information about the datasets used in the examples, please refer to the data documentation...",
-        "categories": [],
-        "tags": [],
-        "url": "https://kimbrianj.github.io/Introduction-Python-SQL/intro.html",
-        "teaser":null},]
-</script>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Error-Messages-and-Documentation-(VIDEO)"><span style="color:green">Error Messages and Documentation (VIDEO)</span><a class="anchor-link" href="#Error-Messages-and-Documentation-(VIDEO)"> </a></h2><p>We've discussed many basics for using Python for data analysis, but there is so much more that Python can do. It would be extremely difficult, even impossible, to memorize all of the different functions and remember how to do everything. Luckily, there is plenty of documentation available so that you can figure out what to do even if you don't remember it.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Error-Messages">Error Messages<a class="anchor-link" href="#Error-Messages"> </a></h3><p>Let's start by looking at error messages. The following code has intentionally been written incorrectly to produce an error message.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">error_msg_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">error_msg_mean</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The important thing to look for in an error message is usually the last line. Here, we see "<code>tuple index out of range</code>". This is because <code>mean</code> doesn't take three arguments to find the mean of three numbers. In order to find this mean, we need to group them up in, for example, a list.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">correct_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">correct_mean</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There might be times when you aren't able to figure out what went wrong based on the last line. In that case, your best bet is to copy and paste that line containing the error message into Google and see if there are any helpful hints online. One great resource is Stack Overflow, a website in which users submit questions to get help about coding. You'll most likely be able to find previous users who had the same issue you did, so you can simply find the appropriate thread and read what others have responded.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Documentation">Documentation<a class="anchor-link" href="#Documentation"> </a></h3><p>You can also get help by using the <code>help</code> function to look at the documentation. Let's pull up the documentation for <code>mean</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If this is a bit difficult to read (and it probably is because it's in the same document as everything else), you can also look up the documentation online. We can see here what the source of our error was, because the parameter we need to specify is <code>a</code>, which is an array, or array-like object.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Checkpoint-4:-Exploring-Error-Messages-and-Documentation-"><span style="color:red">Checkpoint 4: Exploring Error Messages and Documentation </span><a class="anchor-link" href="#Checkpoint-4:-Exploring-Error-Messages-and-Documentation-"> </a></h2><p>Try looking at the documentation for various functions or objects we've gone over. This should help you get a better feel for how the documentation is structured, since you should have an idea what they're like already. Some possibilities include:</p>
+<ul>
+<li>Data Frames</li>
+<li>Pandas Series</li>
+<li>Lists</li>
+<li>Dictionaries</li>
+</ul>
+<p>Is there a part of the documentation that doesn't make sense to you? Does seeing the documentation help you understand what you're working with better?</p>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    
             </div>
             <div class="c-textbook__footer" id="textbook_footer">
               <nav class="c-page__nav">
   
+    
+    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/Introduction-Python-SQL/04-functions-loops/multiple-years.html">
+      〈 <span class="u-margin-right-tiny"></span> Visualizing Multiple Years
+    </a>
+  
 
+  
+    
+    <a id="js-page__nav__next" class="c-page__nav__next" href="/Introduction-Python-SQL/05-python-sql/intro.html">
+      Using Python with SQL <span class="u-margin-right-tiny"></span> 〉
+    </a>
   
 </nav>
 

@@ -19,6 +19,203 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
     <main class="jupyter-page">
     
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Loading-Libraries">Loading Libraries<a class="anchor-link" href="#Loading-Libraries"> </a></h2><p>We first load a few libraries. These libraries are essentially bundles of useful tools that can help us do specific tasks. In this case, we're going to be bringing in NumPy and Pandas, which are specifically useful for computing and data analysis. Don't worry too much about the specifics of libraries for now, just that we need to include the first few lines of code below if we want to use many of the tools described in this workbook.</p>
+<p>If you'd like to read more about the libraries that we're loading here, see the following links: for <a href="http://www.numpy.org/">NumPy</a> and for <a href="http://pandas-docs.github.io/pandas-docs-travis/">Pandas</a></p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># First, we import packages</span>
+<span class="c1"># Note that everything after a &quot;#&quot; in Python will be ignored, so you can use it to write comments</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># NumPy (Numerical Python) for scientific computing</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># Pandas, for data analysis tools </span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Reading-in-the-Data-Set-(VIDEO)"><span style="color:green">Reading in the Data Set (VIDEO)</span><a class="anchor-link" href="#Reading-in-the-Data-Set-(VIDEO)"> </a></h2><p>We'll start by reading in a data set from a csv, or comma-separated value, file. For our examples, we'll use the Workplace Area Characteristic (WAC) data from California.</p>
+<p>We use the <code>read_csv</code> function from pandas to read in the csv file.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_file</span> <span class="o">=</span> <span class="s1">&#39;ca_wac_S000_JT00_2015.csv&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_file</span><span class="p">)</span>
+
+<span class="c1"># We can also use the following line by itself instead</span>
+<span class="c1"># df = pd.read_csv(&#39;ca_wac_S000_JT00_2015.csv&#39;)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's break the code down. In the first line, we assign <code>'ca_wac_S000_JT00_2015.csv'</code> to the variable <code>data_file</code>. Note that any text inside quotation marks, such as <code>'ca_wac_S000_JT00_2015.csv'</code>, is a string, which makes <code>data_file</code> a string variable. Note that this by itself doesn't really do anything fancy. We are just setting up a string variable with the text, <code>'ca_wac_S000_JT00_2015.csv'</code>, not telling Python to look for a file with that name or anything like that yet.</p>
+<p>To look at what we've stored inside <code>data_file</code>, try using the <code>print</code> function with <code>data_file</code> as the argument. What do you think the output will be?</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data_file</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the second line, we're using the <code>read_csv()</code> function from the <code>pandas</code> package. Notice that we had to include <code>pd.</code> in front of the function. This tells Python to use the <code>read_csv</code> function that is inside the <code>pandas</code> package. The function <code>read_csv</code> outputs a Data Frame, which is then assigned to the variable <code>df</code>. This means that our data is now in a data frame called <code>df</code>.</p>
+<blockquote><h4 id="Side-Note:-File-Location">Side Note: File Location<a class="anchor-link" href="#Side-Note:-File-Location"> </a></h4><p>We only used the file name for <code>data_file</code>. This is because we included the CSV file in the same folder as this notebook. If it were somewhere else, we'd have to include the file path (e.g. <code>"/Documents/precourse/Python/ca_wac_S000_JT00_2015.csv"</code>). If you don't know much about how file paths work, don't worry: you just need to make sure that the file is in the same folder as the notebook.</p>
+</blockquote>
+<p>Lastly, we've included a line of code that can load the csv file into <code>df</code> in one line. This does the exact same thing as the first two lines of code, with the exception of not assigning <code>'ca_wac_S000_JT00_2015.csv'</code> to <code>data_file</code>. Notice that all we did was replace <code>data_file</code> with the string that we assigned to <code>data_file</code>. It is commented out, but feel free to try running it by itself (commenting out the first two lines) to check that it does the same thing.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="A-Note-on-Data-Types">A Note on Data Types<a class="anchor-link" href="#A-Note-on-Data-Types"> </a></h2><p>We've mentioned that <code>data_file</code> is a string variable and that <code>df</code> is a pandas Data Frame. These are different variable types, and it's important to keep this in mind because the type of variable dictates what you can do with it.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">data_file</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Since <code>data_file</code> is a string, the <code>type</code> function returns <code>str</code> (which stands for string). Let's look at <code>df</code>. What do you think the output will be?</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It tells us that <code>df</code> is a pandas Data Frame. As we'll see later on, a Pandas Data Frame, as with other Python objects, has specific attributes and functions that you can use with it.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Checkpoint-1:-Read-in-Other-Data"><span style="color:red">Checkpoint 1: Read in Other Data</span><a class="anchor-link" href="#Checkpoint-1:-Read-in-Other-Data"> </a></h2><p>You can access LODES data from other states by using the link below:</p>
+<p><a href="https://lehd.ces.census.gov/data/lodes/LODES7">LODES Data</a></p>
+<p>and navigating to the state you want. Check out the <a href="https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.3.pdf">LODES documentation</a> for more information.</p>
+<p>If you download any data, it will go to your local computer. However, since this notebook is running from a server in the cloud, you'll have to upload it to this server to access it. You can do so by navigating to the <strong>Home</strong> folder by clicking on the <strong>Jupyter</strong> icon at the top left of this page, and clicking the Upload button in right-hand corner.</p>
+<p>If you have problems with that, don't worry. We've included several other LODES data in this environment too. They are named:</p>
+<ul>
+<li>Illinois: <code>il_wac_S000_JT00_2015.csv</code></li>
+<li>Indiana: <code>in_wac_S000_JT00_2015.csv</code></li>
+<li>Maryland: <code>md_wac_S000_JT00_2015.csv</code></li>
+</ul>
+<p>See if you can load one similarly to how you loaded the California data above.</p>
+<p>Make sure you assign it to a variable other than <code>df</code> so that you don't overwrite the data we loaded earlier (for example, if you choose Illinois, you might use <code>df_il</code>). Play around with the few functions you've learned.</p>
+
+</div>
+</div>
+</div>
+</div>
+
  
 
 

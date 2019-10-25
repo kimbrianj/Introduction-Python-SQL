@@ -36,6 +36,228 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 </div>
 </div>
 
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Using-Conditional-Statements"><span style="color:green">Using Conditional Statements</span><a class="anchor-link" href="#Using-Conditional-Statements"> </a></h2><p>Suppose we want to look at a subset of the data. We can use conditional statements to do this.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-SQL"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">ca_wac_2015</span> 
+<span class="k">WHERE</span> <span class="n">c000</span> <span class="o">&lt;</span> <span class="mi">100</span>
+<span class="k">LIMIT</span> <span class="mi">1000</span><span class="p">;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Using a query like the one above can be useful for finding if there are any data entry errors or missing values. Since it's not possible to have an age less 0, if there are any rows with negative age, this is likely an error or the method used to code missing values (e.g. <code>-1</code>).</p>
+<p>We can also use more complicated conditional statements.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-SQL"><pre><span></span><span class="k">SELECT</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> 
+<span class="k">FROM</span> <span class="n">ca_wac_2015</span>
+<span class="k">WHERE</span> <span class="p">(</span><span class="n">c000</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">)</span> <span class="k">AND</span> <span class="p">(</span><span class="n">c000</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This subsets to rows in which <code>c000</code> is greater than 50 and <code>c000</code> is less than 100. That is, this subsets to census blocks with between 50 and 100 total jobs. Using <code>OR</code> works in the same way.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-SQL"><pre><span></span><span class="k">SELECT</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> 
+<span class="k">FROM</span> <span class="n">ca_wac_2015</span>
+<span class="k">WHERE</span> <span class="p">(</span><span class="n">c000</span> <span class="o">&lt;=</span> <span class="mi">50</span><span class="p">)</span> <span class="k">OR</span> <span class="p">(</span><span class="n">c000</span> <span class="o">&gt;=</span> <span class="mi">100</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This subsets to rows in which <code>c000</code> is less than or equal to 50 or <code>c000</code> is greater than or equal to 100. This query should, in other words, capture the rest of the rows.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote><h3 id="Common-Comparison-Operators">Common Comparison Operators<a class="anchor-link" href="#Common-Comparison-Operators"> </a></h3><p>Though there are some more complicated comparison operators (if you're curious, feel free to look up what <code>LIKE</code> and <code>IN</code> do), these should cover most of what you want to do.</p>
+<ul>
+<li><strong><code>=</code></strong>: equal to</li>
+<li><strong><code>!=</code></strong> or "<strong><code>&lt;&gt;</code></strong>": not equal to</li>
+<li><strong><code>&lt;</code></strong>: less than</li>
+<li><strong><code>&lt;=</code></strong>: less-than-or-equal-to</li>
+<li><strong><code>&gt;</code></strong>: greater than</li>
+<li><strong><code>&gt;=</code></strong>: greater-than-or-equal-to</li>
+<li><p><strong><code>IS NULL</code></strong> and <strong><code>IS NOT NULL</code></strong>: The signifier of a row in a column not having a value is a special keyword: <code>NULL</code>.  To check for <code>NULL</code>, you use <code>IS NULL</code> or <code>IS NOT NULL</code>, rather than "=" or "!=". For example, to count the number of rows with <code>NULL</code> values for <code>c000</code> we might use the following:</p>
+
+<pre><code> SELECT count(*) 
+ FROM ca_wac_2015
+ WHERE c000 IS NULL;</code></pre>
+</li>
+</ul>
+</blockquote>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Creating-Variables">Creating Variables<a class="anchor-link" href="#Creating-Variables"> </a></h2><p>Suppose we want to create a new column in the table that acts as a "flag" for which rows fit a certain condition, so that you can use them later. We can do this using the <code>ALTER TABLE</code> statement.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-SQL"><pre><span></span><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">ca_wac_2015</span> <span class="k">ADD</span> <span class="n">over100</span> <span class="n">BOOL</span><span class="p">;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-SQL"><pre><span></span><span class="k">UPDATE</span> <span class="n">ca_wac_2015</span> <span class="k">SET</span> <span class="n">over100</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-SQL"><pre><span></span><span class="k">UPDATE</span> <span class="n">ca_wac_2015</span> <span class="k">SET</span> <span class="n">over100</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">WHERE</span> <span class="n">c000</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's break this down line by line. First, we use <code>ALTER TABLE</code>, then specify the table we want to alter. In this case, we want to alter the <code>ca_wac_2015</code> table. Then, we <code>ADD</code> a new column, <code>over100</code>. We designate this as a <code>BOOL</code> for boolean (that is, a TRUE/FALSE value) column.</p>
+<p>After we create this new column, we need to fill it with the appropriate values. First, we're going to set everything in the column to be 0 (or False). To do this, we use <code>UPDATE</code>, specify the appropriate table, then use <code>SET over100 = 0</code>. Then, we replace the value with 1 (or True) if the value in <code>c000</code> for that row is above 100. We again use <code>UPDATE</code> in a similar manner, except we add a <code>WHERE</code> clause, so that it only set the value to TRUE if a certain condition is met -- in this case, that <code>c000 &gt; 100</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Checkpoint-2:-Counting-Rows,-Using-Conditional-Statements-and-Creating-Variables"><span style="color:red">Checkpoint 2: Counting Rows, Using Conditional Statements and Creating Variables</span><a class="anchor-link" href="#Checkpoint-2:-Counting-Rows,-Using-Conditional-Statements-and-Creating-Variables"> </a></h2><p>We've included the 2015 OD, RAC, WAC, and geography crosswalk data for both California and Illinois for you in tables. The Illinois data follow the same format as the California, except with <code>il</code> replacing <code>ca</code> (e.g. <code>il_wac_2015</code> for the Illinois 2015 WAC). Try using the methods described in this section to further explore the tables. If you are using PostgreSQL on your own computer, feel free to bring in data from a different state (using the document about bringing in data into PostgreSQL), or use the California or Illinois data provided for you. Answer the questions below, making sure to write out the queries used to answer the questions.</p>
+<ul>
+<li>How many census blocks contain more than 200 jobs?</li>
+<li>How many census blocks contain residences of fewer than 25 workers?</li>
+<li>How many census blocks contain workplaces with more than 10 workers with a Bachelor's degree or higher?</li>
+<li>How many counties are there?</li>
+<li>How many total census blocks are there?</li>
+<li>How many Metropolitan/Micropolitan areas are there?</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
  
 
 
