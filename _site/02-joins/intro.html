@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>Joins in SQL</title>
-  <meta name="description" content="        Workbook 2: What are the Distributions of Jobs by County and by Metropolitan/Micropolitan Area? So far in Workbook 1, we've just looked at the data b...">
+  <meta name="description" content="        SQL Joins So far, we've just looked at the data one at a time, exploring a state's workplace area characteristics, residence area characteristics, or...">
 
   <link rel="canonical" href="https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/intro.html">
   <link rel="alternate" type="application/rss+xml" title="Introduction to Python and SQL for Data Analysis" href="https://kimbrianj.github.io/Introduction-Python-SQL/feed.xml">
@@ -14,7 +14,7 @@
   <meta property="og:url"         content="https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/intro.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Joins in SQL" />
-<meta property="og:description" content="        Workbook 2: What are the Distributions of Jobs by County and by Metropolitan/Micropolitan Area? So far in Workbook 1, we've just looked at the data b..." />
+<meta property="og:description" content="        SQL Joins So far, we've just looked at the data one at a time, exploring a state's workplace area characteristics, residence area characteristics, or..." />
 <meta property="og:image"       content="" />
 
 <meta name="twitter:card" content="summary">
@@ -26,9 +26,9 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/intro.html",
   "headline": "Joins in SQL",
-  "datePublished": "2019-10-24T23:51:25-04:00",
-  "dateModified": "2019-10-24T23:51:25-04:00",
-  "description": "        Workbook 2: What are the Distributions of Jobs by County and by Metropolitan/Micropolitan Area? So far in Workbook 1, we've just looked at the data b...",
+  "datePublished": "2019-10-27T16:17:12-04:00",
+  "dateModified": "2019-10-27T16:17:12-04:00",
+  "description": "        SQL Joins So far, we've just looked at the data one at a time, exploring a state's workplace area characteristics, residence area characteristics, or...",
   "author": {
     "@type": "Person",
     "name": "Brian Kim"
@@ -498,7 +498,7 @@ initFunction(initPrint)
                   
                     1.2
                   
-                  Jupyter notebooks
+                  Counting
                 </a>
 
                 
@@ -1040,7 +1040,7 @@ initFunction(initPrint)
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Workbook-2:-What-are-the-Distributions-of-Jobs-by-County-and-by-Metropolitan/Micropolitan-Area?">Workbook 2: What are the Distributions of Jobs by County and by Metropolitan/Micropolitan Area?<a class="anchor-link" href="#Workbook-2:-What-are-the-Distributions-of-Jobs-by-County-and-by-Metropolitan/Micropolitan-Area?"> </a></h1><p>So far in Workbook 1, we've just looked at the data by census block, with each row representing one census block. We also have a geography crosswalk table, containing information about the census blocks, including information about county and zip codes. What if we wanted to look at the jobs dataset within the context of the county they were in? We'd need to somehow combine the information from these two datasets together. We do that using <code>JOIN</code>s.</p>
+<h1 id="SQL-Joins">SQL Joins<a class="anchor-link" href="#SQL-Joins"> </a></h1><p>So far, we've just looked at the data one at a time, exploring a state's workplace area characteristics, residence area characteristics, origin-destination pair information, or descriptions of each census block. What if we wanted to look at the jobs dataset within the context of the county they were in? We have get information about jobs from the WAC, RAC, or OD tables, but we also have to use the geography crosswalk table, containing information about the census blocks such as county and zip codes. We'd need to somehow combine the information from these two datasets together. We do that using <code>JOIN</code>s.</p>
 
 </div>
 </div>
@@ -1052,7 +1052,7 @@ initFunction(initPrint)
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Motivating-Question">Motivating Question<a class="anchor-link" href="#Motivating-Question"> </a></h2><p>In the previous workbook, we explored a little bit of the Workplace Area Characteristic dataset as well as the Geography Crosswalk dataset. We were able to look at how jobs were in each census block, as well as how many census blocks there were in each county or metropolitan/micropolitan area. In this notebook, we're going to explore deeper into the data available to us to try to answer the question:</p>
-<p><strong>What are the characteristics of the distribution of jobs by county and by metropolitan/micropolitan area? </strong></p>
+<p><strong>What are the characteristics of the distribution of jobs by county and by metropolitan/micropolitan area?</strong></p>
 <p>To answer this, we'll have to use data from multiple tables.</p>
 
 </div>

@@ -3,7 +3,7 @@ interact_link: content/01-intro-sql/counting.ipynb
 kernel_name: sql
 has_widgets: false
 title: |-
-  Jupyter notebooks
+  Counting
 prev_page:
   url: /01-intro-sql/queries.html
   title: |-
@@ -19,14 +19,14 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
     <main class="jupyter-page">
     
-<div class="jb_cell">
+<div class="jb_cell tag_hide_input">
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-SQL"><pre><span></span><span class="o">%</span><span class="n">defaultDatasource</span> <span class="n">jdbc</span><span class="p">:</span><span class="n">sqlite</span><span class="p">:</span><span class="n">lodes</span><span class="p">.</span><span class="n">db</span>
+<div class=" highlight hl-SQL"><pre><span></span><span class="o">%</span><span class="n">defaultDatasource</span> <span class="n">jdbc</span><span class="p">:</span><span class="n">sqlite</span><span class="p">:..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="n">lodes</span><span class="p">.</span><span class="n">db</span>
 </pre></div>
 
     </div>
@@ -98,6 +98,35 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>We can also look at both of these at the same time. This can be helpful for checking for <code>NULL</code> values of multiple columns at a time, since we'll be able to see which ones have less than the total number of rows.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-SQL"><pre><span></span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">),</span> <span class="k">COUNT</span><span class="p">(</span><span class="n">w_geocode</span><span class="p">),</span> <span class="k">COUNT</span><span class="p">(</span><span class="n">C000</span><span class="p">)</span> 
+<span class="k">FROM</span> <span class="n">ca_wac_2015</span><span class="p">;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>But wait; what if there are duplicates in the data? We can check for them by using <code>DISTINCT</code>.</p>
 
 </div>
@@ -112,9 +141,9 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-SQL"><pre><span></span><span class="k">SELECT</span> <span class="k">DISTINCT</span><span class="p">(</span><span class="n">w_geocode</span><span class="p">)</span> 
+<div class=" highlight hl-SQL"><pre><span></span><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="n">w_geocode</span> 
 <span class="k">FROM</span> <span class="n">ca_wac_2015</span>
-<span class="k">LIMIT</span> <span class="mi">1000</span><span class="p">;</span>
+<span class="k">LIMIT</span> <span class="mi">100</span><span class="p">;</span>
 </pre></div>
 
     </div>
@@ -142,7 +171,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-SQL"><pre><span></span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="p">(</span><span class="n">w_geocode</span><span class="p">))</span> 
+<div class=" highlight hl-SQL"><pre><span></span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span> <span class="n">w_geocode</span><span class="p">)</span> 
 <span class="k">FROM</span> <span class="n">ca_wac_2015</span><span class="p">;</span>
 </pre></div>
 

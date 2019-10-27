@@ -19,7 +19,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
     <main class="jupyter-page">
     
-<div class="jb_cell">
+<div class="jb_cell tag_hide_input">
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -40,7 +40,37 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Using-Aggregation-Functions-(VIDEO)"><span style="color:green">Using Aggregation Functions (VIDEO)</span><a class="anchor-link" href="#Using-Aggregation-Functions-(VIDEO)"> </a></h2><p>We've created a variable that indicates whether the census block had over 100 jobs or not. What if we wanted to know how many blocks had over 100 jobs and how many didn't? We can now use the <code>GROUP BY</code> statement.</p>
+<h2 id="Using-Aggregation-Functions">Using Aggregation Functions<a class="anchor-link" href="#Using-Aggregation-Functions"> </a></h2><p>We've explored how to create a variable that indicates whether the census block had over 100 jobs or not using the code below.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-SQL"><pre><span></span><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">ca_wac_2015</span> <span class="k">ADD</span> <span class="n">over100</span> <span class="n">BOOL</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="n">ca_wac_2015</span> <span class="k">SET</span> <span class="n">over100</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="n">ca_wac_2015</span> <span class="k">SET</span> <span class="n">over100</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">WHERE</span> <span class="n">c000</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What if we wanted to know how many blocks had over 100 jobs and how many didn't? We can now use the <code>GROUP BY</code> statement.</p>
 
 </div>
 </div>
@@ -186,7 +216,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-SQL"><pre><span></span><span class="k">SELECT</span> <span class="n">over100</span><span class="p">,</span> <span class="k">COUNT</span><span class="p">(</span><span class="n">over100</span><span class="p">),</span> <span class="k">AVG</span><span class="p">(</span><span class="n">c000</span><span class="p">)</span> <span class="k">AS</span> <span class="n">avg_jobs</span><span class="p">,</span> <span class="k">MIN</span><span class="p">(</span><span class="n">c000</span><span class="p">),</span> <span class="k">MAX</span><span class="p">(</span><span class="n">c000</span><span class="p">)</span>
+<div class=" highlight hl-SQL"><pre><span></span><span class="k">SELECT</span> <span class="n">over100</span><span class="p">,</span> <span class="k">COUNT</span><span class="p">(</span><span class="n">over100</span><span class="p">)</span> <span class="k">AVG</span><span class="p">(</span><span class="n">c000</span><span class="p">)</span> <span class="k">AS</span> <span class="n">avg_jobs</span><span class="p">,</span> <span class="k">MIN</span><span class="p">(</span><span class="n">c000</span><span class="p">)</span> <span class="k">AS</span> <span class="n">min_jobs</span><span class="p">,</span> <span class="k">MAX</span><span class="p">(</span><span class="n">c000</span><span class="p">)</span> <span class="k">AS</span> <span class="n">max_jobs</span>
 <span class="k">FROM</span> <span class="n">ca_wac_2015</span> 
 <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">over100</span> 
 <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">over100</span>

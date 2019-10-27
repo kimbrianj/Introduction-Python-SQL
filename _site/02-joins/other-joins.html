@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>Left, Right, and Outer Joins</title>
-  <meta name="description" content="        Different Types of Joins (VIDEO) We've so far done only one type of join, an inner join. This is the default join (which is why we didn't need to spe...">
+  <meta name="description" content="            %defaultDatasource jdbc:sqlite:lodes.db    Different Types of Joins We've so far done only one type of join, an inner join. This is the default j...">
 
   <link rel="canonical" href="https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/other-joins.html">
   <link rel="alternate" type="application/rss+xml" title="Introduction to Python and SQL for Data Analysis" href="https://kimbrianj.github.io/Introduction-Python-SQL/feed.xml">
@@ -14,7 +14,7 @@
   <meta property="og:url"         content="https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/other-joins.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Left, Right, and Outer Joins" />
-<meta property="og:description" content="        Different Types of Joins (VIDEO) We've so far done only one type of join, an inner join. This is the default join (which is why we didn't need to spe..." />
+<meta property="og:description" content="            %defaultDatasource jdbc:sqlite:lodes.db    Different Types of Joins We've so far done only one type of join, an inner join. This is the default j..." />
 <meta property="og:image"       content="" />
 
 <meta name="twitter:card" content="summary">
@@ -26,9 +26,9 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/other-joins.html",
   "headline": "Left, Right, and Outer Joins",
-  "datePublished": "2019-10-24T23:51:25-04:00",
-  "dateModified": "2019-10-24T23:51:25-04:00",
-  "description": "        Different Types of Joins (VIDEO) We've so far done only one type of join, an inner join. This is the default join (which is why we didn't need to spe...",
+  "datePublished": "2019-10-27T16:17:12-04:00",
+  "dateModified": "2019-10-27T16:17:12-04:00",
+  "description": "            %defaultDatasource jdbc:sqlite:lodes.db    Different Types of Joins We've so far done only one type of join, an inner join. This is the default j...",
   "author": {
     "@type": "Person",
     "name": "Brian Kim"
@@ -498,7 +498,7 @@ initFunction(initPrint)
                   
                     1.2
                   
-                  Jupyter notebooks
+                  Counting
                 </a>
 
                 
@@ -1036,11 +1036,28 @@ initFunction(initPrint)
             <div class="c-textbook__content" id="textbook_content">
                   <main class="jupyter-page">
     
+<div class="jb_cell tag_hide_input">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-SQL"><pre><span></span><span class="o">%</span><span class="n">defaultDatasource</span> <span class="n">jdbc</span><span class="p">:</span><span class="n">sqlite</span><span class="p">:</span><span class="n">lodes</span><span class="p">.</span><span class="n">db</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
 <div class="jb_cell">
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Different-Types-of-Joins-(VIDEO)"><span style="color:green">Different Types of Joins (VIDEO)</span><a class="anchor-link" href="#Different-Types-of-Joins-(VIDEO)"> </a></h2><p>We've so far done only one type of join, an inner join. This is the default join (which is why we didn't need to specify anything more in the code). However, there are different types of joins.</p>
+<h2 id="Different-Types-of-Joins">Different Types of Joins<a class="anchor-link" href="#Different-Types-of-Joins"> </a></h2><p>We've so far done only one type of join, an inner join. This is the default join (which is why we didn't need to specify anything more in the code). However, there are different types of joins.</p>
 <h3 id="Left-and-Right-Joins-in-SQL">Left and Right Joins in SQL<a class="anchor-link" href="#Left-and-Right-Joins-in-SQL"> </a></h3><p>Suppose we want to look at every single census block in one table, only filling in information from the second table if it exists. We'll illustrate this using Table A and Table B from before. Recall that our <code>JOIN</code> created Table C:</p>
 <table>
 <thead><tr>
@@ -1187,6 +1204,8 @@ initFunction(initPrint)
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This is very similar to what we've done already with <code>JOIN</code>, except we add the word <code>LEFT</code> to it. When doing <code>LEFT</code> and <code>RIGHT JOIN</code>s, make sure to keep track of which one is first. Here, <code>lodes.ca_wac</code> comes first, so that's the table on the "left" side.</p>
+<blockquote><p>Right JOINs are not supported in SQLite3, so you aren't able to practice doing them here. However, it's useful to keep in mind for more sophisticated databases.</p>
+</blockquote>
 
 </div>
 </div>

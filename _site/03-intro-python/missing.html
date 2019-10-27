@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>Missing Values</title>
-  <meta name="description" content="            # First, we import packages# Note that everything after a &quot;#&quot; in Python will be ignored, so you can use it to write commentsimport nump...">
+  <meta name="description" content="            import numpy as np import pandas as pd df = pd.read_csv(&#39;ca_wac_S000_JT00_2015.csv&#39;)    Checking for Missing Values Now that we have our ...">
 
   <link rel="canonical" href="https://kimbrianj.github.io/Introduction-Python-SQL/03-intro-python/missing.html">
   <link rel="alternate" type="application/rss+xml" title="Introduction to Python and SQL for Data Analysis" href="https://kimbrianj.github.io/Introduction-Python-SQL/feed.xml">
@@ -14,7 +14,7 @@
   <meta property="og:url"         content="https://kimbrianj.github.io/Introduction-Python-SQL/03-intro-python/missing.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Missing Values" />
-<meta property="og:description" content="            # First, we import packages# Note that everything after a &quot;#&quot; in Python will be ignored, so you can use it to write commentsimport nump..." />
+<meta property="og:description" content="            import numpy as np import pandas as pd df = pd.read_csv(&#39;ca_wac_S000_JT00_2015.csv&#39;)    Checking for Missing Values Now that we have our ..." />
 <meta property="og:image"       content="" />
 
 <meta name="twitter:card" content="summary">
@@ -26,9 +26,9 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "https://kimbrianj.github.io/Introduction-Python-SQL/03-intro-python/missing.html",
   "headline": "Missing Values",
-  "datePublished": "2019-10-24T23:51:25-04:00",
-  "dateModified": "2019-10-24T23:51:25-04:00",
-  "description": "            # First, we import packages# Note that everything after a &quot;#&quot; in Python will be ignored, so you can use it to write commentsimport nump...",
+  "datePublished": "2019-10-27T16:17:12-04:00",
+  "dateModified": "2019-10-27T16:17:12-04:00",
+  "description": "            import numpy as np import pandas as pd df = pd.read_csv(&#39;ca_wac_S000_JT00_2015.csv&#39;)    Checking for Missing Values Now that we have our ...",
   "author": {
     "@type": "Person",
     "name": "Brian Kim"
@@ -498,7 +498,7 @@ initFunction(initPrint)
                   
                     1.2
                   
-                  Jupyter notebooks
+                  Counting
                 </a>
 
                 
@@ -1036,17 +1036,16 @@ initFunction(initPrint)
             <div class="c-textbook__content" id="textbook_content">
                   <main class="jupyter-page">
     
-<div class="jb_cell">
+<div class="jb_cell tag_hide_input">
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># First, we import packages</span>
-<span class="c1"># Note that everything after a &quot;#&quot; in Python will be ignored, so you can use it to write comments</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># NumPy (Numerical Python) for scientific computing</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># Pandas, for data analysis tools </span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;ca_wac_S000_JT00_2015.csv&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1147,7 +1146,7 @@ initFunction(initPrint)
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Checking-for-Inconsistencies-(VIDEO)"><span style="color:green">Checking for Inconsistencies (VIDEO)</span><a class="anchor-link" href="#Checking-for-Inconsistencies-(VIDEO)"> </a></h2><p>If you check the data documentation, you'll see that <code>C000</code> is the total number of jobs. Therefore, it would make sense for the other groups to columns to add up to the values in <code>C000</code>. For example, you'd expect <code>CA01</code>, <code>CA02</code>, and <code>CA03</code> to add up to <code>C000</code> for each row. Let's check to see if this is true.</p>
+<h2 id="Checking-for-Inconsistencies">Checking for Inconsistencies<a class="anchor-link" href="#Checking-for-Inconsistencies"> </a></h2><p>If you check the data documentation, you'll see that <code>C000</code> is the total number of jobs. Therefore, it would make sense for the other groups to columns to add up to the values in <code>C000</code>. For example, you'd expect <code>CA01</code>, <code>CA02</code>, and <code>CA03</code> to add up to <code>C000</code> for each row. Let's check to see if this is true.</p>
 <p>We'll first take the sum of <code>CA01</code>, <code>CA02</code>, and <code>CA03</code> in each row and put that in a new column called <code>CA_sum</code>. Then, we'll compare our new <code>CA_sum</code> column to the existing <code>C000</code> column to see if they match. We'll first show all the code, then explain each section.</p>
 
 </div>

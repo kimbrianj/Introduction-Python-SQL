@@ -26,8 +26,8 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "https://kimbrianj.github.io/Introduction-Python-SQL/search",
   "headline": "Search the site",
-  "datePublished": "2019-10-24T23:51:25-04:00",
-  "dateModified": "2019-10-24T23:51:25-04:00",
+  "datePublished": "2019-10-27T16:17:12-04:00",
+  "dateModified": "2019-10-27T16:17:12-04:00",
   "description": "        ",
   "author": {
     "@type": "Person",
@@ -498,7 +498,7 @@ initFunction(initPrint)
                   
                     1.2
                   
-                  Jupyter notebooks
+                  Counting
                 </a>
 
                 
@@ -1029,7 +1029,7 @@ initFunction(initPrint)
         "title": "Aggregating",
         
         "excerpt":
-            "%defaultDatasource jdbc:sqlite:lodes.db Using Aggregation Functions (VIDEO) We've created a variable that indicates whether the census block had over 100 jobs or not. What if we wanted to know how many blocks had over 100 jobs and how many didn't? We can now use the GROUP BY statement. SELECT over100, COUNT(over100) FROM ca_wac_2015 GROUP BY over100 LIMIT 1000; Here, the GROUP BY statement groups it into the categories of the variable. Since we've chosen to display the count, we can see the counts. We can also change the order in which the results are displayed so that it's in increasing order....",
+            "%defaultDatasource jdbc:sqlite:lodes.db Using Aggregation Functions We've explored how to create a variable that indicates whether the census block had over 100 jobs or not using the code below. ALTER TABLE ca_wac_2015 ADD over100 BOOL; UPDATE ca_wac_2015 SET over100 = 0; UPDATE ca_wac_2015 SET over100 = 1 WHERE c000 &gt; 100; What if we wanted to know how many blocks had over 100 jobs and how many didn't? We can now use the GROUP BY statement. SELECT over100, COUNT(over100) FROM ca_wac_2015 GROUP BY over100 LIMIT 1000; Here, the GROUP BY statement groups it into the categories of the variable. Since we've...",
         "categories": [],
         "tags": [],
         "url": "https://kimbrianj.github.io/Introduction-Python-SQL/01-intro-sql/aggregating.html",
@@ -1037,15 +1037,15 @@ initFunction(initPrint)
         "title": "Using Conditional Statements",
         
         "excerpt":
-            "%defaultDatasource jdbc:sqlite:lodes.db Using Conditional Statements Suppose we want to look at a subset of the data. We can use conditional statements to do this. SELECT * FROM ca_wac_2015 WHERE c000 &lt; 100 LIMIT 1000; Using a query like the one above can be useful for finding if there are any data entry errors or missing values. Since it's not possible to have an age less 0, if there are any rows with negative age, this is likely an error or the method used to code missing values (e.g. -1). We can also use more complicated conditional statements. SELECT count(*) FROM...",
+            "Using Conditional Statements Suppose we want to look at a subset of the data. We can use conditional statements to do this. SELECT * FROM ca_wac_2015 WHERE c000 &lt; 100 LIMIT 1000; Using a query like the one above can be useful for finding if there are any data entry errors or missing values. Since it's not possible to have an age less 0, if there are any rows with negative age, this is likely an error or the method used to code missing values (e.g. -1). We can also use more complicated conditional statements. SELECT count(*) FROM ca_wac_2015 WHERE...",
         "categories": [],
         "tags": [],
         "url": "https://kimbrianj.github.io/Introduction-Python-SQL/01-intro-sql/conditionals.html",
         "teaser":null},{
-        "title": "Jupyter notebooks",
+        "title": "Counting",
         
         "excerpt":
-            "%defaultDatasource jdbc:sqlite:lodes.db Checking Number of Rows and Duplicates (VIDEO) Let's say we want to find out how many rows there are. You can do this by using a COUNT. SELECT COUNT(*) FROM ca_wac_2015; Here, we used COUNT(*), which does a count of all rows, regardless of NULL values. We can instead do a count of all non-NULL values of a certain variable by including that variable instead of *. SELECT COUNT(w_geocode) FROM ca_wac_2015; But wait; what if there are duplicates in the data? We can check for them by using DISTINCT. SELECT DISTINCT(w_geocode) FROM ca_wac_2015 LIMIT 1000; This shows us...",
+            "%defaultDatasource jdbc:sqlite:../../lodes.db Checking Number of Rows and Duplicates (VIDEO) Let's say we want to find out how many rows there are. You can do this by using a COUNT. SELECT COUNT(*) FROM ca_wac_2015; Here, we used COUNT(*), which does a count of all rows, regardless of NULL values. We can instead do a count of all non-NULL values of a certain variable by including that variable instead of *. SELECT COUNT(w_geocode) FROM ca_wac_2015; We can also look at both of these at the same time. This can be helpful for checking for NULL values of multiple columns at a time,...",
         "categories": [],
         "tags": [],
         "url": "https://kimbrianj.github.io/Introduction-Python-SQL/01-intro-sql/counting.html",
@@ -1061,7 +1061,7 @@ initFunction(initPrint)
         "title": "Constructing an SQL Query",
         
         "excerpt":
-            "Writing a Basic Query (VIDEO) In order to analyze the data in a database, we need to query it, or request specific information about the data. Before we do that, run the following cell to establish a connection to the database: %defaultDatasource jdbc:sqlite:../../lodes.db Now, let's start with some basics. We'll start by retrieving all columns from the California Workplace Area Characteristic (ca_wac_2015) table. Try running the following query: SELECT * FROM ca_wac_2015 LIMIT 10; You should see 10 rows of the ca_wac_2015 dataset. Let's go over the basics of this SQL command. SELECT: We start out with the SELECT statement....",
+            "Writing a Basic Query (VIDEO) In order to analyze the data in a database, we need to query it, or request specific information about the data. Before we do that, run the following cell to establish a connection to the database: %defaultDatasource jdbc:sqlite:../../lodes.db This is something that is unique to Jupyter Notebooks, and is only there because of how we've set up the notebook to interact with the database using SQLite3. THere are other ways to interact with the database, such as using the command line or other software such as DBeaver. We won't go over the various ways to...",
         "categories": [],
         "tags": [],
         "url": "https://kimbrianj.github.io/Introduction-Python-SQL/01-intro-sql/queries.html",
@@ -1069,7 +1069,7 @@ initFunction(initPrint)
         "title": "Creating Tables",
         
         "excerpt":
-            "Creating New Tables for Future Use (VIDEO) So far, we've mostly just been exploring the data without making any changes to the database. However, there might be times when we might want to create new tables. We can do this using CREATE TABLE. Let's use a previous example to create a new table. CREATE TABLE joinedtable AS SELECT * FROM ca_wac_2015 LEFT JOIN ca_xwalk ON ca_wac_2015.w_geocode = ca_xwalk.tabblk2010 LIMIT 1000; This should look mostly familiar, since everything after the first line is stuff we've already done. The first line creates a new table called joinedtable from the output. This is...",
+            "%defaultDatasource jdbc:sqlite:lodes.db Creating New Tables for Future Use So far, we've mostly just been exploring the data without making any changes to the database. However, there might be times when we might want to create new tables. We can do this using CREATE TABLE. Let's use a previous example to create a new table. CREATE TABLE joinedtable AS SELECT * FROM ca_wac_2015 LEFT JOIN ca_xwalk ON ca_wac_2015.w_geocode = ca_xwalk.tabblk2010 LIMIT 1000; This should look mostly familiar, since everything after the first line is stuff we've already done. The first line creates a new table called joinedtable from the output. This...",
         "categories": [],
         "tags": [],
         "url": "https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/creating-tables.html",
@@ -1077,7 +1077,7 @@ initFunction(initPrint)
         "title": "Joins in SQL",
         
         "excerpt":
-            "Workbook 2: What are the Distributions of Jobs by County and by Metropolitan/Micropolitan Area? So far in Workbook 1, we've just looked at the data by census block, with each row representing one census block. We also have a geography crosswalk table, containing information about the census blocks, including information about county and zip codes. What if we wanted to look at the jobs dataset within the context of the county they were in? We'd need to somehow combine the information from these two datasets together. We do that using JOINs. Motivating Question In the previous workbook, we explored a...",
+            "SQL Joins So far, we've just looked at the data one at a time, exploring a state's workplace area characteristics, residence area characteristics, origin-destination pair information, or descriptions of each census block. What if we wanted to look at the jobs dataset within the context of the county they were in? We have get information about jobs from the WAC, RAC, or OD tables, but we also have to use the geography crosswalk table, containing information about the census blocks such as county and zip codes. We'd need to somehow combine the information from these two datasets together. We do...",
         "categories": [],
         "tags": [],
         "url": "https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/intro.html",
@@ -1085,7 +1085,7 @@ initFunction(initPrint)
         "title": "Joins with Aggregation",
         
         "excerpt":
-            "Using Joins With Aggregation Functions (VIDEO) Suppose we wanted to know the distribution of the total number of jobs in California by county. The employment information is in one table, and county information is in another table. We need to join them, then aggregate the jobs, by county. Even though this seems like a complicated multi-step process, we can actually do it all in one query. Let's break it down into two parts: the join and the aggregation. The Join We need to join the ca_wac_2015 table and the ca_xwalk table. Since we aren't worried about counties that have no...",
+            "%defaultDatasource jdbc:sqlite:lodes.db Using Joins With Aggregation Functions Suppose we wanted to know the distribution of the total number of jobs in California by county. The employment information is in one table, and county information is in another table. We need to join them, then aggregate the jobs, by county. Even though this seems like a complicated multi-step process, we can actually do it all in one query. Let's break it down into two parts: the join and the aggregation. The Join We need to join the ca_wac_2015 table and the ca_xwalk table. Since we aren't worried about counties that have...",
         "categories": [],
         "tags": [],
         "url": "https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/joins-aggregation.html",
@@ -1093,7 +1093,7 @@ initFunction(initPrint)
         "title": "Joins",
         
         "excerpt":
-            "Joins (VIDEO) One of the nice things about relational databases is organization using multiple tables that are linked together in some way. For example, suppose we have one table with 6 rows called Table A: blockid C000 1 5 2 10 3 2 4 6 5 22 6 9 And another table with 5 rows called Table B: blockid CA01 2 2 5 4 6 1 7 2 8 0 Let's say we want to combine Table A and Table B so that we have one table that contains information about blockid, C000, and CA01. We want to do this...",
+            "%defaultDatasource jdbc:sqlite:lodes.db Joins One of the nice things about relational databases is organization using multiple tables that are linked together in some way. For example, suppose we have one table with 6 rows called Table A: blockid C000 1 5 2 10 3 2 4 6 5 22 6 9 And another table with 5 rows called Table B: blockid CA01 2 2 5 4 6 1 7 2 8 0 Let's say we want to combine Table A and Table B so that we have one table that contains information about blockid, C000, and CA01. We want to do...",
         "categories": [],
         "tags": [],
         "url": "https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/joins.html",
@@ -1101,7 +1101,7 @@ initFunction(initPrint)
         "title": "Left, Right, and Outer Joins",
         
         "excerpt":
-            "Different Types of Joins (VIDEO) We've so far done only one type of join, an inner join. This is the default join (which is why we didn't need to specify anything more in the code). However, there are different types of joins. Left and Right Joins in SQL Suppose we want to look at every single census block in one table, only filling in information from the second table if it exists. We'll illustrate this using Table A and Table B from before. Recall that our JOIN created Table C: blockid C000 CA01 2 10 2 5 22 4 6...",
+            "%defaultDatasource jdbc:sqlite:lodes.db Different Types of Joins We've so far done only one type of join, an inner join. This is the default join (which is why we didn't need to specify anything more in the code). However, there are different types of joins. Left and Right Joins in SQL Suppose we want to look at every single census block in one table, only filling in information from the second table if it exists. We'll illustrate this using Table A and Table B from before. Recall that our JOIN created Table C: blockid C000 CA01 2 10 2 5 22 4...",
         "categories": [],
         "tags": [],
         "url": "https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/other-joins.html",
@@ -1109,7 +1109,7 @@ initFunction(initPrint)
         "title": "Exploring the Data Frame",
         
         "excerpt":
-            "# First, we import packages # Note that everything after a &quot;#&quot; in Python will be ignored, so you can use it to write comments import numpy as np # NumPy (Numerical Python) for scientific computing import pandas as pd # Pandas, for data analysis tools Exploring the Data Frame (VIDEO) Now that we've loaded in the data set as a Data Frame, let's check the number of rows and columns. We can do this by looking at the shape attribute of a data frame. df.shape It looks like there are 243,462 rows and 53 columns. Let's also find out...",
+            "import numpy as np import pandas as pd df = pd.read_csv(&#39;ca_wac_S000_JT00_2015.csv&#39;) Exploring the Data Frame Now that we've loaded in the data set as a Data Frame, let's check the number of rows and columns. We can do this by looking at the shape attribute of a data frame. df.shape It looks like there are 243,462 rows and 53 columns. Let's also find out the names of all the variables in this data set. df.columns We can use the head and tail methods in order to look at the first or last few rows of the data frame. df.head() #...",
         "categories": [],
         "tags": [],
         "url": "https://kimbrianj.github.io/Introduction-Python-SQL/03-intro-python/data-exploration.html",
@@ -1117,7 +1117,7 @@ initFunction(initPrint)
         "title": "Bring in a Dataset",
         
         "excerpt":
-            "Loading Libraries We first load a few libraries. These libraries are essentially bundles of useful tools that can help us do specific tasks. In this case, we're going to be bringing in NumPy and Pandas, which are specifically useful for computing and data analysis. Don't worry too much about the specifics of libraries for now, just that we need to include the first few lines of code below if we want to use many of the tools described in this workbook. If you'd like to read more about the libraries that we're loading here, see the following links: for NumPy...",
+            "Loading Libraries We first load a few libraries. These libraries are essentially bundles of useful tools that can help us do specific tasks. In this case, we're going to be bringing in NumPy and Pandas, which are specifically useful for computing and data analysis. Don't worry too much about the specifics of libraries for now, just remember that we need to include the first few lines of code below if we want to use many of the tools described in this workbook. If you'd like to read more about the libraries that we're loading here, see the following links: for...",
         "categories": [],
         "tags": [],
         "url": "https://kimbrianj.github.io/Introduction-Python-SQL/03-intro-python/data.html",
@@ -1125,7 +1125,7 @@ initFunction(initPrint)
         "title": "Python for Data Analysis",
         
         "excerpt":
-            "Python Workbook 1: What are the characteristics in the number of jobs by census block? In these workbooks, we will start with a motivating question, then walk through the process we need to go through in order to answer the motivating question. Along the way, we will walk through various Python commands and develop skills as we work towards answering the question. As you work, there will be headers that are in GREEN. These indicate locations where there is an accompanying video. This video may walk through the steps or expand on the topics discussed in that section. Though it...",
+            "Introduction to Python and Pandas SQL is very useful for querying databases to explore datasets and cleaning data. However, there's a lot that it isn't able to do. If you want to display visualizations, perform text analysis, or fit machine learning models, you'll need to use something else besides SQL. There are many options for doing this, but one popular programming language is Python. Python is a general-purpose programming language that has seen a rise in use for data analysis. As of 2017, Python is near or at the top in terms of popularity in programming languages for data analysis...",
         "categories": [],
         "tags": [],
         "url": "https://kimbrianj.github.io/Introduction-Python-SQL/03-intro-python/intro.html",
@@ -1133,7 +1133,7 @@ initFunction(initPrint)
         "title": "Missing Values",
         
         "excerpt":
-            "# First, we import packages # Note that everything after a &quot;#&quot; in Python will be ignored, so you can use it to write comments import numpy as np # NumPy (Numerical Python) for scientific computing import pandas as pd # Pandas, for data analysis tools Checking for Missing Values Now that we have our data set, let's do a quick check for missing values. This is typically one of the first things you'll want to do when exploring a new data set. Below, we've shown two different ways of writing the same thing. Using isnull() gives us a data...",
+            "import numpy as np import pandas as pd df = pd.read_csv(&#39;ca_wac_S000_JT00_2015.csv&#39;) Checking for Missing Values Now that we have our data set, let's do a quick check for missing values. This is typically one of the first things you'll want to do when exploring a new data set. Below, we've shown two different ways of writing the same thing. Using isnull() gives us a data frame of the same size with True and False values depending on whether it was a missing value or not. Then, sum() sums each column. Since Python treats True as 1 and False as 0,...",
         "categories": [],
         "tags": [],
         "url": "https://kimbrianj.github.io/Introduction-Python-SQL/03-intro-python/missing.html",
@@ -1141,7 +1141,7 @@ initFunction(initPrint)
         "title": "Subsetting",
         
         "excerpt":
-            "# First, we import packages # Note that everything after a &quot;#&quot; in Python will be ignored, so you can use it to write comments import numpy as np # NumPy (Numerical Python) for scientific computing import pandas as pd # Pandas, for data analysis tools Creating Subsets of the Data (VIDEO) Let's look at how many census blocks had more than 50 jobs. We can do this by including a conditional statement inside brackets. df_over50 = df[df[&#39;C000&#39;] &gt; 50] df_over50.shape To see how exactly this works, let's see what happens when we run only what's inside the brackets. df[&#39;C000&#39;]...",
+            "import numpy as np import pandas as pd df = pd.read_csv(&#39;ca_wac_S000_JT00_2015.csv&#39;) Creating Subsets of the Data Let's look at how many census blocks had more than 50 jobs. We can do this by including a conditional statement inside brackets. df_over50 = df[df[&#39;C000&#39;] &gt; 50] df_over50.shape To see how exactly this works, let's see what happens when we run only what's inside the brackets. df[&#39;C000&#39;] &gt; 50 # This will be a pandas Series with True and False values The above code evaluates whether the value in C000 is above 50 for each row in the data frame, creating a Series...",
         "categories": [],
         "tags": [],
         "url": "https://kimbrianj.github.io/Introduction-Python-SQL/03-intro-python/subsetting.html",
@@ -1165,7 +1165,7 @@ initFunction(initPrint)
         "title": "Functions, Loops and Visualizations",
         
         "excerpt":
-            "Python Workbook 2: What is the Difference by Year? In previous workbook, we looked at how to bring in a dataset in a Pandas Data Frame and explore it. In this workbook, we'll explore more of how we can use Python to automate and speed up analysis. In addition, we'll look at using basic visualizations. Motivating Question So far, we've only looked at data from 2015. However, part of what makes the LODES data so useful is the availability of the data over many years. The data are available in multiple CSV files. There are many insights we might find...",
+            "Functions, Loops, and Visualizations In the previous chapter, we looked at how to bring in a dataset in a Pandas Data Frame and explore it. In this workbook, we'll explore more of how we can use Python to automate and speed up analysis. In addition, we'll look at using basic visualizations. Motivating Question So far, we've only looked at data from 2015. However, part of what makes the LODES data so useful is the availability of the data over many years. The data are available in multiple CSV files. There are many insights we might find from analyzing data over...",
         "categories": [],
         "tags": [],
         "url": "https://kimbrianj.github.io/Introduction-Python-SQL/04-functions-loops/intro.html",
