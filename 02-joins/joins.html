@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>Joins</title>
-  <meta name="description" content="        Joins (VIDEO) One of the nice things about relational databases is organization using multiple tables that are linked together in some way. For examp...">
+  <meta name="description" content="            %defaultDatasource jdbc:sqlite:lodes.db    Joins One of the nice things about relational databases is organization using multiple tables that are...">
 
   <link rel="canonical" href="https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/joins.html">
   <link rel="alternate" type="application/rss+xml" title="Introduction to Python and SQL for Data Analysis" href="https://kimbrianj.github.io/Introduction-Python-SQL/feed.xml">
@@ -14,7 +14,7 @@
   <meta property="og:url"         content="https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/joins.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Joins" />
-<meta property="og:description" content="        Joins (VIDEO) One of the nice things about relational databases is organization using multiple tables that are linked together in some way. For examp..." />
+<meta property="og:description" content="            %defaultDatasource jdbc:sqlite:lodes.db    Joins One of the nice things about relational databases is organization using multiple tables that are..." />
 <meta property="og:image"       content="" />
 
 <meta name="twitter:card" content="summary">
@@ -26,9 +26,9 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/joins.html",
   "headline": "Joins",
-  "datePublished": "2019-10-24T23:51:25-04:00",
-  "dateModified": "2019-10-24T23:51:25-04:00",
-  "description": "        Joins (VIDEO) One of the nice things about relational databases is organization using multiple tables that are linked together in some way. For examp...",
+  "datePublished": "2019-10-27T16:17:12-04:00",
+  "dateModified": "2019-10-27T16:17:12-04:00",
+  "description": "            %defaultDatasource jdbc:sqlite:lodes.db    Joins One of the nice things about relational databases is organization using multiple tables that are...",
   "author": {
     "@type": "Person",
     "name": "Brian Kim"
@@ -498,7 +498,7 @@ initFunction(initPrint)
                   
                     1.2
                   
-                  Jupyter notebooks
+                  Counting
                 </a>
 
                 
@@ -1036,11 +1036,28 @@ initFunction(initPrint)
             <div class="c-textbook__content" id="textbook_content">
                   <main class="jupyter-page">
     
+<div class="jb_cell tag_hide_input">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-SQL"><pre><span></span><span class="o">%</span><span class="n">defaultDatasource</span> <span class="n">jdbc</span><span class="p">:</span><span class="n">sqlite</span><span class="p">:</span><span class="n">lodes</span><span class="p">.</span><span class="n">db</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
 <div class="jb_cell">
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Joins-(VIDEO)"><span style="color:green">Joins (VIDEO)</span><a class="anchor-link" href="#Joins-(VIDEO)"> </a></h2><p>One of the nice things about relational databases is organization using multiple tables that are linked together in some way. For example, suppose we have one table with 6 rows called <strong>Table A</strong>:</p>
+<h2 id="Joins">Joins<a class="anchor-link" href="#Joins"> </a></h2><p>One of the nice things about relational databases is organization using multiple tables that are linked together in some way. For example, suppose we have one table with 6 rows called <strong>Table A</strong>:</p>
 <table>
 <thead><tr>
 <th>blockid</th>
@@ -1141,27 +1158,9 @@ initFunction(initPrint)
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="SQL-Code-and-how-it-works">SQL Code and how it works<a class="anchor-link" href="#SQL-Code-and-how-it-works"> </a></h3><p>Before we begin joining, let's first connect to the database.</p>
-
+<h3 id="SQL-Code-and-How-It-Works">SQL Code and How It Works<a class="anchor-link" href="#SQL-Code-and-How-It-Works"> </a></h3>
 </div>
 </div>
-</div>
-</div>
-
-<div class="jb_cell">
-
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-SQL"><pre><span></span><span class="o">%</span><span class="n">defaultDatasource</span> <span class="n">jdbc</span><span class="p">:</span><span class="n">sqlite</span><span class="p">:</span><span class="n">lodes</span><span class="p">.</span><span class="n">db</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -1169,7 +1168,7 @@ initFunction(initPrint)
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now that we're connected and have established a plan for how we're joining two tables together, let's take a look at the SQL code that performs this join and break it down.</p>
+<p>Now that we have established a plan for how we're joining two tables together, let's take a look at the SQL code that performs this join and break it down.</p>
 
 <pre><code>SELECT * FROM ca_wac_2015
 JOIN ca_xwalk
@@ -1257,7 +1256,7 @@ JOIN ca_xwalk
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2><span style="color:red">Checkpoint: Get Census Data and Join with your Tables</h2>
+<h2><span style="color:red">Checkpoint: Get Census Data and Join</h2>
 <p>Try joining the Residence Area Characteristics table with the Crosswalk table in a similar manner, as well as changing some of the columns to display. As you construct your query, make sure you answer the following question regarding the join:</p>
 <ul>
 <li>What are they being joined on? That is, what is the "ID" variable you're matching on in each table?</li>

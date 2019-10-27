@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>Joins with Aggregation</title>
-  <meta name="description" content="        Using Joins With Aggregation Functions (VIDEO) Suppose we wanted to know the distribution of the total number of jobs in California by county. The em...">
+  <meta name="description" content="            %defaultDatasource jdbc:sqlite:lodes.db    Using Joins With Aggregation Functions Suppose we wanted to know the distribution of the total number ...">
 
   <link rel="canonical" href="https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/joins-aggregation.html">
   <link rel="alternate" type="application/rss+xml" title="Introduction to Python and SQL for Data Analysis" href="https://kimbrianj.github.io/Introduction-Python-SQL/feed.xml">
@@ -14,7 +14,7 @@
   <meta property="og:url"         content="https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/joins-aggregation.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Joins with Aggregation" />
-<meta property="og:description" content="        Using Joins With Aggregation Functions (VIDEO) Suppose we wanted to know the distribution of the total number of jobs in California by county. The em..." />
+<meta property="og:description" content="            %defaultDatasource jdbc:sqlite:lodes.db    Using Joins With Aggregation Functions Suppose we wanted to know the distribution of the total number ..." />
 <meta property="og:image"       content="" />
 
 <meta name="twitter:card" content="summary">
@@ -26,9 +26,9 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "https://kimbrianj.github.io/Introduction-Python-SQL/02-joins/joins-aggregation.html",
   "headline": "Joins with Aggregation",
-  "datePublished": "2019-10-24T23:51:25-04:00",
-  "dateModified": "2019-10-24T23:51:25-04:00",
-  "description": "        Using Joins With Aggregation Functions (VIDEO) Suppose we wanted to know the distribution of the total number of jobs in California by county. The em...",
+  "datePublished": "2019-10-27T16:17:12-04:00",
+  "dateModified": "2019-10-27T16:17:12-04:00",
+  "description": "            %defaultDatasource jdbc:sqlite:lodes.db    Using Joins With Aggregation Functions Suppose we wanted to know the distribution of the total number ...",
   "author": {
     "@type": "Person",
     "name": "Brian Kim"
@@ -498,7 +498,7 @@ initFunction(initPrint)
                   
                     1.2
                   
-                  Jupyter notebooks
+                  Counting
                 </a>
 
                 
@@ -1036,11 +1036,28 @@ initFunction(initPrint)
             <div class="c-textbook__content" id="textbook_content">
                   <main class="jupyter-page">
     
+<div class="jb_cell tag_hide_input">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-SQL"><pre><span></span><span class="o">%</span><span class="n">defaultDatasource</span> <span class="n">jdbc</span><span class="p">:</span><span class="n">sqlite</span><span class="p">:</span><span class="n">lodes</span><span class="p">.</span><span class="n">db</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
 <div class="jb_cell">
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Using-Joins-With-Aggregation-Functions-(VIDEO)"><span style="color:green">Using Joins With Aggregation Functions (VIDEO)</span><a class="anchor-link" href="#Using-Joins-With-Aggregation-Functions-(VIDEO)"> </a></h2><p>Suppose we wanted to know the distribution of the total number of jobs in California by county. The employment information is in one table, and county information is in another table. We need to join them, then aggregate the jobs, by county. Even though this seems like a complicated multi-step process, we can actually do it all in one query.  Let's break it down into two parts: the join and the aggregation.</p>
+<h2 id="Using-Joins-With-Aggregation-Functions">Using Joins With Aggregation Functions<a class="anchor-link" href="#Using-Joins-With-Aggregation-Functions"> </a></h2><p>Suppose we wanted to know the distribution of the total number of jobs in California by county. The employment information is in one table, and county information is in another table. We need to join them, then aggregate the jobs, by county. Even though this seems like a complicated multi-step process, we can actually do it all in one query.  Let's break it down into two parts: the join and the aggregation.</p>
 <h3 id="The-Join">The Join<a class="anchor-link" href="#The-Join"> </a></h3><p>We need to join the <code>ca_wac_2015</code> table and the <code>ca_xwalk</code> table. Since we aren't worried about counties that have no jobs, we can do an inner join. Consider the following <code>JOIN</code> (if you want to run it, I would suggest adding a <code>LIMIT</code> at the end):</p>
 
 </div>
