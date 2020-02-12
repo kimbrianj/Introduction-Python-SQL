@@ -9,9 +9,3 @@ do
   rm ~/data/${file}
 done
 
-csvfiles = 'ca_wac_S000_JT00_2015'
-
-for file in $csvfiles
-do
-  unzip ~/data/${file}.zip -d ~/data/content/03-intro-python/
-done
