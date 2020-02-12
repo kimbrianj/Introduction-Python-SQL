@@ -1,4 +1,4 @@
-name: ada-intro-sql
+name: Introduction-Python-SQL
 channels:
   - conda-forge
 dependencies:
