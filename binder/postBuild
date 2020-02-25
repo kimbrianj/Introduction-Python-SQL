@@ -8,3 +8,4 @@ do
   sqlite3 lodes.db < ~/data/${file}
   rm ~/data/${file}
 done
+
