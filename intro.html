@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>Introduction to Python and SQL for Data Analysis</title>
-  <meta name="description" content="        Introduction to SQL and Python for Data Analysis This book provides a brief and gentle introduction to using Python and SQL for data analysis. In thi...">
+  <meta name="description" content="        Introduction to SQL and Python for Data Analysis This book provides a brief and gentle introduction to using Python and SQL for data analysis. The go...">
 
   <link rel="canonical" href="https://kimbrianj.github.io/Introduction-Python-SQL/intro.html">
   <link rel="alternate" type="application/rss+xml" title="Introduction to Python and SQL for Data Analysis" href="https://kimbrianj.github.io/Introduction-Python-SQL/feed.xml">
@@ -14,7 +14,7 @@
   <meta property="og:url"         content="https://kimbrianj.github.io/Introduction-Python-SQL/intro.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Introduction to Python and SQL for Data Analysis" />
-<meta property="og:description" content="        Introduction to SQL and Python for Data Analysis This book provides a brief and gentle introduction to using Python and SQL for data analysis. In thi..." />
+<meta property="og:description" content="        Introduction to SQL and Python for Data Analysis This book provides a brief and gentle introduction to using Python and SQL for data analysis. The go..." />
 <meta property="og:image"       content="" />
 
 <meta name="twitter:card" content="summary">
@@ -26,9 +26,9 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "https://kimbrianj.github.io/Introduction-Python-SQL/intro.html",
   "headline": "Introduction to Python and SQL for Data Analysis",
-  "datePublished": "2020-02-25T18:09:08-05:00",
-  "dateModified": "2020-02-25T18:09:08-05:00",
-  "description": "        Introduction to SQL and Python for Data Analysis This book provides a brief and gentle introduction to using Python and SQL for data analysis. In thi...",
+  "datePublished": "2020-03-13T16:32:56-04:00",
+  "dateModified": "2020-03-13T16:32:56-04:00",
+  "description": "        Introduction to SQL and Python for Data Analysis This book provides a brief and gentle introduction to using Python and SQL for data analysis. The go...",
   "author": {
     "@type": "Person",
     "name": "Brian Kim"
@@ -1040,9 +1040,47 @@ initFunction(initPrint)
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Introduction-to-SQL-and-Python-for-Data-Analysis">Introduction to SQL and Python for Data Analysis<a class="anchor-link" href="#Introduction-to-SQL-and-Python-for-Data-Analysis"> </a></h1><p>This book provides a brief and gentle introduction to using Python and SQL for data analysis. In this book, we will use a set of public datasets from the Longitudinal Employer Household Dynamic (LEHD) data provided by the United States Census Bureau. In particular, we will use the LEHD Origin-Destination Employment Statistics (LODES) data. These data are based on tabulated administrative data and give information about workplaces and residences of workers at the census block level.</p>
-<p>For more information about the datasets used in the examples, please refer to the data documentation provided <a href="https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf">at this link</a>.</p>
+<h1 id="Introduction-to-SQL-and-Python-for-Data-Analysis">Introduction to SQL and Python for Data Analysis<a class="anchor-link" href="#Introduction-to-SQL-and-Python-for-Data-Analysis"> </a></h1><p>This book provides a brief and gentle introduction to using Python and SQL for data analysis. The goal is not to cover the fundamentals of programming in Python, or to understand the database architecture behind relational database. Instead, this book aims to present practical tools and serve as a jumping off point for doing data analysis with SQL and Python. Keeping this goal in mind, this book assumes no prior programming knowledge, and only a minimum level of statistical knowledge.</p>
 <p>In each chapter, we will start with a motivating question, then walk through the process we need to go through in order to answer the motivating question. Along the way, we will walk through various Python commands and develop skills as we work towards answering the question. As you work through this book, you will run into some headers that are in <strong><span style="color:red">RED</span></strong>. These headers indicate a checkpoint to practice writing the code yourself. You should stop at these checkpoints and try doing the exercises and answering the questions posed in these sections by clicking on the "Interact" button at the top of the page.</p>
+<h2 id="Data">Data<a class="anchor-link" href="#Data"> </a></h2><p>In this book, we will use a set of public datasets from the Longitudinal Employer Household Dynamic (LEHD) data provided by the United States Census Bureau. In particular, we will use the LEHD Origin-Destination Employment Statistics (LODES) data. These data are based on tabulated administrative data and give information about workplaces and residences of workers at the census block level. There are four main types of data that we will use.</p>
+<ul>
+<li><strong>Workplace Area Characteristics (WAC):</strong> Census block level. Job totals for workplaces in the census block.</li>
+<li><strong>Residence Area Characteristics (RAC):</strong> Census block level. Job totals for residences in the census block.</li>
+<li><strong>Origin-Destination (OD):</strong> Origin census block - Destination census block pair level. </li>
+<li><strong>Crosswalk (xwalk):</strong> Census block level. Contains all census blocks within that state, and contains information about that census block (e.g. city, county).</li>
+</ul>
+<p>The WAC and RAC data generally look something like the following:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_hide_input">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+<span class="n">data_file</span> <span class="o">=</span> <span class="s1">&#39;/data/ca_wac_S000_JT00_2015.csv&#39;</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_file</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here, each of the</p>
+<p>For more information about the datasets used in the examples, please refer to the data documentation provided <a href="https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf">at this link</a>.</p>
 
 </div>
 </div>
