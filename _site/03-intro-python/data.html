@@ -26,8 +26,8 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "https://kimbrianj.github.io/Introduction-Python-SQL/03-intro-python/data.html",
   "headline": "Bring in a Dataset",
-  "datePublished": "2020-02-25T18:09:08-05:00",
-  "dateModified": "2020-02-25T18:09:08-05:00",
+  "datePublished": "2020-03-13T16:32:56-04:00",
+  "dateModified": "2020-03-13T16:32:56-04:00",
   "description": "        Loading Libraries We first load a few libraries. These libraries are essentially bundles of useful tools that can help us do specific tasks. In this ...",
   "author": {
     "@type": "Person",
@@ -1135,7 +1135,7 @@ initFunction(initPrint)
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In the second line, we're using the <code>read_csv()</code> function from the <code>pandas</code> package. Notice that we had to include <code>pd.</code> in front of the function. This tells Python to use the <code>read_csv</code> function that is inside the <code>pandas</code> package. The function <code>read_csv</code> outputs a Data Frame, which is then assigned to the variable <code>df</code>. This means that our data is now in a data frame called <code>df</code>.</p>
-<blockquote><h4 id="Side-Note:-File-Location">Side Note: File Location<a class="anchor-link" href="#Side-Note:-File-Location"> </a></h4><p>We only used the file name for <code>data_file</code>. This is because we included the CSV file in the same folder as this notebook. If it were somewhere else, we'd have to include the file path (e.g. <code>"/Documents/precourse/Python/ca_wac_S000_JT00_2015.csv"</code>). If you don't know much about how file paths work, don't worry: you just need to make sure that the file is in the same folder as the notebook.</p>
+<blockquote><h4 id="Side-Note:-File-Location">Side Note: File Location<a class="anchor-link" href="#Side-Note:-File-Location"> </a></h4><p>We only used the file name for <code>data_file</code>. This is because we included the CSV file in the same folder as this notebook. If it were somewhere else, we'd have to include the file path (e.g. <code>"/Documents/Python/ca_wac_S000_JT00_2015.csv"</code>). If you don't know much about how file paths work, don't worry: you just need to make sure that the file is in the same folder as the notebook.</p>
 </blockquote>
 <p>Lastly, we've included a line of code that can load the csv file into <code>df</code> in one line. This does the exact same thing as the first two lines of code, with the exception of not assigning <code>'ca_wac_S000_JT00_2015.csv'</code> to <code>data_file</code>. Notice that all we did was replace <code>data_file</code> with the string that we assigned to <code>data_file</code>. It is commented out, but feel free to try running it by itself (commenting out the first two lines) to check that it does the same thing.</p>
 
