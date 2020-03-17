@@ -64,26 +64,31 @@
     url: /03-intro-python/subsetting
   - title: Missing Values
     url: /03-intro-python/missing
+  - title: Error Messages and Documentation
+    url: /03-intro-python/documentation
 
-- title: Functions, Loops and Visualizations
+- title: Functions and Loops
   url: /04-functions-loops/intro
   sections:
   - title: Functions
     url: /04-functions-loops/functions
   - title: Loops
     url: /04-functions-loops/loops
-  - title: Visualizations
-    url: /04-functions-loops/visualizations
+
+- title: Visualizations
+  url: /05-visualizations/intro
+  sections:
+  - title: Basic Visualizations using matplotlib
+    url: /05-visualizations/basic-visualizations
   - title: Visualizing Multiple Years
-    url: /04-functions-loops/multiple-years
-  - title: Error Messages and Documentation
-    url: /04-functions-loops/documentation
+    url: /05-visualizations/multiple-years
+
 
 - title: Using Python with SQL
-  url: /05-python-sql/intro
+  url: /06-python-sql/intro
   sections:
   - title: Connecting to the Database
-    url: /05-python-sql/connecting
+    url: /06-python-sql/connecting
 
   - title: Bringing in Tables as Data Frames
-    url: /05-python-sql/tables-df
+    url: /06-python-sql/tables-df

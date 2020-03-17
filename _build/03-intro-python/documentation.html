@@ -1,0 +1,187 @@
+---
+interact_link: content/03-intro-python/documentation.ipynb
+kernel_name: python3
+has_widgets: false
+title: |-
+  Error Messages and Documentation
+prev_page:
+  url: /03-intro-python/missing.html
+  title: |-
+    Missing Values
+next_page:
+  url: /04-functions-loops/intro.html
+  title: |-
+    Functions and Loops
+suffix: .ipynb
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Start (as usual) by loading libraries</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mplib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># For inline graphics</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Error-Messages-and-Documentation-(VIDEO)"><span style="color:green">Error Messages and Documentation (VIDEO)</span><a class="anchor-link" href="#Error-Messages-and-Documentation-(VIDEO)"> </a></h2><p>We've discussed many basics for using Python for data analysis, but there is so much more that Python can do. It would be extremely difficult, even impossible, to memorize all of the different functions and remember how to do everything. Luckily, there is plenty of documentation available so that you can figure out what to do even if you don't remember it.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Error-Messages">Error Messages<a class="anchor-link" href="#Error-Messages"> </a></h3><p>Let's start by looking at error messages. The following code has intentionally been written incorrectly to produce an error message.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">error_msg_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">error_msg_mean</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The important thing to look for in an error message is usually the last line. Here, we see "<code>tuple index out of range</code>". This is because <code>mean</code> doesn't take three arguments to find the mean of three numbers. In order to find this mean, we need to group them up in, for example, a list.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">correct_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">correct_mean</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There might be times when you aren't able to figure out what went wrong based on the last line. In that case, your best bet is to copy and paste that line containing the error message into Google and see if there are any helpful hints online. One great resource is Stack Overflow, a website in which users submit questions to get help about coding. You'll most likely be able to find previous users who had the same issue you did, so you can simply find the appropriate thread and read what others have responded.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Documentation">Documentation<a class="anchor-link" href="#Documentation"> </a></h3><p>You can also get help by using the <code>help</code> function to look at the documentation. Let's pull up the documentation for <code>mean</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If this is a bit difficult to read (and it probably is because it's in the same document as everything else), you can also look up the documentation online. We can see here what the source of our error was, because the parameter we need to specify is <code>a</code>, which is an array, or array-like object.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Checkpoint-4:-Exploring-Error-Messages-and-Documentation-"><span style="color:red">Checkpoint 4: Exploring Error Messages and Documentation </span><a class="anchor-link" href="#Checkpoint-4:-Exploring-Error-Messages-and-Documentation-"> </a></h2><p>Try looking at the documentation for various functions or objects we've gone over. This should help you get a better feel for how the documentation is structured, since you should have an idea what they're like already. Some possibilities include:</p>
+<ul>
+<li>Data Frames</li>
+<li>Pandas Series</li>
+<li>Lists</li>
+<li>Dictionaries</li>
+</ul>
+<p>Is there a part of the documentation that doesn't make sense to you? Does seeing the documentation help you understand what you're working with better?</p>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    
