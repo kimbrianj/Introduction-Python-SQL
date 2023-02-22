@@ -18,8 +18,14 @@
 
 
 - title: Introduction to Python and SQL for Data Analysis
-  url: /intro
+  url: /intro/intro
   not_numbered: true
+  sections:
+  - title: Data
+    url: /intro/data
+  
+  - title: Jupyter Notebooks
+    url: /intro/jupyter
 
 - title: Introduction to SQL
   url: /01-intro-sql/intro
