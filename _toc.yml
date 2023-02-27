@@ -1,0 +1,45 @@
+format: jb-book
+root: intro
+
+chapters:
+- file: content/intro/intro
+  sections:
+  - file: content/intro/data
+  - file: content/intro/jupyter
+
+- file: content/01-intro-python/intro
+  sections:
+  - file: content/01-intro-python/data
+  - file: content/01-intro-python/data-exploration
+  - file: content/01-intro-python/subsetting
+  - file: content/01-intro-python/missing
+  - file: content/01-intro-python/documentation
+
+- file: content/02-functions-loops/intro
+  sections:
+  - file: content/02-functions-loops/functions
+  - file: content/02-functions-loops/loops
+
+- file: content/03-visualizations/intro
+  sections:
+  - file: content/03-visualizations/basic-visualizations
+  - file: content/03-visualizations/multiple-years
+
+- file: content/04-intro-sql/intro
+  sections:
+  - file: content/04-intro-sql/queries
+  - file: content/04-intro-sql/counting
+  - file: content/04-intro-sql/conditionals
+  - file: content/04-intro-sql/aggregating
+
+- file: content/05-joins/intro
+  sections:
+  - file: content/05-joins/joins
+  - file: content/05-joins/other-joins
+  - file: content/05-joins/joins-aggregation
+  - file: content/05-joins/creating-tables
+
+- file: content/06-python-sql/intro
+  sections:
+  - file: content/06-python-sql/connecting
+  - file: content/06-python-sql/tables-df
