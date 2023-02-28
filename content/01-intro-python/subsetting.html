@@ -143,7 +143,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="data.html">
-     Loading Libraries
+     Data
     </a>
    </li>
    <li class="toctree-l2">
@@ -530,18 +530,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;ca_wac_S000_JT00_2015.csv&#39;</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <section id="creating-subsets-of-the-data">
 <h1>Creating Subsets of the Data<a class="headerlink" href="#creating-subsets-of-the-data" title="Permalink to this headline">#</a></h1>
@@ -553,11 +541,32 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(47191, 53)
+</pre></div>
+</div>
+</div>
 </div>
 <p>To see how exactly this works, let’s see what happens when we run only what’s inside the brackets.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;C000&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">50</span> <span class="c1"># This will be a pandas Series with True and False values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0         False
+1         False
+2         False
+3         False
+4         False
+          ...  
+243457    False
+243458    False
+243459    False
+243460    False
+243461    False
+Name: C000, Length: 243462, dtype: bool
 </pre></div>
 </div>
 </div>
@@ -571,6 +580,11 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(17877, 53)
+</pre></div>
+</div>
+</div>
 </div>
 <p>Notice that we replaced our conditional statement from before with <code class="docutils literal notranslate"><span class="pre">(df['C000']</span> <span class="pre">&gt;</span> <span class="pre">50)</span> <span class="pre">&amp;</span> <span class="pre">(df['C000']</span> <span class="pre">&lt;</span> <span class="pre">100)</span></code>. This says that we want each row that meets both conditions, <code class="docutils literal notranslate"><span class="pre">(df['C000']</span> <span class="pre">&gt;</span> <span class="pre">50)</span></code> and <code class="docutils literal notranslate"><span class="pre">(df['C000']</span> <span class="pre">&lt;</span> <span class="pre">100)</span></code>.</p>
 <p>What about the rest? Well, we can find the rows with less than or equal to 50 jobs OR greater than or equal to 100 jobs.</p>
@@ -578,6 +592,11 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_not50to100</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;C000&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">50</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;C000&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">100</span><span class="p">)]</span>
 <span class="n">df_not50to100</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(225585, 53)
 </pre></div>
 </div>
 </div>
