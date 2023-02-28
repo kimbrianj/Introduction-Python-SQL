@@ -1,6 +1,0 @@
-name: Introduction-Python-SQL
-channels:
-  - conda-forge
-dependencies:
-  - ipywidgets
-  - beakerx
