@@ -2,5 +2,7 @@ name: Introduction-Python-SQL
 channels:
   - conda-forge
 dependencies:
+  - numpy
+  - pandas
   - ipywidgets
   - xeus-sqlite
