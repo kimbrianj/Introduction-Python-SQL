@@ -7,39 +7,45 @@ chapters:
   - file: content/intro/data
   - file: content/intro/jupyter
 
-- file: content/01-intro-python/intro
+- file: content/01-intro-python/00-intro
   sections:
-  - file: content/01-intro-python/data
-  - file: content/01-intro-python/data-exploration
-  - file: content/01-intro-python/subsetting
-  - file: content/01-intro-python/missing
-  - file: content/01-intro-python/documentation
+  - file: content/01-intro-python/01-reading-data
+  - file: content/01-intro-python/02-data-exploration
+  - file: content/01-intro-python/03-documentation
 
-- file: content/02-functions-loops/intro
-  sections:
-  - file: content/02-functions-loops/functions
-  - file: content/02-functions-loops/loops
+- file: content/02-data-management/00-intro
+  - file: content/02-intro-python/01-data-types
+  - file: content/02-intro-python/02-subsetting
+  - file: content/02-intro-python/03-missing
 
-- file: content/03-visualizations/intro
-  sections:
-  - file: content/03-visualizations/basic-visualizations
-  - file: content/03-visualizations/multiple-years
 
-- file: content/04-intro-sql/intro
+- file: content/03-functions-loops/00-intro
   sections:
-  - file: content/04-intro-sql/queries
-  - file: content/04-intro-sql/counting
-  - file: content/04-intro-sql/conditionals
-  - file: content/04-intro-sql/aggregating
+  - file: content/03-functions-loops/functions
+  - file: content/03-functions-loops/loops
 
-- file: content/05-joins/intro
+- file: content/04-visualizations/00-intro
   sections:
-  - file: content/05-joins/joins
-  - file: content/05-joins/other-joins
-  - file: content/05-joins/joins-aggregation
-  - file: content/05-joins/creating-tables
+  - file: content/04-visualizations/01-basic-visualizations 
+  - file: content/04-visualizations/02-seaborn-ggplot
+  - file: content/04-visualizations/03-multiple-years
 
-- file: content/06-python-sql/intro
+- file: content/05-intro-sql/intro
   sections:
-  - file: content/06-python-sql/connecting
-  - file: content/06-python-sql/tables-df
+  - file: content/05-intro-sql/01-relational-databases
+  - file: content/05-intro-sql/02-queries
+  - file: content/05-intro-sql/03-counting
+  - file: content/05-intro-sql/04-conditionals
+  - file: content/05-intro-sql/05-aggregating
+
+- file: content/06-joins/00-intro
+  sections:
+  - file: content/06-joins/01-joins
+  - file: content/06-joins/02-other-joins
+  - file: content/06-joins/03-joins-aggregation
+  - file: content/06-joins/04-creating-tables
+
+- file: content/07-python-sql/00-intro
+  sections:
+  - file: content/07-python-sql/01-connecting
+  - file: content/07-python-sql/02-tables-df
