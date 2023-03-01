@@ -4,5 +4,7 @@ channels:
 dependencies:
   - numpy
   - pandas
+  - matplotlib
+  - seaborn
   - ipywidgets
   - xeus-sqlite

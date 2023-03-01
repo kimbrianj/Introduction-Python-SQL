@@ -14,15 +14,15 @@ chapters:
   - file: content/01-intro-python/03-documentation
 
 - file: content/02-data-management/00-intro
-  - file: content/02-intro-python/01-data-types
-  - file: content/02-intro-python/02-subsetting
-  - file: content/02-intro-python/03-missing
-
+  sections:
+  - file: content/02-data-management/01-data-types
+  - file: content/02-data-management/02-subsetting
+  - file: content/02-data-management/03-missing
 
 - file: content/03-functions-loops/00-intro
   sections:
-  - file: content/03-functions-loops/functions
-  - file: content/03-functions-loops/loops
+  - file: content/03-functions-loops/01-functions
+  - file: content/03-functions-loops/02-loops
 
 - file: content/04-visualizations/00-intro
   sections:
@@ -30,7 +30,7 @@ chapters:
   - file: content/04-visualizations/02-seaborn-ggplot
   - file: content/04-visualizations/03-multiple-years
 
-- file: content/05-intro-sql/intro
+- file: content/05-intro-sql/00-intro
   sections:
   - file: content/05-intro-sql/01-relational-databases
   - file: content/05-intro-sql/02-queries
