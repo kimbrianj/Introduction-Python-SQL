@@ -18,6 +18,7 @@
 # Jekyll site settings
 title: Introduction to Python and SQL for Data Analysis
 author: Brian Kim
+logo: content/images/logo/logo.png
 email: kimbrian@umd.edu
 description: >-
   Introduction to Python and SQL for data analysis.
@@ -60,6 +61,7 @@ launch_buttons:
   notebook_interface: "jupyterlab"
   binderhub_url: "https://mybinder.org"
   colab_url: "https://colab.research.google.com"
+  thebe: true
 
 # nbinteract settings
 use_show_widgets_button: true                # If 'true', display a button to allow in-page running code cells with nbinteract

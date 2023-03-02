@@ -2,10 +2,10 @@ format: jb-book
 root: intro
 
 chapters:
-- file: content/intro/intro
+- file: content/00-intro/00-intro
   sections:
-  - file: content/intro/data
-  - file: content/intro/jupyter
+  - file: content/00-intro/01-jupyter
+  - file: content/00-intro/02-data
 
 - file: content/01-intro-python/00-intro
   sections:
