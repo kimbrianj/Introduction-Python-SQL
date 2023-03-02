@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Checking Number of Rows and Duplicates (VIDEO) &#8212; Introduction to Python and SQL for Data Analysis</title>
+    <title>Introduction &#8212; Introduction to Python and SQL for Data Analysis</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Using Conditional Statements" href="04-conditionals.html" />
-    <link rel="prev" title="Writing a Basic Query" href="02-queries.html" />
+    <link rel="next" title="Introduction to Jupyter Notebooks" href="01-jupyter.html" />
+    <link rel="prev" title="Introduction to SQL and Python for Data Analysis" href="../../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -114,23 +114,23 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../00-intro/00-intro.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
    Introduction
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../00-intro/01-jupyter.html">
+    <a class="reference internal" href="01-jupyter.html">
      Introduction to Jupyter Notebooks
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../00-intro/02-data.html">
+    <a class="reference internal" href="02-data.html">
      Data
     </a>
    </li>
@@ -239,40 +239,40 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="00-intro.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05-intro-sql/00-intro.html">
    Introduction to SQL and Relational Databases
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="01-relational-databases.html">
+    <a class="reference internal" href="../05-intro-sql/01-relational-databases.html">
      Relational Databases
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="02-queries.html">
+    <a class="reference internal" href="../05-intro-sql/02-queries.html">
      Writing a Basic Query
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-intro-sql/03-counting.html">
      <span style="color:green">
       Checking Number of Rows and Duplicates (VIDEO)
      </span>
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04-conditionals.html">
+    <a class="reference internal" href="../05-intro-sql/04-conditionals.html">
      Using Conditional Statements
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="05-aggregating.html">
+    <a class="reference internal" href="../05-intro-sql/05-aggregating.html">
      Using Aggregation Functions
     </a>
    </li>
@@ -391,7 +391,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/kimbrianj/Introduction-Python-SQL/master?urlpath=lab/tree/content/05-intro-sql/03-counting.ipynb"
+        <a href="https://mybinder.org/v2/gh/kimbrianj/Introduction-Python-SQL/master?urlpath=lab/tree/content/00-intro/00-intro.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -409,7 +409,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/kimbrianj/Introduction-Python-SQL/blob/master/content/05-intro-sql/03-counting.ipynb"
+        <a href="https://colab.research.google.com/github/kimbrianj/Introduction-Python-SQL/blob/master/content/00-intro/00-intro.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -470,7 +470,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/content/05-intro-sql/03-counting.ipynb"
+        <a href="../../_sources/content/00-intro/00-intro.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -507,60 +507,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#building-up-a-query">
-   Building Up a Query
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><span style="color:green">Checking Number of Rows and Duplicates (VIDEO)</span></h1>
+                <h1>Introduction</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#building-up-a-query">
-   Building Up a Query
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -568,70 +531,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="cell tag_hide_input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">defaultDatasource</span><span class="w"> </span><span class="n">jdbc</span><span class="p">:</span><span class="n">sqlite</span><span class="p">:..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="n">lodes</span><span class="p">.</span><span class="n">db</span>
-</pre></div>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
+<p>This book uses data from the Longitudinal Employer Household Dynamic (LEHD) data provided by the United States Census Bureau for its examples. Because the data can be somewhat difficult to parse at first glance, we recommend reading the documentation closely and making sure you understand the structure as described in this chapter before moving on to later chapters.</p>
+<p>We will also Jupyter notebooks to provide you with a chance to run the code and practice the exercises yourself. The</p>
+<div class="toctree-wrapper compound">
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">Error</span>: Load a database to run this command.
-</pre></div>
-</div>
-</div>
-</div>
-<section id="span-style-color-green-checking-number-of-rows-and-duplicates-video-span">
-<h1><span style="color:green">Checking Number of Rows and Duplicates (VIDEO)</span><a class="headerlink" href="#span-style-color-green-checking-number-of-rows-and-duplicates-video-span" title="Permalink to this headline">#</a></h1>
-<p>Let’s say we want to find out how many rows there are. You can do this by using a <code class="docutils literal notranslate"><span class="pre">COUNT</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ca_wac_2015</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Here, we used <code class="docutils literal notranslate"><span class="pre">COUNT(*)</span></code>, which does a count of all rows, regardless of <code class="docutils literal notranslate"><span class="pre">NULL</span></code> values. We can instead do a count of all non-<code class="docutils literal notranslate"><span class="pre">NULL</span></code> values of a certain variable by including that variable instead of <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">w_geocode</span><span class="p">)</span><span class="w"> </span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ca_wac_2015</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>We can also look at both of these at the same time. This can be helpful for checking for <code class="docutils literal notranslate"><span class="pre">NULL</span></code> values of multiple columns at a time, since we’ll be able to see which ones have less than the total number of rows.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">w_geocode</span><span class="p">),</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">C000</span><span class="p">)</span><span class="w"> </span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ca_wac_2015</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>But wait; what if there are duplicates in the data? We can check for them by using <code class="docutils literal notranslate"><span class="pre">DISTINCT</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">w_geocode</span><span class="w"> </span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ca_wac_2015</span>
-<span class="k">LIMIT</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>This shows us all of the rows with distinct <code class="docutils literal notranslate"><span class="pre">w_geocode</span></code> values; that is, all of the distinct census block ids. Let’s count how many there are. To count them, all we have to do is put <code class="docutils literal notranslate"><span class="pre">COUNT()</span></code> around the <code class="docutils literal notranslate"><span class="pre">DISTINCT</span></code> part.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">w_geocode</span><span class="p">)</span><span class="w"> </span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ca_wac_2015</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="building-up-a-query">
-<h2>Building Up a Query<a class="headerlink" href="#building-up-a-query" title="Permalink to this headline">#</a></h2>
-<p>Notice that we wanted to count the number of distinct rows, but we first started from querying the rows with distinct <code class="docutils literal notranslate"><span class="pre">w_geocode</span></code> first before adding in the <code class="docutils literal notranslate"><span class="pre">COUNT</span></code>. Though this is a simple example, this process of building up a query as we go is important, especially when we get to more complicated tasks. When writing a query, try to think about the basic parts first, and feel free to run intermediate steps (making sure to include <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code>) as you go.</p>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -643,16 +548,16 @@ title="Print to PDF"
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "xsqlite"
+            mode: "python"
         },
         kernelOptions: {
-            name: "xsqlite",
-            path: "./content/05-intro-sql"
+            name: "python3",
+            path: "./content/00-intro"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'xsqlite'</script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -661,17 +566,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="02-queries.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../../intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Writing a Basic Query</p>
+            <p class="prev-next-title">Introduction to SQL and Python for Data Analysis</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="04-conditionals.html" title="next page">
+    <a class='right-next' id="next-link" href="01-jupyter.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Using Conditional Statements</p>
+        <p class="prev-next-title">Introduction to Jupyter Notebooks</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

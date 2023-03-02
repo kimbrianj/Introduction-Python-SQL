@@ -90,6 +90,11 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Introduction to Python and SQL for Data Analysis</h1>
@@ -110,7 +115,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../intro/intro.html">
+  <a class="reference internal" href="../00-intro/00-intro.html">
    Introduction
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -120,13 +125,13 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../intro/data.html">
-     Data
+    <a class="reference internal" href="../00-intro/01-jupyter.html">
+     Introduction to Jupyter Notebooks
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../intro/jupyter.html">
-     Introduction to Jupyter Notebooks
+    <a class="reference internal" href="../00-intro/02-data.html">
+     Data
     </a>
    </li>
   </ul>
@@ -153,9 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-intro-python/03-documentation.html">
-     <span style="color:green">
-      Error Messages and Documentation (VIDEO)
-     </span>
+     Error Messages and Documentation
     </a>
    </li>
   </ul>
@@ -237,11 +240,50 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../06-joins/00-intro.html">
-   SQL Joins
+  <a class="reference internal" href="../05-intro-sql/00-intro.html">
+   Introduction to SQL and Relational Databases
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-intro-sql/01-relational-databases.html">
+     Relational Databases
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-intro-sql/02-queries.html">
+     Writing a Basic Query
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-intro-sql/03-counting.html">
+     <span style="color:green">
+      Checking Number of Rows and Duplicates (VIDEO)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-intro-sql/04-conditionals.html">
+     Using Conditional Statements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-intro-sql/05-aggregating.html">
+     Using Aggregation Functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06-joins/00-intro.html">
+   SQL Joins
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -272,8 +314,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../07-python-sql/00-intro.html">
    Using SQL and Python Together
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -384,6 +426,24 @@ title="Launch on Colab"
 
       </li>
       
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
     </ul>
   </div>
 </div>
@@ -475,9 +535,9 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-1-creating-functions-span">
+  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-creating-functions-span">
    <span style="color:red">
-    Checkpoint 1: Creating Functions
+    Checkpoint: Creating Functions
    </span>
   </a>
  </li>
@@ -506,9 +566,9 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-1-creating-functions-span">
+  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-creating-functions-span">
    <span style="color:red">
-    Checkpoint 1: Creating Functions
+    Checkpoint: Creating Functions
    </span>
   </a>
  </li>
@@ -522,7 +582,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="cell docutils container">
+  <div class="cell tag_hide_input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start (as usual) by loading libraries</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -574,7 +634,13 @@ return(y)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_ca_wac</span><span class="p">(</span><span class="n">year</span><span class="p">):</span>
-    <span class="c1"># year: the year we want to bring in data for</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Arguments</span>
+<span class="sd">    year: int, the year we want to bring in data for</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    A pandas DataFrame with the California WAC for a specific year</span>
+<span class="sd">    &#39;&#39;&#39;</span>
     
     <span class="n">file_name</span> <span class="o">=</span> <span class="s1">&#39;https://lehd.ces.census.gov/data/lodes/LODES7/ca/wac/ca_wac_S000_JT00_</span><span class="si">{yr}</span><span class="s1">.csv.gz&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">yr</span> <span class="o">=</span> <span class="n">year</span><span class="p">)</span>
     <span class="n">output</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span><span class="n">compression</span><span class="o">=</span><span class="s1">&#39;gzip&#39;</span><span class="p">)</span>
@@ -608,8 +674,14 @@ return(y)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_wac</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;ca&quot;</span><span class="p">):</span>
-    <span class="c1"># state: string, two-letter code of state for which we want the data</span>
-    <span class="c1"># year: int, the year we want to bring in data for</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Arguments</span>
+<span class="sd">    state: string, two-letter code of state for which we want the data</span>
+<span class="sd">    year: int, the year we want to bring in data for</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    A pandas DataFrame with the WAC for a specific state and year</span>
+<span class="sd">    &#39;&#39;&#39;</span>
     
     <span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://lehd.ces.census.gov/data/lodes/LODES7/&#39;</span>
     <span class="n">file_specs</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{st}</span><span class="s1">/wac/</span><span class="si">{st}</span><span class="s1">_wac_S000_JT00_</span><span class="si">{yr}</span><span class="s1">.csv.gz&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">st</span> <span class="o">=</span> <span class="n">state</span><span class="p">,</span> <span class="n">yr</span> <span class="o">=</span> <span class="n">year</span><span class="p">)</span>
@@ -805,8 +877,8 @@ return(y)
 <div><p><strong>Coding Tip:</strong> Notice that there’s a line that’s been commented out near the bottom: “<code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">print(&quot;The</span> <span class="pre">URL</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">file</span> <span class="pre">is</span> <span class="pre">at:</span> <span class="pre">&quot;</span> <span class="pre">+</span> <span class="pre">file_name)</span></code>”. Try uncommenting it (delete the “#”), run the cell defining the function, then use the function again. This prints out helpful information – in this case, the URL that we’ve constructed – as the function runs. Using <code class="docutils literal notranslate"><span class="pre">print()</span></code> functions in this way is very useful for debugging when your function isn’t working the way you think it should.</p>
 </div></blockquote>
 </section>
-<section id="span-style-color-red-checkpoint-1-creating-functions-span">
-<h2><span style = "color:red">Checkpoint 1: Creating Functions</span><a class="headerlink" href="#span-style-color-red-checkpoint-1-creating-functions-span" title="Permalink to this headline">#</a></h2>
+<section id="span-style-color-red-checkpoint-creating-functions-span">
+<h2><span style = "color:red">Checkpoint: Creating Functions</span><a class="headerlink" href="#span-style-color-red-checkpoint-creating-functions-span" title="Permalink to this headline">#</a></h2>
 <p>Try using the functions above to bring in the data for your state. Do you need to make any changes to the functions? Why or why not?</p>
 <p>Suppose you wanted to adjust the functions so that you can specify whether you want to bring in the Residence Area Characteristics (rac), or the Workplace Area Characteristics (wac), instead of bringing in the wac dataset by default. How would you adjust the code? Try doing it yourself.</p>
 <p>What about if you wanted to change the function to also work for the Origin-Destination (od) data? How would the function change then? Make sure you look carefully at the file name.</p>
@@ -835,7 +907,7 @@ return(y)
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "kimbrianj/Introduction-Python-SQL",
             ref: "master",
         },
         codeMirrorConfig: {

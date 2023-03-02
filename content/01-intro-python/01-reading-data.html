@@ -90,6 +90,11 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Introduction to Python and SQL for Data Analysis</h1>
@@ -110,7 +115,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../intro/intro.html">
+  <a class="reference internal" href="../00-intro/00-intro.html">
    Introduction
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -120,13 +125,13 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../intro/data.html">
-     Data
+    <a class="reference internal" href="../00-intro/01-jupyter.html">
+     Introduction to Jupyter Notebooks
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../intro/jupyter.html">
-     Introduction to Jupyter Notebooks
+    <a class="reference internal" href="../00-intro/02-data.html">
+     Data
     </a>
    </li>
   </ul>
@@ -153,9 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03-documentation.html">
-     <span style="color:green">
-      Error Messages and Documentation (VIDEO)
-     </span>
+     Error Messages and Documentation
     </a>
    </li>
   </ul>
@@ -237,11 +240,50 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../06-joins/00-intro.html">
-   SQL Joins
+  <a class="reference internal" href="../05-intro-sql/00-intro.html">
+   Introduction to SQL and Relational Databases
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-intro-sql/01-relational-databases.html">
+     Relational Databases
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-intro-sql/02-queries.html">
+     Writing a Basic Query
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-intro-sql/03-counting.html">
+     <span style="color:green">
+      Checking Number of Rows and Duplicates (VIDEO)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-intro-sql/04-conditionals.html">
+     Using Conditional Statements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-intro-sql/05-aggregating.html">
+     Using Aggregation Functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06-joins/00-intro.html">
+   SQL Joins
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -272,8 +314,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../07-python-sql/00-intro.html">
    Using SQL and Python Together
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -384,6 +426,24 @@ title="Launch on Colab"
 
       </li>
       
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
     </ul>
   </div>
 </div>
@@ -478,13 +538,11 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#reading-in-the-data-set">
    Reading in the Data Set
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#side-note-file-location">
-     Side Note: File Location
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-from-the-internet">
+   Data from the Internet
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#a-note-on-data-types">
@@ -492,9 +550,9 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-1-read-in-other-data-span">
+  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-read-in-other-data-span">
    <span style="color:red">
-    Checkpoint 1: Read in Other Data
+    Checkpoint: Read in Other Data
    </span>
   </a>
  </li>
@@ -526,13 +584,11 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#reading-in-the-data-set">
    Reading in the Data Set
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#side-note-file-location">
-     Side Note: File Location
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-from-the-internet">
+   Data from the Internet
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#a-note-on-data-types">
@@ -540,9 +596,9 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-1-read-in-other-data-span">
+  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-read-in-other-data-span">
    <span style="color:red">
-    Checkpoint 1: Read in Other Data
+    Checkpoint: Read in Other Data
    </span>
   </a>
  </li>
@@ -558,11 +614,11 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="reading-data">
 <h1>Reading Data<a class="headerlink" href="#reading-data" title="Permalink to this headline">#</a></h1>
-<p>We’ll start by bringing in some data to analyze.</p>
+<p>Before we can start analyzing data, we first need to actually bring in the data into Python so that we can work with it.</p>
 <section id="loading-libraries">
 <h2>Loading Libraries<a class="headerlink" href="#loading-libraries" title="Permalink to this headline">#</a></h2>
 <p>We first load a few libraries. These libraries are essentially bundles of useful tools that can help us do specific tasks. In this case, we’re going to be bringing in NumPy and Pandas, which are specifically useful for computing and data analysis. Don’t worry too much about the specifics of libraries for now, just remember that we need to include the first few lines of code below if we want to use many of the tools described in this workbook.</p>
-<p>If you’d like to read more about the libraries that we’re loading here, see the following links: for <a class="reference external" href="http://www.numpy.org/">NumPy</a> and for <a class="reference external" href="http://pandas-docs.github.io/pandas-docs-travis/">Pandas</a></p>
+<p>If you’d like to read more about the libraries that we’re loading here, see the following links: for <a class="reference external" href="http://www.numpy.org/">NumPy</a> and for <a class="reference external" href="http://pandas-docs.github.io/pandas-docs-travis/">Pandas</a>. Throughout this book, we’ll continuously add libraries (also called packages or modules within Python) that we bring in.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First, we import packages</span>
@@ -605,12 +661,26 @@ title="Print to PDF"
 </div>
 <p>In the second line, we’re using the <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> package. Notice that we had to include <code class="docutils literal notranslate"><span class="pre">pd.</span></code> in front of the function. This tells Python to use the <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> function that is inside the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> package. The function <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> outputs a Data Frame, which is then assigned to the variable <code class="docutils literal notranslate"><span class="pre">df</span></code>. This means that our data is now in a data frame called <code class="docutils literal notranslate"><span class="pre">df</span></code>.</p>
 <blockquote>
-<div></div></blockquote>
-<section id="side-note-file-location">
-<h3>Side Note: File Location<a class="headerlink" href="#side-note-file-location" title="Permalink to this headline">#</a></h3>
-<p>We only used the file name for <code class="docutils literal notranslate"><span class="pre">data_file</span></code>. This is because we included the CSV file in the same folder as this notebook. If it were somewhere else, we’d have to include the file path (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;/Documents/Python/ca_wac_S000_JT00_2015.csv&quot;</span></code>). If you don’t know much about how file paths work, don’t worry: you just need to make sure that the file is in the same folder as the notebook.</p>
-</section>
+<div><p><strong>Note:</strong> We only used the file name for <code class="docutils literal notranslate"><span class="pre">data_file</span></code>. This is because we included the CSV file in the same folder as this notebook. If it were somewhere else, we’d have to include the file path (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;/Documents/Python/ca_wac_S000_JT00_2015.csv&quot;</span></code>). If you don’t know much about how file paths work, don’t worry: you just need to make sure that the file is in the same folder as the notebook.</p>
+</div></blockquote>
 <p>Lastly, we’ve included a line of code that can load the csv file into <code class="docutils literal notranslate"><span class="pre">df</span></code> in one line. This does the exact same thing as the first two lines of code, with the exception of not assigning <code class="docutils literal notranslate"><span class="pre">'ca_wac_S000_JT00_2015.csv'</span></code> to <code class="docutils literal notranslate"><span class="pre">data_file</span></code>. Notice that all we did was replace <code class="docutils literal notranslate"><span class="pre">data_file</span></code> with the string that we assigned to <code class="docutils literal notranslate"><span class="pre">data_file</span></code>. It is commented out, but feel free to try running it by itself (commenting out the first two lines) to check that it does the same thing.</p>
+</section>
+<section id="data-from-the-internet">
+<h2>Data from the Internet<a class="headerlink" href="#data-from-the-internet" title="Permalink to this headline">#</a></h2>
+<p>We can also bring in data from a URL if the data is made available in this way. The LODES data was downloaded by following links as described in the <a class="reference external" href="https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.3.pdf">documentation</a>. Notably, the documentation says:</p>
+<blockquote>
+<div><p>For users who want to automate the download of LODES data files, the root location of the directory structure is <a class="reference external" href="https://lehd.ces.census.gov/data/lodes/LODES7/">lehd.ces.census.gov/data/lodes/LODES7/</a>. This location can be accessed directly via a web browser.</p>
+</div></blockquote>
+<p>This means we can construct the URL for where we got the file by following the link and navigating to it. We can also look at the description in the documentation to see how the naming convention goes. An example of bringing in data using the URL is shown below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_url</span> <span class="o">=</span> <span class="s1">&#39;https://lehd.ces.census.gov/data/lodes/LODES7/ca/wac/ca_wac_S000_JT00_2015.csv.gz&#39;</span>
+<span class="n">df_from_url</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_url</span><span class="p">,</span><span class="n">compression</span><span class="o">=</span><span class="s1">&#39;gzip&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that we had to add another argument to the function. We added <code class="docutils literal notranslate"><span class="pre">compression</span> <span class="pre">=</span> <span class="pre">'gzip'</span></code>. This is because the CSV file as it is provided through the URL is compressed. Luckily, the <code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code> function has a way of unzipping it while bringing it in.</p>
 </section>
 <section id="a-note-on-data-types">
 <h2>A Note on Data Types<a class="headerlink" href="#a-note-on-data-types" title="Permalink to this headline">#</a></h2>
@@ -642,13 +712,13 @@ title="Print to PDF"
 </div>
 <p>It tells us that <code class="docutils literal notranslate"><span class="pre">df</span></code> is a pandas Data Frame. As we’ll see later on, a Pandas Data Frame, as with other Python objects, has specific attributes and functions that you can use with it.</p>
 </section>
-<section id="span-style-color-red-checkpoint-1-read-in-other-data-span">
-<h2><span style="color:red">Checkpoint 1: Read in Other Data</span><a class="headerlink" href="#span-style-color-red-checkpoint-1-read-in-other-data-span" title="Permalink to this headline">#</a></h2>
+<section id="span-style-color-red-checkpoint-read-in-other-data-span">
+<h2><span style="color:red">Checkpoint: Read in Other Data</span><a class="headerlink" href="#span-style-color-red-checkpoint-read-in-other-data-span" title="Permalink to this headline">#</a></h2>
 <p>You can access LODES data from other states by using the link below:</p>
 <p><a class="reference external" href="https://lehd.ces.census.gov/data/lodes/LODES7">LODES Data</a></p>
 <p>and navigating to the state you want. Check out the <a class="reference external" href="https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.3.pdf">LODES documentation</a> for more information.</p>
-<p>If you download any data, it will go to your local computer. However, since this notebook is running from a server in the cloud, you’ll have to upload it to this server to access it. You can do so by navigating to the <strong>Home</strong> folder by clicking on the <strong>Jupyter</strong> icon at the top left of this page, and clicking the Upload button in right-hand corner.</p>
-<p>If you have problems with that, don’t worry. We’ve included several other LODES data in this environment too. They are named:</p>
+<p>If you download any data, it will go to your local computer. However, since this notebook is running from a server in the cloud, you’ll have to upload it to this server to access it. In JupyterLab, there should be an Upload Files icon on the left side above the file structure to do this. If you are running this in Colab, you will need to make sure the data is in the same place as the Colab notebook. This will likely be easier if you copy the notebook into your own Colab space.</p>
+<p>If you have problems with that, don’t worry. We’ve included several other LODES data in this environment too as long as you are using Binder. They are named:</p>
 <ul class="simple">
 <li><p>Illinois: <code class="docutils literal notranslate"><span class="pre">il_wac_S000_JT00_2015.csv</span></code></p></li>
 <li><p>Indiana: <code class="docutils literal notranslate"><span class="pre">in_wac_S000_JT00_2015.csv</span></code></p></li>
@@ -656,6 +726,7 @@ title="Print to PDF"
 </ul>
 <p>See if you can load one similarly to how you loaded the California data above.</p>
 <p>Make sure you assign it to a variable other than <code class="docutils literal notranslate"><span class="pre">df</span></code> so that you don’t overwrite the data we loaded earlier (for example, if you choose Illinois, you might use <code class="docutils literal notranslate"><span class="pre">df_il</span></code>).</p>
+<p>Try using the URL structure to bring in another data source as well.</p>
 </section>
 </section>
 
@@ -663,7 +734,7 @@ title="Print to PDF"
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "kimbrianj/Introduction-Python-SQL",
             ref: "master",
         },
         codeMirrorConfig: {

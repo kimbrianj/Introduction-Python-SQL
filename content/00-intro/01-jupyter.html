@@ -1,0 +1,962 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction to Jupyter Notebooks &#8212; Introduction to Python and SQL for Data Analysis</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Data" href="02-data.html" />
+    <link rel="prev" title="Introduction" href="00-intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Python and SQL for Data Analysis</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Introduction to SQL and Python for Data Analysis
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="00-intro.html">
+   Introduction
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Introduction to Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-data.html">
+     Data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-intro-python/00-intro.html">
+   Introduction to Python and Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-intro-python/01-reading-data.html">
+     Reading Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-intro-python/02-data-exploration.html">
+     Exploring the Data Frame
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-intro-python/03-documentation.html">
+     Error Messages and Documentation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02-data-management/00-intro.html">
+   Data Management in Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-data-management/01-data-types.html">
+     Data Types in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-data-management/02-subsetting.html">
+     Creating Subsets of the Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-data-management/03-missing.html">
+     Checking for Missing Values
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-functions-loops/00-intro.html">
+   Functions and Loops
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-functions-loops/01-functions.html">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-functions-loops/02-loops.html">
+     Loops
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04-visualizations/00-intro.html">
+   Visualizations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-visualizations/01-basic-visualizations.html">
+     Basic Visualizations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-visualizations/02-seaborn-ggplot.html">
+     Other Plotting Libraries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-visualizations/03-multiple-years.html">
+     Example: Line Chart Over Years
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05-intro-sql/00-intro.html">
+   Introduction to SQL and Relational Databases
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-intro-sql/01-relational-databases.html">
+     Relational Databases
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-intro-sql/02-queries.html">
+     Writing a Basic Query
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-intro-sql/03-counting.html">
+     <span style="color:green">
+      Checking Number of Rows and Duplicates (VIDEO)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-intro-sql/04-conditionals.html">
+     Using Conditional Statements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-intro-sql/05-aggregating.html">
+     Using Aggregation Functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06-joins/00-intro.html">
+   SQL Joins
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06-joins/01-joins.html">
+     Joins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06-joins/02-other-joins.html">
+     Different Types of Joins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06-joins/03-joins-aggregation.html">
+     Using Joins With Aggregation Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06-joins/04-creating-tables.html">
+     Creating New Tables for Future Use
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../07-python-sql/00-intro.html">
+   Using SQL and Python Together
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-python-sql/01-connecting.html">
+     Creating a Connection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-python-sql/02-tables-df.html">
+     Reading SQL tables using Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/kimbrianj/Introduction-Python-SQL/master?urlpath=lab/tree/content/00-intro/01-jupyter.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/kimbrianj/Introduction-Python-SQL/blob/master/content/00-intro/01-jupyter.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/content/00-intro/01-jupyter.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-notebooks">
+   Jupyter notebooks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#writing-in-jupyter-notebooks">
+   Writing in Jupyter notebooks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#markdown-text-cells">
+   Markdown (text) cells
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-kernel">
+   The Kernel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-cells">
+   Code cells
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#errors">
+   Errors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expressions">
+   Expressions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calling-functions">
+   Calling functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#names">
+   Names
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-packages">
+   Python Packages
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction to Jupyter Notebooks</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-notebooks">
+   Jupyter notebooks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#writing-in-jupyter-notebooks">
+   Writing in Jupyter notebooks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#markdown-text-cells">
+   Markdown (text) cells
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-kernel">
+   The Kernel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-cells">
+   Code cells
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#errors">
+   Errors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expressions">
+   Expressions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calling-functions">
+   Calling functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#names">
+   Names
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-packages">
+   Python Packages
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-jupyter-notebooks">
+<h1>Introduction to Jupyter Notebooks<a class="headerlink" href="#introduction-to-jupyter-notebooks" title="Permalink to this headline">#</a></h1>
+<p>You can access all of the content within this book as executable files called <strong>Jupyter notebooks</strong>. These Jupyter notebooks can be opened through the cloud using <a class="reference external" href="https://colab.research.google.com">Google Colab</a> or Binder, which serves the notebooks in a temporary space. If you would like to try running the notebooks locally on your own computer, you can also download the notebooks and download Jupyter to run them. The easiest way is likely by using <a class="reference external" href="https://www.anaconda.com">Anaconda</a>.</p>
+<p>In this section, we will go over the structure of how to navigate and use a Jupyter notebook, as well as provide a short introduction to some concepts in Python. This section is written assuming you have already opened it using Colab or Binder (or downloaded it). You can still look through it without doing the interactive parts, but some of the descriptions of the Jupyter environment won’t make sense.</p>
+<section id="jupyter-notebooks">
+<h2>Jupyter notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">#</a></h2>
+<p>This webpage is called a Jupyter notebook. A notebook is a place to write programs and view their results, and also to write text.</p>
+</section>
+<section id="writing-in-jupyter-notebooks">
+<h2>Writing in Jupyter notebooks<a class="headerlink" href="#writing-in-jupyter-notebooks" title="Permalink to this headline">#</a></h2>
+<p>You can use Jupyter notebooks for your own projects or documents.  When you make your own notebook, you’ll need to create your own cells for text and code.</p>
+<p>To add a cell, click the + button in the menu bar.  You can change the cell type by using drop-down menu in the menu bar, and choosing “Code” or “Markdown”. In Colab, you should just see a “+ Text” or “+ Code” option.</p>
+<p>Try creating a new cell and putting some text in it.</p>
+</section>
+<section id="markdown-text-cells">
+<h2>Markdown (text) cells<a class="headerlink" href="#markdown-text-cells" title="Permalink to this headline">#</a></h2>
+<p>In a notebook, each rectangle containing text or code is called a <em>cell</em>.</p>
+<p>Text cells (like this one) can be edited by double-clicking on them. They’re written in a simple format called <a class="reference external" href="http://daringfireball.net/projects/markdown/syntax">Markdown</a> to add formatting and section headings.  You don’t need to learn Markdown, but you might want to.</p>
+<p>After you edit a text cell, click the “run cell” button at the top that looks like a play button or hold down <code class="docutils literal notranslate"><span class="pre">shift</span></code> + <code class="docutils literal notranslate"><span class="pre">return</span></code> (or <code class="docutils literal notranslate"><span class="pre">ctrl</span></code> + <code class="docutils literal notranslate"><span class="pre">return</span></code>) to confirm any changes. (Try not to delete the instructions of the lab.)</p>
+</section>
+<section id="the-kernel">
+<h2>The Kernel<a class="headerlink" href="#the-kernel" title="Permalink to this headline">#</a></h2>
+<p>The kernel is a program that executes the code inside your notebook and outputs the results. In the top right of your window, you can see a circle that indicates the status of your kernel. If the circle is empty (⚪), the kernel is idle and ready to execute code. If the circle is filled in (⚫), the kernel is busy running some code.</p>
+<p>In Google Colab, you can look at the <strong>Runtime</strong> menu item, and also see the usage on the top right of the notebook instead of the filled in or empty circle.</p>
+<p>You may run into problems where your kernel is stuck for an excessive amount of time, your notebook is very slow and unresponsive, or your kernel loses its connection. If this happens, try the following steps:</p>
+<ol class="simple">
+<li><p>At the top of your screen, click <strong>Kernel</strong>, then <strong>Interrupt</strong>.</p></li>
+<li><p>If that doesn’t help, click <strong>Kernel</strong>, then <strong>Restart</strong>. If you do this, you will have to run your code cells from the start of your notebook up until where you paused your work.</p></li>
+<li><p>If that doesn’t help, restart your server. First, save your work by clicking <strong>File</strong> at the top left of your screen, then <strong>Save and Checkpoint</strong>. Next, click <strong>Control Panel</strong> at the top right. Choose <strong>Stop My Server</strong> to shut it down, then <strong>Start My Server</strong> to start it back up. Then, navigate back to the notebook you were working on. You’ll still have to run your code cells again.</p></li>
+</ol>
+</section>
+<section id="code-cells">
+<h2>Code cells<a class="headerlink" href="#code-cells" title="Permalink to this headline">#</a></h2>
+<p>Other cells contain code in the Python 3 language. Running a code cell will execute all of the code it contains.</p>
+<p>To run the code in a code cell, first click on that cell to activate it.  It’ll be highlighted with a little green or blue rectangle.  Next, either press ▶| or hold down <code class="docutils literal notranslate"><span class="pre">shift</span></code> + <code class="docutils literal notranslate"><span class="pre">return</span></code> or <code class="docutils literal notranslate"><span class="pre">ctrl</span></code> + <code class="docutils literal notranslate"><span class="pre">return</span></code>. Using <code class="docutils literal notranslate"><span class="pre">shift</span></code> + return will take you to the next cell, while using <code class="docutils literal notranslate"><span class="pre">ctrl</span></code> + <code class="docutils literal notranslate"><span class="pre">return</span></code> will keep you in the same cell.</p>
+<p>Try running this cell:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Some text&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Some text
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>I personally dislike using “Hello, world” as the first piece of code to write. You can feel free to try printing “Hello, world” though.</p>
+</div></blockquote>
+<p><strong>Exercise:</strong> Try printing out some thing else. While we won’t need use the print function to see the output most times, it can still be useful later on, when we want to diagnose issues with our code.</p>
+</section>
+<section id="errors">
+<h2>Errors<a class="headerlink" href="#errors" title="Permalink to this headline">#</a></h2>
+<p>Python is a language, and like natural human languages, it has rules.  It differs from natural language in two important ways:</p>
+<ol class="simple">
+<li><p>The rules are <em>simple</em>.  You can learn most of them in a few weeks and gain reasonable proficiency with the language in a semester.</p></li>
+<li><p>The rules are <em>rigid</em>.  If you’re proficient in a natural language, you can understand a non-proficient speaker, glossing over small mistakes.  A computer running Python code is not smart enough to do that.</p></li>
+</ol>
+<p>Whenever you write code, you’ll make mistakes.  When you run a code cell that has errors, Python will sometimes produce error messages to tell you what you did wrong.</p>
+<p>Errors are okay; even experienced programmers make many errors.  When you make an error, you just have to find the source of the problem, fix it, and move on.</p>
+<p>We have made an error in the next cell.  Run it and see what happens.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This line is missing something.&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This line is missing something.&quot;</span>
+                                           <span class="o">^</span>
+<span class="ne">SyntaxError</span>: unexpected EOF while parsing
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Note:</strong> In the toolbar, there is the option to click <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">&gt;</span> <span class="pre">Run</span> <span class="pre">All</span> <span class="pre">Cells</span></code>, which will run all the code cells in this notebook in order. However, the notebook stops running code cells if it hits an error, like the one in the cell above.</p>
+<p>You should see something like this (minus our annotations):</p>
+<p><img alt="" src="../../_images/error.jpg" /></p>
+<p>The last line of the error output attempts to tell you what went wrong.  The <em>syntax</em> of a language is its structure, and this <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> tells you that you have created an illegal structure.  “<code class="docutils literal notranslate"><span class="pre">EOF</span></code>” means “end of file,” so the message is saying Python expected you to write something more (in this case, a right parenthesis) before finishing the cell.</p>
+<p>There’s a lot of terminology in programming languages, but you don’t need to know it all in order to program effectively. If you see a cryptic message like this, you can often get by without deciphering it.  (Of course, if you’re frustrated, ask a neighbor or a staff member for help.)</p>
+<p><strong>Exercise:</strong> Try to fix the code above so that you can run the cell and see the intended message instead of an error.</p>
+</section>
+<section id="expressions">
+<h2>Expressions<a class="headerlink" href="#expressions" title="Permalink to this headline">#</a></h2>
+<p>You can use Python to do simple arithmetic operations, such as addition, subtraction, multiplication, and so on.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">*</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span><span class="o">/</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># This is exponentiation</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parentheses work the same way</span>
+<span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note the text that came after the <code class="docutils literal notranslate"><span class="pre">#</span></code> symbol above. This is called “commenting”. Python ignores anything that comes after the <code class="docutils literal notranslate"><span class="pre">#</span></code> symbol, and it’s so it’s a useful way to make notes in your code. This is especially useful for when you want to look back at code later, so I highly recommend you comment any code you write!</p>
+</section>
+<section id="calling-functions">
+<h2>Calling functions<a class="headerlink" href="#calling-functions" title="Permalink to this headline">#</a></h2>
+<p>The most common way to combine or manipulate values in Python is by calling functions. Python comes with many built-in functions that perform common operations.</p>
+<p>For example, the <code class="docutils literal notranslate"><span class="pre">abs</span></code> function takes a single number as its argument and returns the absolute value of that number.  The absolute value of a number is its distance from 0 on the number line, so <code class="docutils literal notranslate"><span class="pre">abs(5)</span></code> is 5 and <code class="docutils literal notranslate"><span class="pre">abs(-5)</span></code> is also 5.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise:</strong> Find the value of the expression: $<span class="math notranslate nohighlight">\(\frac{|79-54|+ |54-74|}{2} + (45 - 41)^2 \)</span>$</p>
+<p><code class="docutils literal notranslate"><span class="pre">print</span></code> is another example of function that we’ve already used. We’ve used a <code class="docutils literal notranslate"><span class="pre">string</span></code> object as its argument before, but we can also use other types of objects.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Another useful function that you might use throughout the course is <code class="docutils literal notranslate"><span class="pre">type</span></code>. It shows what kind of variable something is.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># This is an integer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">)</span> <span class="c1"># This is a string</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="names">
+<h2>Names<a class="headerlink" href="#names" title="Permalink to this headline">#</a></h2>
+<p>In Python, we use <em>assignment statements</em> to give a name to an expression. An assignment statement has a name on the left side of an <code class="docutils literal notranslate"><span class="pre">=</span></code> sign and an expression to be evaluated on the right.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ten</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When you run that cell, Python first computes the value of the expression on the right-hand side, <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">*</span> <span class="pre">2</span> <span class="pre">+</span> <span class="pre">4</span></code>, which is the number 10.  Then it assigns that value to the name <code class="docutils literal notranslate"><span class="pre">ten</span></code>.  At that point, the code in the cell is done running.</p>
+<p>After you run that cell, the value 10 is bound to the name <code class="docutils literal notranslate"><span class="pre">ten</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ten</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">ten</span></code> isn’t special by any means. We just named it that because it was more descriptive. We could have just as easily used a different name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also include multiple lines of code in one cell, and work with the objects that we’ve created.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">doubled</span> <span class="o">=</span> <span class="n">number</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="n">doubled</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, we are assigning <code class="docutils literal notranslate"><span class="pre">5</span></code> to <code class="docutils literal notranslate"><span class="pre">number</span></code>. Then, we multiple what’s in <code class="docutils literal notranslate"><span class="pre">number</span></code> and assign that to <code class="docutils literal notranslate"><span class="pre">doubled</span></code>. Finally, we look at the output by simply typing out <code class="docutils literal notranslate"><span class="pre">doubled</span></code> by itself on a line.</p>
+<p>Suppose we wanted to see what would happen if we doubled 10. How would you change the above code to show this? Try it out yourself.</p>
+<p><strong>Exercise:</strong> What if you wanted an easy way to calculate the area of a circle using just its radius. How might you code this?</p>
+</section>
+<section id="python-packages">
+<h2>Python Packages<a class="headerlink" href="#python-packages" title="Permalink to this headline">#</a></h2>
+<p>There’s all sorts of functions and tools people have developed using Python. To avoid having to recreate all of these, people put these useful tools inside packages, which we can bring into Python and use.</p>
+<p>The main one we’ll be using in this book is <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. We’ll also frequently use <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, which stands for Numerical Python, and has many useful computational tools. To bring in a package, we can use the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You don’t see any output above, but it imported the NumPy package. Note that we used <code class="docutils literal notranslate"><span class="pre">as</span> <span class="pre">np</span></code> at the end. This means that whenever we want to use a function or object from the NumPy package, we need to put <code class="docutils literal notranslate"><span class="pre">np.</span></code> in front of it. For example, NumPy comes with an object that has the value of pi.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise:</strong> Try using this value of pi to adjust the calculation of the area of a circle from above.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "kimbrianj/Introduction-Python-SQL",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/00-intro"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="00-intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Introduction</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="02-data.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Brian Kim<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

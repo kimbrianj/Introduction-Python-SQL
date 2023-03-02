@@ -52,6 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="SQL Joins" href="../06-joins/00-intro.html" />
+    <link rel="prev" title="Using Conditional Statements" href="04-conditionals.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -88,6 +90,11 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Introduction to Python and SQL for Data Analysis</h1>
@@ -106,9 +113,9 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../intro/intro.html">
+  <a class="reference internal" href="../00-intro/00-intro.html">
    Introduction
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -118,13 +125,13 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../intro/data.html">
-     Data
+    <a class="reference internal" href="../00-intro/01-jupyter.html">
+     Introduction to Jupyter Notebooks
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../intro/jupyter.html">
-     Introduction to Jupyter Notebooks
+    <a class="reference internal" href="../00-intro/02-data.html">
+     Data
     </a>
    </li>
   </ul>
@@ -151,9 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-intro-python/03-documentation.html">
-     <span style="color:green">
-      Error Messages and Documentation (VIDEO)
-     </span>
+     Error Messages and Documentation
     </a>
    </li>
   </ul>
@@ -234,12 +239,51 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="00-intro.html">
+   Introduction to SQL and Relational Databases
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-relational-databases.html">
+     Relational Databases
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-queries.html">
+     Writing a Basic Query
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-counting.html">
+     <span style="color:green">
+      Checking Number of Rows and Duplicates (VIDEO)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-conditionals.html">
+     Using Conditional Statements
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Using Aggregation Functions
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../06-joins/00-intro.html">
    SQL Joins
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -270,8 +314,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../07-python-sql/00-intro.html">
    Using SQL and Python Together
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -382,6 +426,24 @@ title="Launch on Colab"
 
       </li>
       
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
     </ul>
   </div>
 </div>
@@ -467,37 +529,25 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Using Aggregation Functions
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-group-by-with-multiple-variables">
+   Using GROUP BY with Multiple Variables
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-group-by-with-multiple-variables">
-     Using GROUP BY with Multiple Variables
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#conditional-statements-after-aggregation">
-     Conditional Statements After Aggregation
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-different-aggregation-functions">
-     Using Different Aggregation Functions
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#side-note-aliasing">
-     Side Note: Aliasing
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-3-checking-your-dataset-span">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conditional-statements-after-aggregation">
+   Conditional Statements After Aggregation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-different-aggregation-functions">
+   Using Different Aggregation Functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-checking-your-dataset-span">
    <span style="color:red">
-    Checkpoint 3: Checking Your Dataset
+    Checkpoint: Checking Your Dataset
    </span>
   </a>
  </li>
@@ -520,37 +570,25 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Using Aggregation Functions
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-group-by-with-multiple-variables">
+   Using GROUP BY with Multiple Variables
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-group-by-with-multiple-variables">
-     Using GROUP BY with Multiple Variables
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#conditional-statements-after-aggregation">
-     Conditional Statements After Aggregation
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-different-aggregation-functions">
-     Using Different Aggregation Functions
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#side-note-aliasing">
-     Side Note: Aliasing
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-3-checking-your-dataset-span">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conditional-statements-after-aggregation">
+   Conditional Statements After Aggregation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-different-aggregation-functions">
+   Using Different Aggregation Functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-checking-your-dataset-span">
    <span style="color:red">
-    Checkpoint 3: Checking Your Dataset
+    Checkpoint: Checking Your Dataset
    </span>
   </a>
  </li>
@@ -566,27 +604,102 @@ title="Print to PDF"
                 
   <div class="cell tag_hide_input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">LOAD</span><span class="w"> </span><span class="n">lodes</span><span class="p">.</span><span class="n">db</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">LOAD</span><span class="w"> </span><span class="p">..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="n">lodes</span><span class="p">.</span><span class="n">db</span>
 </pre></div>
 </div>
 </div>
 </div>
-<section id="using-aggregation-functions">
+<section class="tex2jax_ignore mathjax_ignore" id="using-aggregation-functions">
 <h1>Using Aggregation Functions<a class="headerlink" href="#using-aggregation-functions" title="Permalink to this headline">#</a></h1>
 <p>We’ve explored how to create a variable that indicates whether the census block had over 100 jobs or not using the code below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">ca_wac_2015</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="n">over100</span><span class="w"> </span><span class="n">BOOL</span><span class="p">;</span>
-<span class="k">UPDATE</span><span class="w"> </span><span class="n">ca_wac_2015</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">over100</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="k">UPDATE</span><span class="w"> </span><span class="n">ca_wac_2015</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">over100</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">c000</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">ca_wac_2015</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">over100</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">ca_wac_2015</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">over100</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">c000</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s take a quick look at what we did.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">w_geocode</span><span class="p">,</span><span class="w"> </span><span class="n">c000</span><span class="p">,</span><span class="w"> </span><span class="n">over100</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">ca_wac_2015</span><span class="w"> </span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">Error</span>: no such table: ca_wac_2015
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><table>
+<tr>
+<th>w_geocode</th>
+<th>c000</th>
+<th>over100</th>
+</tr>
+<tr>
+<td>060014001001007</td>
+<td>30</td>
+<td>0</td>
+</tr>
+<tr>
+<td>060014001001008</td>
+<td>4</td>
+<td>0</td>
+</tr>
+<tr>
+<td>060014001001011</td>
+<td>3</td>
+<td>0</td>
+</tr>
+<tr>
+<td>060014001001017</td>
+<td>11</td>
+<td>0</td>
+</tr>
+<tr>
+<td>060014001001024</td>
+<td>10</td>
+<td>0</td>
+</tr>
+<tr>
+<td>060014001001026</td>
+<td>3</td>
+<td>0</td>
+</tr>
+<tr>
+<td>060014001001027</td>
+<td>13</td>
+<td>0</td>
+</tr>
+<tr>
+<td>060014001001032</td>
+<td>13</td>
+<td>0</td>
+</tr>
+<tr>
+<td>060014001001033</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>060014001001034</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</table></div></div>
 </div>
 <p>What if we wanted to know how many blocks had over 100 jobs and how many didn’t? We can now use the <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> statement.</p>
 <div class="cell docutils container">
@@ -598,6 +711,21 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<tr>
+<th>over100</th>
+<th>COUNT(over100)</th>
+</tr>
+<tr>
+<td>0</td>
+<td>214364</td>
+</tr>
+<tr>
+<td>1</td>
+<td>29098</td>
+</tr>
+</table></div></div>
 </div>
 <p>Here, the <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> statement groups it into the categories of the variable. Since we’ve chosen to display the count, we can see the counts. We can also change the order in which the results are displayed so that it’s in increasing order.</p>
 <div class="cell docutils container">
@@ -610,6 +738,21 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<tr>
+<th>over100</th>
+<th>COUNT(over100)</th>
+</tr>
+<tr>
+<td>1</td>
+<td>29098</td>
+</tr>
+<tr>
+<td>0</td>
+<td>214364</td>
+</tr>
+</table></div></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> statement orders the rows that it displays according to whatever you put after it. In this case, we chose the count of <code class="docutils literal notranslate"><span class="pre">over100</span></code>.</p>
 <section id="using-group-by-with-multiple-variables">
@@ -625,6 +768,319 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<tr>
+<th>cbsaname</th>
+<th>ctyname</th>
+<th>COUNT(*)</th>
+</tr>
+<tr>
+<td>Los Angeles-Long Beach-Anaheim, CA</td>
+<td>Los Angeles County, CA</td>
+<td>109587</td>
+</tr>
+<tr>
+<td>Riverside-San Bernardino-Ontario, CA</td>
+<td>San Bernardino County, CA</td>
+<td>48173</td>
+</tr>
+<tr>
+<td>San Diego-Carlsbad, CA</td>
+<td>San Diego County, CA</td>
+<td>43415</td>
+</tr>
+<tr>
+<td>Los Angeles-Long Beach-Anaheim, CA</td>
+<td>Orange County, CA</td>
+<td>36873</td>
+</tr>
+<tr>
+<td>Riverside-San Bernardino-Ontario, CA</td>
+<td>Riverside County, CA</td>
+<td>35720</td>
+</tr>
+<tr>
+<td>Bakersfield, CA</td>
+<td>Kern County, CA</td>
+<td>35280</td>
+</tr>
+<tr>
+<td>San Francisco-Oakland-Hayward, CA</td>
+<td>Alameda County, CA</td>
+<td>23956</td>
+</tr>
+<tr>
+<td>San Jose-Sunnyvale-Santa Clara, CA</td>
+<td>Santa Clara County, CA</td>
+<td>22369</td>
+</tr>
+<tr>
+<td>Fresno, CA</td>
+<td>Fresno County, CA</td>
+<td>22096</td>
+</tr>
+<tr>
+<td>Sacramento--Roseville--Arden-Arcade, CA</td>
+<td>Sacramento County, CA</td>
+<td>19939</td>
+</tr>
+<tr>
+<td>San Francisco-Oakland-Hayward, CA</td>
+<td>Contra Costa County, CA</td>
+<td>18309</td>
+</tr>
+<tr>
+<td>Oxnard-Thousand Oaks-Ventura, CA</td>
+<td>Ventura County, CA</td>
+<td>14856</td>
+</tr>
+<tr>
+<td>Visalia-Porterville, CA</td>
+<td>Tulare County, CA</td>
+<td>13796</td>
+</tr>
+<tr>
+<td>Stockton-Lodi, CA</td>
+<td>San Joaquin County, CA</td>
+<td>13239</td>
+</tr>
+<tr>
+<td>San Luis Obispo-Paso Robles-Arroyo Grande, CA</td>
+<td>San Luis Obispo County, CA</td>
+<td>11428</td>
+</tr>
+<tr>
+<td>Salinas, CA</td>
+<td>Monterey County, CA</td>
+<td>10601</td>
+</tr>
+<tr>
+<td>Redding, CA</td>
+<td>Shasta County, CA</td>
+<td>10564</td>
+</tr>
+<tr>
+<td>Santa Rosa, CA</td>
+<td>Sonoma County, CA</td>
+<td>10389</td>
+</tr>
+<tr>
+<td>Santa Maria-Santa Barbara, CA</td>
+<td>Santa Barbara County, CA</td>
+<td>10370</td>
+</tr>
+<tr>
+<td>Vallejo-Fairfield, CA</td>
+<td>Solano County, CA</td>
+<td>10282</td>
+</tr>
+<tr>
+<td></td>
+<td>Siskiyou County, CA</td>
+<td>10152</td>
+</tr>
+<tr>
+<td>Eureka-Arcata-Fortuna, CA</td>
+<td>Humboldt County, CA</td>
+<td>9697</td>
+</tr>
+<tr>
+<td>San Francisco-Oakland-Hayward, CA</td>
+<td>San Mateo County, CA</td>
+<td>9260</td>
+</tr>
+<tr>
+<td>Sacramento--Roseville--Arden-Arcade, CA</td>
+<td>Placer County, CA</td>
+<td>9162</td>
+</tr>
+<tr>
+<td>El Centro, CA</td>
+<td>Imperial County, CA</td>
+<td>8875</td>
+</tr>
+<tr>
+<td>Modesto, CA</td>
+<td>Stanislaus County, CA</td>
+<td>8544</td>
+</tr>
+<tr>
+<td>Ukiah, CA</td>
+<td>Mendocino County, CA</td>
+<td>8235</td>
+</tr>
+<tr>
+<td>San Francisco-Oakland-Hayward, CA</td>
+<td>San Francisco County, CA</td>
+<td>7386</td>
+</tr>
+<tr>
+<td>Merced, CA</td>
+<td>Merced County, CA</td>
+<td>7180</td>
+</tr>
+<tr>
+<td>Chico, CA</td>
+<td>Butte County, CA</td>
+<td>6517</td>
+</tr>
+<tr>
+<td>Hanford-Corcoran, CA</td>
+<td>Kings County, CA</td>
+<td>6188</td>
+</tr>
+<tr>
+<td>Sacramento--Roseville--Arden-Arcade, CA</td>
+<td>El Dorado County, CA</td>
+<td>5810</td>
+</tr>
+<tr>
+<td>Susanville, CA</td>
+<td>Lassen County, CA</td>
+<td>5639</td>
+</tr>
+<tr>
+<td>Red Bluff, CA</td>
+<td>Tehama County, CA</td>
+<td>5435</td>
+</tr>
+<tr>
+<td></td>
+<td>Inyo County, CA</td>
+<td>5317</td>
+</tr>
+<tr>
+<td></td>
+<td>Modoc County, CA</td>
+<td>5222</td>
+</tr>
+<tr>
+<td>Clearlake, CA</td>
+<td>Lake County, CA</td>
+<td>5164</td>
+</tr>
+<tr>
+<td>Santa Cruz-Watsonville, CA</td>
+<td>Santa Cruz County, CA</td>
+<td>5085</td>
+</tr>
+<tr>
+<td>Madera, CA</td>
+<td>Madera County, CA</td>
+<td>4989</td>
+</tr>
+<tr>
+<td>Sonora, CA</td>
+<td>Tuolumne County, CA</td>
+<td>4753</td>
+</tr>
+<tr>
+<td></td>
+<td>Plumas County, CA</td>
+<td>4732</td>
+</tr>
+<tr>
+<td>Truckee-Grass Valley, CA</td>
+<td>Nevada County, CA</td>
+<td>4597</td>
+</tr>
+<tr>
+<td>San Francisco-Oakland-Hayward, CA</td>
+<td>Marin County, CA</td>
+<td>4506</td>
+</tr>
+<tr>
+<td>Sacramento--Roseville--Arden-Arcade, CA</td>
+<td>Yolo County, CA</td>
+<td>3601</td>
+</tr>
+<tr>
+<td></td>
+<td>Trinity County, CA</td>
+<td>3121</td>
+</tr>
+<tr>
+<td></td>
+<td>Mono County, CA</td>
+<td>3050</td>
+</tr>
+<tr>
+<td>Yuba City, CA</td>
+<td>Yuba County, CA</td>
+<td>2942</td>
+</tr>
+<tr>
+<td></td>
+<td>Calaveras County, CA</td>
+<td>2818</td>
+</tr>
+<tr>
+<td></td>
+<td>Glenn County, CA</td>
+<td>2783</td>
+</tr>
+<tr>
+<td>Napa, CA</td>
+<td>Napa County, CA</td>
+<td>2771</td>
+</tr>
+<tr>
+<td>Yuba City, CA</td>
+<td>Sutter County, CA</td>
+<td>2736</td>
+</tr>
+<tr>
+<td>San Jose-Sunnyvale-Santa Clara, CA</td>
+<td>San Benito County, CA</td>
+<td>2650</td>
+</tr>
+<tr>
+<td></td>
+<td>Colusa County, CA</td>
+<td>2204</td>
+</tr>
+<tr>
+<td>Crescent City, CA</td>
+<td>Del Norte County, CA</td>
+<td>2062</td>
+</tr>
+<tr>
+<td></td>
+<td>Sierra County, CA</td>
+<td>1940</td>
+</tr>
+<tr>
+<td></td>
+<td>Mariposa County, CA</td>
+<td>1919</td>
+</tr>
+<tr>
+<td></td>
+<td>Amador County, CA</td>
+<td>1396</td>
+</tr>
+<tr>
+<td></td>
+<td>Alpine County, CA</td>
+<td>456</td>
+</tr>
+<tr>
+<td>Klamath Falls, OR</td>
+<td>Klamath County, OR</td>
+<td>7</td>
+</tr>
+<tr>
+<td></td>
+<td>Lake County, OR</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Las Vegas-Henderson-Paradise, NV</td>
+<td>Clark County, NV</td>
+<td>1</td>
+</tr>
+</table></div></div>
 </div>
 <p>This first groups by CBSA (<code class="docutils literal notranslate"><span class="pre">cbsaname</span></code>) name, then it groups by county (<code class="docutils literal notranslate"><span class="pre">ctyname</span></code>), in that order. In this case, county is nested completely in the metropolitan/micropolitan area. In other cases in which we don’t have complete nesting, we would be able to see all possible combinations that exist in the data.</p>
 <p>Further, notice that we used <code class="docutils literal notranslate"><span class="pre">DESC</span></code> after <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code>. This orders in descending order instead of ascending order, so that we can see the areas with the most census blocks at the top.</p>
@@ -643,6 +1099,59 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<tr>
+<th>ctyname</th>
+<th>cbsaname</th>
+<th>COUNT(cbsaname)</th>
+</tr>
+<tr>
+<td>Los Angeles County, CA</td>
+<td>Los Angeles-Long Beach-Anaheim, CA</td>
+<td>109587</td>
+</tr>
+<tr>
+<td>San Bernardino County, CA</td>
+<td>Riverside-San Bernardino-Ontario, CA</td>
+<td>48173</td>
+</tr>
+<tr>
+<td>San Diego County, CA</td>
+<td>San Diego-Carlsbad, CA</td>
+<td>43415</td>
+</tr>
+<tr>
+<td>Orange County, CA</td>
+<td>Los Angeles-Long Beach-Anaheim, CA</td>
+<td>36873</td>
+</tr>
+<tr>
+<td>Riverside County, CA</td>
+<td>Riverside-San Bernardino-Ontario, CA</td>
+<td>35720</td>
+</tr>
+<tr>
+<td>Kern County, CA</td>
+<td>Bakersfield, CA</td>
+<td>35280</td>
+</tr>
+<tr>
+<td>Alameda County, CA</td>
+<td>San Francisco-Oakland-Hayward, CA</td>
+<td>23956</td>
+</tr>
+<tr>
+<td>Santa Clara County, CA</td>
+<td>San Jose-Sunnyvale-Santa Clara, CA</td>
+<td>22369</td>
+</tr>
+<tr>
+<td>Fresno County, CA</td>
+<td>Fresno, CA</td>
+<td>22096</td>
+</tr>
+</table></div></div>
 </div>
 <p>This will only display the counts for which the count of <code class="docutils literal notranslate"><span class="pre">cbsaname</span></code> is greater than 20000. Note that this is different from using <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>, since the conditional statement comes after the <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> statement. Basically, <code class="docutils literal notranslate"><span class="pre">HAVING</span></code> gives us a way of using the same types of conditional statements after we do our aggregation.</p>
 </section>
@@ -651,7 +1160,7 @@ title="Print to PDF"
 <p>What if we wanted to find the sum within each group, or the minimum or maximum value? We can use the appropriate aggregation function. To show this, let’s go back to our <code class="docutils literal notranslate"><span class="pre">ca_wac_2015</span></code> table.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">over100</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">over100</span><span class="p">)</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">c000</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_jobs</span><span class="p">,</span><span class="w"> </span><span class="k">MIN</span><span class="p">(</span><span class="n">c000</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">min_jobs</span><span class="p">,</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">c000</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">max_jobs</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">over100</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">over100</span><span class="p">),</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">c000</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_jobs</span><span class="p">,</span><span class="w"> </span><span class="k">MIN</span><span class="p">(</span><span class="n">c000</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">min_jobs</span><span class="p">,</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">c000</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">max_jobs</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">ca_wac_2015</span><span class="w"> </span>
 <span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">over100</span><span class="w"> </span>
 <span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">over100</span>
@@ -659,16 +1168,38 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<tr>
+<th>over100</th>
+<th>COUNT(over100)</th>
+<th>avg_jobs</th>
+<th>min_jobs</th>
+<th>max_jobs</th>
+</tr>
+<tr>
+<td>0</td>
+<td>214364</td>
+<td>14.4433300367599</td>
+<td>1</td>
+<td>100</td>
+</tr>
+<tr>
+<td>1</td>
+<td>29098</td>
+<td>445.137707058904</td>
+<td>101</td>
+<td>72275</td>
+</tr>
+</table></div></div>
 </div>
 <p>Here, we’re finding the counts, average, minimum, and maximum value of the total jobs in each census block within each group. Now, we’re not doing anything very insightful here, since the groups already split the blocks by how many jobs there are. However, as we’ll see later on, these aggregation functions can be very useful. For example, suppose we had the county data that’s in <code class="docutils literal notranslate"><span class="pre">ca_xwalk</span></code> in this table. We could find the average number of jobs per census block for each county in this way.</p>
+<blockquote>
+<div><p><strong>Aliasing:</strong> You may have noticed that we included a part using “<code class="docutils literal notranslate"><span class="pre">AS</span></code>,” followed by a new name, in the first line. When you ran the code, you might have noticed that the column labels were changed to these new names. This is called aliasing, and is done for readability and ease of access. Later on, aliasing will also help us more easily reference tables within the same query.</p>
+</div></blockquote>
 </section>
-<section id="side-note-aliasing">
-<h2>Side Note: Aliasing<a class="headerlink" href="#side-note-aliasing" title="Permalink to this headline">#</a></h2>
-<p>You may have noticed that we included a part using “<code class="docutils literal notranslate"><span class="pre">AS</span></code>,” followed by a new name, in the first line. When you ran the code, you might have noticed that the column labels were changed to these new names. This is called aliasing, and is done for readability and ease of access. Later on, aliasing will also help us more easily reference tables within the same query.</p>
-</section>
-</section>
-<section id="span-style-color-red-checkpoint-3-checking-your-dataset-span">
-<h1><span style = "color:red">Checkpoint 3: Checking Your Dataset</span><a class="headerlink" href="#span-style-color-red-checkpoint-3-checking-your-dataset-span" title="Permalink to this headline">#</a></h1>
+<section id="span-style-color-red-checkpoint-checking-your-dataset-span">
+<h2><span style = "color:red">Checkpoint: Checking Your Dataset</span><a class="headerlink" href="#span-style-color-red-checkpoint-checking-your-dataset-span" title="Permalink to this headline">#</a></h2>
 <p>Using the above methods, explore the tables we’ve provided or your own state’s data to answer the questions below. As before, make sure to include the queries with your answers.</p>
 <ul class="simple">
 <li><p>Which county has the most census blocks?</p></li>
@@ -679,12 +1210,13 @@ title="Print to PDF"
 <li><p>For California, which county has the most census blocks above the +36 latitude line? Which county has the most below?</p></li>
 </ul>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "kimbrianj/Introduction-Python-SQL",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -707,6 +1239,20 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="04-conditionals.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Using Conditional Statements</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../06-joins/00-intro.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">SQL Joins</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

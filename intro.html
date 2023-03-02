@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Introduction" href="content/intro/intro.html" />
+    <link rel="next" title="Introduction" href="content/00-intro/00-intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -89,6 +89,11 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Introduction to Python and SQL for Data Analysis</h1>
@@ -109,7 +114,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="content/intro/intro.html">
+  <a class="reference internal" href="content/00-intro/00-intro.html">
    Introduction
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -119,13 +124,13 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="content/intro/data.html">
-     Data
+    <a class="reference internal" href="content/00-intro/01-jupyter.html">
+     Introduction to Jupyter Notebooks
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="content/intro/jupyter.html">
-     Introduction to Jupyter Notebooks
+    <a class="reference internal" href="content/00-intro/02-data.html">
+     Data
     </a>
    </li>
   </ul>
@@ -152,9 +157,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="content/01-intro-python/03-documentation.html">
-     <span style="color:green">
-      Error Messages and Documentation (VIDEO)
-     </span>
+     Error Messages and Documentation
     </a>
    </li>
   </ul>
@@ -252,9 +255,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="content/05-intro-sql/02-queries.html">
-     <span style="color:green">
-      Writing a Basic Query (VIDEO)
-     </span>
+     Writing a Basic Query
     </a>
    </li>
    <li class="toctree-l2">
@@ -470,7 +471,7 @@ title="Print to PDF"
 <p>In each chapter, we will start with a motivating question, then walk through the process we need to go through in order to answer the motivating question. Along the way, we will walk through various SQL and Python commands and develop skills as we work towards answering the question. As you work through this book, you will run into some headers that are in <strong><span style="color:red">RED</span></strong>. These headers indicate a checkpoint to practice writing the code yourself. You should stop at these checkpoints and try doing the exercises and answering the questions posed in these sections by clicking on the rocketship icon button at the top of the page and choosing Binder or Colab. Note that Colab will not work for SQL material.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="content/intro/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/00-intro/00-intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="content/01-intro-python/00-intro.html">Introduction to Python and Pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="content/02-data-management/00-intro.html">Data Management in Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="content/03-functions-loops/00-intro.html">Functions and Loops</a></li>
@@ -486,7 +487,7 @@ title="Print to PDF"
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "kimbrianj/Introduction-Python-SQL",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -509,7 +510,7 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="content/intro/intro.html" title="next page">
+    <a class='right-next' id="next-link" href="content/00-intro/00-intro.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Introduction</p>

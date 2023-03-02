@@ -90,6 +90,11 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Introduction to Python and SQL for Data Analysis</h1>
@@ -110,7 +115,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../intro/intro.html">
+  <a class="reference internal" href="../00-intro/00-intro.html">
    Introduction
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -120,13 +125,13 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../intro/data.html">
-     Data
+    <a class="reference internal" href="../00-intro/01-jupyter.html">
+     Introduction to Jupyter Notebooks
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../intro/jupyter.html">
-     Introduction to Jupyter Notebooks
+    <a class="reference internal" href="../00-intro/02-data.html">
+     Data
     </a>
    </li>
   </ul>
@@ -153,9 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-intro-python/03-documentation.html">
-     <span style="color:green">
-      Error Messages and Documentation (VIDEO)
-     </span>
+     Error Messages and Documentation
     </a>
    </li>
   </ul>
@@ -236,12 +239,51 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05-intro-sql/00-intro.html">
+   Introduction to SQL and Relational Databases
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-intro-sql/01-relational-databases.html">
+     Relational Databases
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-intro-sql/02-queries.html">
+     Writing a Basic Query
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-intro-sql/03-counting.html">
+     <span style="color:green">
+      Checking Number of Rows and Duplicates (VIDEO)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-intro-sql/04-conditionals.html">
+     Using Conditional Statements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-intro-sql/05-aggregating.html">
+     Using Aggregation Functions
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="00-intro.html">
    SQL Joins
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -272,8 +314,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../07-python-sql/00-intro.html">
    Using SQL and Python Together
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -381,6 +423,24 @@ title="Launch on Colab"
   </span>
 <span class="headerbtn__text-container">Colab</span>
 </a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
 
       </li>
       
@@ -520,31 +580,22 @@ title="Print to PDF"
                 
   <div class="cell tag_hide_input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">defaultDatasource</span><span class="w"> </span><span class="n">jdbc</span><span class="p">:</span><span class="n">sqlite</span><span class="p">:</span><span class="n">lodes</span><span class="p">.</span><span class="n">db</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">Error</span>: Load a database to run this command.
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">LOAD</span><span class="w"> </span><span class="p">..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="n">lodes</span><span class="p">.</span><span class="n">db</span>
 </pre></div>
 </div>
 </div>
 </div>
-<section id="using-joins-with-aggregation-functions">
+<section class="tex2jax_ignore mathjax_ignore" id="using-joins-with-aggregation-functions">
 <h1>Using Joins With Aggregation Functions<a class="headerlink" href="#using-joins-with-aggregation-functions" title="Permalink to this headline">#</a></h1>
 <p>Suppose we wanted to know the distribution of the total number of jobs in California by county. The employment information is in one table, and county information is in another table. We need to join them, then aggregate the jobs, by county. Even though this seems like a complicated multi-step process, we can actually do it all in one query.  Let’s break it down into two parts: the join and the aggregation.</p>
 <section id="the-join">
 <h2>The Join<a class="headerlink" href="#the-join" title="Permalink to this headline">#</a></h2>
 <p>We need to join the <code class="docutils literal notranslate"><span class="pre">ca_wac_2015</span></code> table and the <code class="docutils literal notranslate"><span class="pre">ca_xwalk</span></code> table. Since we aren’t worried about counties that have no jobs, we can do an inner join. Consider the following <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> (if you want to run it, I would suggest adding a <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> at the end):</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">w_geocode</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">c000</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">ctyname</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ca_wac_2015</span><span class="w"> </span><span class="n">a</span>
-<span class="k">JOIN</span><span class="w"> </span><span class="n">ca_xwalk</span><span class="w"> </span><span class="n">b</span>
-<span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">w_geocode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">tabblk2010</span><span class="p">;</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SELECT a.w_geocode, a.c000, b.ctyname
+FROM ca_wac_2015 a
+JOIN ca_xwalk b
+ON a.w_geocode = b.tabblk2010;
 </pre></div>
-</div>
-</div>
 </div>
 <p>This should provide the <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> that we want, as well as the relevant columns. We need to take the table we get from the join and apply the aggregation to it.</p>
 </section>
@@ -555,7 +606,7 @@ title="Print to PDF"
 FROM joinedtable
 GROUP BY ctyname
 ORDER BY SUM(c000) DESC
-LIMIT 1000;
+LIMIT 30;
 </pre></div>
 </div>
 <p>But we’ve actually already figured out how to get table “<code class="docutils literal notranslate"><span class="pre">joinedtable</span></code>” using the <code class="docutils literal notranslate"><span class="pre">JOIN</span></code>s above. All we need to do is put the <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> in.</p>
@@ -567,10 +618,137 @@ LIMIT 1000;
 <span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">w_geocode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">tabblk2010</span>
 <span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ctyname</span>
 <span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">c000</span><span class="p">)</span><span class="w"> </span><span class="k">DESC</span>
-<span class="k">LIMIT</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<tr>
+<th>ctyname</th>
+<th>SUM(a.c000)</th>
+</tr>
+<tr>
+<td>Los Angeles County, CA</td>
+<td>4443133</td>
+</tr>
+<tr>
+<td>Orange County, CA</td>
+<td>1578369</td>
+</tr>
+<tr>
+<td>San Diego County, CA</td>
+<td>1338649</td>
+</tr>
+<tr>
+<td>Santa Clara County, CA</td>
+<td>1006868</td>
+</tr>
+<tr>
+<td>Alameda County, CA</td>
+<td>751240</td>
+</tr>
+<tr>
+<td>San Francisco County, CA</td>
+<td>700616</td>
+</tr>
+<tr>
+<td>San Bernardino County, CA</td>
+<td>685642</td>
+</tr>
+<tr>
+<td>Riverside County, CA</td>
+<td>649800</td>
+</tr>
+<tr>
+<td>Sacramento County, CA</td>
+<td>631522</td>
+</tr>
+<tr>
+<td>San Mateo County, CA</td>
+<td>387932</td>
+</tr>
+<tr>
+<td>Contra Costa County, CA</td>
+<td>359762</td>
+</tr>
+<tr>
+<td>Fresno County, CA</td>
+<td>349119</td>
+</tr>
+<tr>
+<td>Ventura County, CA</td>
+<td>304533</td>
+</tr>
+<tr>
+<td>Kern County, CA</td>
+<td>284472</td>
+</tr>
+<tr>
+<td>San Joaquin County, CA</td>
+<td>230784</td>
+</tr>
+<tr>
+<td>Sonoma County, CA</td>
+<td>193045</td>
+</tr>
+<tr>
+<td>Santa Barbara County, CA</td>
+<td>182850</td>
+</tr>
+<tr>
+<td>Stanislaus County, CA</td>
+<td>178292</td>
+</tr>
+<tr>
+<td>Monterey County, CA</td>
+<td>170326</td>
+</tr>
+<tr>
+<td>Tulare County, CA</td>
+<td>153744</td>
+</tr>
+<tr>
+<td>Placer County, CA</td>
+<td>144750</td>
+</tr>
+<tr>
+<td>Solano County, CA</td>
+<td>144473</td>
+</tr>
+<tr>
+<td>Marin County, CA</td>
+<td>112471</td>
+</tr>
+<tr>
+<td>San Luis Obispo County, CA</td>
+<td>106785</td>
+</tr>
+<tr>
+<td>Santa Cruz County, CA</td>
+<td>99832</td>
+</tr>
+<tr>
+<td>Yolo County, CA</td>
+<td>76969</td>
+</tr>
+<tr>
+<td>Butte County, CA</td>
+<td>76587</td>
+</tr>
+<tr>
+<td>Napa County, CA</td>
+<td>73604</td>
+</tr>
+<tr>
+<td>Merced County, CA</td>
+<td>70947</td>
+</tr>
+<tr>
+<td>Shasta County, CA</td>
+<td>59933</td>
+</tr>
+</table></div></div>
 </div>
 </section>
 </section>
@@ -579,7 +757,7 @@ LIMIT 1000;
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "kimbrianj/Introduction-Python-SQL",
             ref: "master",
         },
         codeMirrorConfig: {
