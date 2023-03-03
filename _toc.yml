@@ -1,51 +1,59 @@
 format: jb-book
 root: intro
+options:
+  numbered: true
 
-chapters:
-- file: content/00-intro/00-intro
-  sections:
-  - file: content/00-intro/01-jupyter
-  - file: content/00-intro/02-data
+parts:
+  - caption: Getting Started
+    chapters:
+    - file: content/00-intro/01-jupyter
+    - file: content/00-intro/02-data
 
-- file: content/01-intro-python/00-intro
-  sections:
-  - file: content/01-intro-python/01-reading-data
-  - file: content/01-intro-python/02-data-exploration
-  - file: content/01-intro-python/03-documentation
+  - caption: Data Analysis with Python
+    chapters:
+      - file: content/01-intro-python/00-intro
+        sections:
+        - file: content/01-intro-python/01-reading-data
+        - file: content/01-intro-python/02-data-exploration
+        - file: content/01-intro-python/03-documentation
 
-- file: content/02-data-management/00-intro
-  sections:
-  - file: content/02-data-management/01-data-types
-  - file: content/02-data-management/02-subsetting
-  - file: content/02-data-management/03-missing
+      - file: content/02-data-management/00-intro
+        sections:
+        - file: content/02-data-management/01-data-types
+        - file: content/02-data-management/02-subsetting
+        - file: content/02-data-management/03-missing
 
-- file: content/03-functions-loops/00-intro
-  sections:
-  - file: content/03-functions-loops/01-functions
-  - file: content/03-functions-loops/02-loops
+      - file: content/03-functions-loops/00-intro
+        sections:
+        - file: content/03-functions-loops/01-functions
+        - file: content/03-functions-loops/02-loops
 
-- file: content/04-visualizations/00-intro
-  sections:
-  - file: content/04-visualizations/01-basic-visualizations 
-  - file: content/04-visualizations/02-seaborn-ggplot
-  - file: content/04-visualizations/03-multiple-years
+      - file: content/04-visualizations/00-intro
+        sections:
+        - file: content/04-visualizations/01-basic-visualizations 
+        - file: content/04-visualizations/02-seaborn-ggplot
+        - file: content/04-visualizations/03-multiple-years
 
-- file: content/05-intro-sql/00-intro
-  sections:
-  - file: content/05-intro-sql/01-relational-databases
-  - file: content/05-intro-sql/02-queries
-  - file: content/05-intro-sql/03-counting
-  - file: content/05-intro-sql/04-conditionals
-  - file: content/05-intro-sql/05-aggregating
+  - caption: SQL
+    chapters: 
+      - file: content/05-intro-sql/00-intro
+        sections:
+        - file: content/05-intro-sql/01-relational-databases
+        - file: content/05-intro-sql/02-queries
+        - file: content/05-intro-sql/03-counting
+        - file: content/05-intro-sql/04-conditionals
+        - file: content/05-intro-sql/05-aggregating
 
-- file: content/06-joins/00-intro
-  sections:
-  - file: content/06-joins/01-joins
-  - file: content/06-joins/02-other-joins
-  - file: content/06-joins/03-joins-aggregation
-  - file: content/06-joins/04-creating-tables
+      - file: content/06-joins/00-intro
+        sections:
+        - file: content/06-joins/01-joins
+        - file: content/06-joins/02-other-joins
+        - file: content/06-joins/03-joins-aggregation
+        - file: content/06-joins/04-creating-tables
 
-- file: content/07-python-sql/00-intro
-  sections:
-  - file: content/07-python-sql/01-connecting
-  - file: content/07-python-sql/02-tables-df
+  - caption: SQL in Python
+    chapters:
+      - file: content/07-python-sql/00-intro
+        sections:
+        - file: content/07-python-sql/01-connecting
+        - file: content/07-python-sql/02-tables-df
