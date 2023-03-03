@@ -1,7 +1,5 @@
 format: jb-book
 root: intro
-options:
-  numbered: true
 
 parts:
   - caption: Getting Started
