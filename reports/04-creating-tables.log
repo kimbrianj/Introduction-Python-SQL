@@ -17,9 +17,14 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-%defaultDatasource jdbc:sqlite:lodes.db
+CREATE TABLE joinedtable2 AS 
+SELECT a.w_geocode AS blockid, a.c000 AS total_jobs, b.cty AS county 
+FROM ca_wac_2015 a
+LEFT JOIN ca_xwalk b
+ON a.w_geocode = b.tabblk2010
+LIMIT 1000;
 ------------------
 
 
-Error: Load a database to run this command.
+Error: table joinedtable2 already exists
 
