@@ -347,6 +347,16 @@ const thebe_selector_output = ".output, .cell_output"
      Reading SQL tables using Pandas
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-python-sql/03-to-sql.html">
+     Writing Data Frames to an SQL Database
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-python-sql/04-jobs-county-years.html">
+     Example: Finding Jobs by County over Years
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -615,6 +625,10 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">squarer</span> <span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Squares a value</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
     <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
     <span class="k">return</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> 
 
@@ -635,11 +649,33 @@ title="Print to PDF"
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">def</span></code> indicates that we’re defining a function, followed by what we want to name the function. Then, in parentheses, we put in any arguments we want the function to take. If we don’t want it to take any arguments, we can just leave it blank. Lastly, we end the line with a colon.</p>
 <p>This takes us to the next lines.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;&#39;&#39;
+Squares a value
+&#39;&#39;&#39;
+</pre></div>
+</div>
+<p>First, note that these lines are indented. In order to be a part of the function, the lines coming after <code class="docutils literal notranslate"><span class="pre">def</span></code> must be indented. These few lines of code are what is called a <strong>doc string</strong>. This is a string that is ignored by Python when running the code, but is put into the documentation. This is what is used to describe a function so that you know what it does later on. Try using the <code class="docutils literal notranslate"><span class="pre">help</span></code> function to look at it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">squarer</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function squarer in module __main__:
+
+squarer(x)
+    Squares a value
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, we get to the <strong>body</strong> of the function.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>y = x ** 2
 return(y) 
 </pre></div>
 </div>
-<p>First, note that these lines are indented. In order to be a part of the function, the lines coming after <code class="docutils literal notranslate"><span class="pre">def</span></code> must be indented. Here, we have two lines, which assigns the value <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">**</span> <span class="pre">2</span></code> (note that <code class="docutils literal notranslate"><span class="pre">**</span></code> is the operator for taking something to a power) to <code class="docutils literal notranslate"><span class="pre">y</span></code>, then uses the <code class="docutils literal notranslate"><span class="pre">return</span></code> function to output it.</p>
+<p>Here, we have two lines, which assigns the value <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">**</span> <span class="pre">2</span></code> (note that <code class="docutils literal notranslate"><span class="pre">**</span></code> is the operator for taking something to a power) to <code class="docutils literal notranslate"><span class="pre">y</span></code>, then uses the <code class="docutils literal notranslate"><span class="pre">return</span></code> function to output it.</p>
 <p>Lastly, we have unindented lines, which aren’t part of the function.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>squarer(4)
 </pre></div>
@@ -659,18 +695,16 @@ return(y)
 <span class="sd">    A pandas DataFrame with the California WAC for a specific year</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     
-    <span class="n">file_name</span> <span class="o">=</span> <span class="s1">&#39;https://lehd.ces.census.gov/data/lodes/LODES7/ca/wac/ca_wac_S000_JT00_</span><span class="si">{yr}</span><span class="s1">.csv.gz&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">yr</span> <span class="o">=</span> <span class="n">year</span><span class="p">)</span>
+    <span class="n">file_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://lehd.ces.census.gov/data/lodes/LODES7/ca/wac/ca_wac_S000_JT00_</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">.csv.gz&#39;</span>
     <span class="n">output</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span><span class="n">compression</span><span class="o">=</span><span class="s1">&#39;gzip&#39;</span><span class="p">)</span>
     <span class="k">return</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>We need to change the location of the file depending what year we want to get. We do this by using the <code class="docutils literal notranslate"><span class="pre">format()</span></code> method on a string. Notice that in the string</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>https://lehd.ces.census.gov/data/lodes/LODES7/ca/wac/ca_wac_S000_JT00_{yr}.csv.gz
-</pre></div>
-</div>
-<p>we have a part with curly braces, <code class="docutils literal notranslate"><span class="pre">{yr}</span></code>. This is followed by an argument in <code class="docutils literal notranslate"><span class="pre">format()</span></code> of <code class="docutils literal notranslate"><span class="pre">yr</span> <span class="pre">=</span> <span class="pre">year</span></code>. This means that whenever we see <code class="docutils literal notranslate"><span class="pre">{yr}</span></code> in the string, we replace it with whatever is in <code class="docutils literal notranslate"><span class="pre">year</span></code>. This gives us the string we want. For example, if the year we want is 2015, the file is at <code class="docutils literal notranslate"><span class="pre">https://lehd.ces.census.gov/data/lodes/LODES7/ca/wac/ca_wac_S000_JT00_2015.csv.gz</span></code>.</p>
+<p>We need to change the location of the file depending what year we want to get. We do this by using what is called an <strong>f-string</strong> or “formatted string literals”. We put <code class="docutils literal notranslate"><span class="pre">f</span></code> in front of the string, then use curly braces to include whatever we want to insert into the string. In the code above, we are creating a string that looks like this:
+<a class="reference external" href="https://lehd.ces.census.gov/data/lodes/LODES7/ca/wac/ca_wac_S000_JT00_%7Byear%7D.csv.gz">https://lehd.ces.census.gov/data/lodes/LODES7/ca/wac/ca_wac_S000_JT00_{year}.csv.gz</a></p>
+<p>Here, we have a part with curly braces, <code class="docutils literal notranslate"><span class="pre">{year}</span></code>. This means that whenever we see <code class="docutils literal notranslate"><span class="pre">{year}</span></code> in the string, we replace it with whatever is in <code class="docutils literal notranslate"><span class="pre">year</span></code>. This gives us the string we want. For example, if the year we want is 2015, the file is at <code class="docutils literal notranslate"><span class="pre">https://lehd.ces.census.gov/data/lodes/LODES7/ca/wac/ca_wac_S000_JT00_2015.csv.gz</span></code>.</p>
 <p>In this function, we put the Data Frame that we want in <code class="docutils literal notranslate"><span class="pre">output</span></code>. The line</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>output = pd.read_csv(file_name,compression=&#39;gzip&#39;)
 </pre></div>
@@ -701,7 +735,7 @@ return(y)
 <span class="sd">    &#39;&#39;&#39;</span>
     
     <span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://lehd.ces.census.gov/data/lodes/LODES7/&#39;</span>
-    <span class="n">file_specs</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{st}</span><span class="s1">/wac/</span><span class="si">{st}</span><span class="s1">_wac_S000_JT00_</span><span class="si">{yr}</span><span class="s1">.csv.gz&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">st</span> <span class="o">=</span> <span class="n">state</span><span class="p">,</span> <span class="n">yr</span> <span class="o">=</span> <span class="n">year</span><span class="p">)</span>
+    <span class="n">file_specs</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">state</span><span class="si">}</span><span class="s1">/wac/</span><span class="si">{</span><span class="n">state</span><span class="si">}</span><span class="s1">_wac_S000_JT00_</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">.csv.gz&#39;</span>
     <span class="n">file_name</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="n">file_specs</span>
     
     <span class="c1"># print(&quot;The URL for the file is at: &quot; + file_name)</span>
