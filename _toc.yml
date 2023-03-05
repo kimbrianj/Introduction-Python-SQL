@@ -13,13 +13,14 @@ parts:
         sections:
         - file: content/01-intro-python/01-reading-data
         - file: content/01-intro-python/02-data-exploration
-        - file: content/01-intro-python/03-documentation
+        - file: content/01-intro-python/03-data-types
+        - file: content/01-intro-python/04-documentation
 
       - file: content/02-data-management/00-intro
         sections:
-        - file: content/02-data-management/01-data-types
-        - file: content/02-data-management/02-subsetting
-        - file: content/02-data-management/03-missing
+        - file: content/02-data-management/01-subsetting
+        - file: content/02-data-management/02-missing
+        - file: content/02-data-management/03-descriptive-statistics
 
       - file: content/03-functions-loops/00-intro
         sections:
@@ -55,3 +56,5 @@ parts:
         sections:
         - file: content/07-python-sql/01-connecting
         - file: content/07-python-sql/02-tables-df
+        - file: content/07-python-sql/03-to-sql
+        - file: content/07-python-sql/04-jobs-county-years
