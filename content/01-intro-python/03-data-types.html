@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Loops &#8212; Introduction to Python and SQL for Data Analysis</title>
+    <title>Data Types in Python &#8212; Introduction to Python and SQL for Data Analysis</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Visualizations" href="../04-visualizations/00-intro.html" />
-    <link rel="prev" title="Functions" href="01-functions.html" />
+    <link rel="next" title="Error Messages and Documentation" href="04-documentation.html" />
+    <link rel="prev" title="Exploring the Data Frame" href="02-data-exploration.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -136,33 +136,33 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01-intro-python/00-intro.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="00-intro.html">
    Introduction to Python and Pandas
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../01-intro-python/01-reading-data.html">
+    <a class="reference internal" href="01-reading-data.html">
      Reading Data
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01-intro-python/02-data-exploration.html">
+    <a class="reference internal" href="02-data-exploration.html">
      Exploring the Data Frame
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01-intro-python/03-data-types.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Data Types in Python
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01-intro-python/04-documentation.html">
+    <a class="reference internal" href="04-documentation.html">
      Error Messages and Documentation
     </a>
    </li>
@@ -195,23 +195,23 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="00-intro.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-functions-loops/00-intro.html">
    Functions and Loops
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="01-functions.html">
+    <a class="reference internal" href="../03-functions-loops/01-functions.html">
      Functions
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-functions-loops/02-loops.html">
      Loops
     </a>
    </li>
@@ -418,7 +418,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/kimbrianj/Introduction-Python-SQL/master?urlpath=lab/tree/content/03-functions-loops/02-loops.ipynb"
+        <a href="https://mybinder.org/v2/gh/kimbrianj/Introduction-Python-SQL/master?urlpath=lab/tree/content/01-intro-python/03-data-types.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -436,7 +436,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/kimbrianj/Introduction-Python-SQL/blob/master/content/03-functions-loops/02-loops.ipynb"
+        <a href="https://colab.research.google.com/github/kimbrianj/Introduction-Python-SQL/blob/master/content/01-intro-python/03-data-types.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -497,7 +497,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/content/03-functions-loops/02-loops.ipynb"
+        <a href="../../_sources/content/01-intro-python/03-data-types.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -557,24 +557,18 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-a-for-loop-to-read-in-csv-files">
-   Using a For Loop to Read In CSV Files
+  <a class="reference internal nav-link" href="#series">
+   Series
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#span-style-color-green-using-loops-and-functions-to-bring-in-multiple-datasets-video-span">
-     <span style="color:green">
-      Using Loops and Functions to Bring in Multiple Datasets  (VIDEO)
-     </span>
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-2-use-functions-and-loops-to-bring-in-your-data-for-multiple-years-span">
-   <span style="color:red">
-    Checkpoint 2: Use Functions and Loops to Bring in Your Data for Multiple Years
-   </span>
+  <a class="reference internal nav-link" href="#lists">
+   Lists
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dictionaries">
+   Dictionaries
   </a>
  </li>
 </ul>
@@ -586,7 +580,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Loops</h1>
+                <h1>Data Types in Python</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -597,24 +591,18 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-a-for-loop-to-read-in-csv-files">
-   Using a For Loop to Read In CSV Files
+  <a class="reference internal nav-link" href="#series">
+   Series
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#span-style-color-green-using-loops-and-functions-to-bring-in-multiple-datasets-video-span">
-     <span style="color:green">
-      Using Loops and Functions to Bring in Multiple Datasets  (VIDEO)
-     </span>
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-2-use-functions-and-loops-to-bring-in-your-data-for-multiple-years-span">
-   <span style="color:red">
-    Checkpoint 2: Use Functions and Loops to Bring in Your Data for Multiple Years
-   </span>
+  <a class="reference internal nav-link" href="#lists">
+   Lists
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dictionaries">
+   Dictionaries
   </a>
  </li>
 </ul>
@@ -627,118 +615,109 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="cell docutils container">
+  <div class="cell tag_hide_input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start (as usual) by loading libraries</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="k">def</span> <span class="nf">get_wac</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;ca&quot;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Arguments</span>
-<span class="sd">    state: string, two-letter code of state for which we want the data</span>
-<span class="sd">    year: int, the year we want to bring in data for</span>
-<span class="sd">    </span>
-<span class="sd">    Returns</span>
-<span class="sd">    A pandas DataFrame with the WAC for a specific state and year</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    
-    <span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://lehd.ces.census.gov/data/lodes/LODES7/&#39;</span>
-    <span class="n">file_specs</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{st}</span><span class="s1">/wac/</span><span class="si">{st}</span><span class="s1">_wac_S000_JT00_</span><span class="si">{yr}</span><span class="s1">.csv.gz&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">st</span> <span class="o">=</span> <span class="n">state</span><span class="p">,</span> <span class="n">yr</span> <span class="o">=</span> <span class="n">year</span><span class="p">)</span>
-    <span class="n">file_name</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="n">file_specs</span>
-    
-    <span class="c1"># print(&quot;The URL for the file is at: &quot; + file_name)</span>
-    <span class="n">output</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span><span class="n">compression</span><span class="o">=</span><span class="s1">&#39;gzip&#39;</span><span class="p">)</span>
-    <span class="k">return</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+<span class="n">data_url</span> <span class="o">=</span> <span class="s1">&#39;https://lehd.ces.census.gov/data/lodes/LODES7/ca/wac/ca_wac_S000_JT00_2015.csv.gz&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_url</span><span class="p">,</span><span class="n">compression</span><span class="o">=</span><span class="s1">&#39;gzip&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<section class="tex2jax_ignore mathjax_ignore" id="loops">
-<h1>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">#</a></h1>
-<p>Sometimes, we want to run the same code many times over. In these case, we can use loops so that we don’t have to copy and paste the code over and over. To demonstrate how loops work, we’ll first look at a basic <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
+<section class="tex2jax_ignore mathjax_ignore" id="data-types-in-python">
+<h1>Data Types in Python<a class="headerlink" href="#data-types-in-python" title="Permalink to this headline">#</a></h1>
+<p>We can store data in many different ways within Python. We’ve gone over one way to do this using Data Frames, which have nice rows and columns in a rectangular format like we might be used to seeing data. However, there are other types of objects that might be better for different types of data. In this section, we will look at different types of objects within Python that will help us better manage the data.</p>
+<section id="series">
+<h2>Series<a class="headerlink" href="#series" title="Permalink to this headline">#</a></h2>
+<p>Individual columns of a Data Frame can be accessed as a pandas Series object. We’ve used this already before – this is what we get from getting just one column from a Data Frame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">C000</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-1
-2
-3
-4
-5
-6
-7
-8
-9
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.series.Series
 </pre></div>
 </div>
 </div>
 </div>
-<p>Here, we are looping through the numbers 0 to 9 and printing them out. Let’s break down how each part works.</p>
-<p>First, consider the first line.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for i in range(0,10):
-</pre></div>
-</div>
-<p>This indicates that we will be looping through the values of 0 to 9, incrementing <code class="docutils literal notranslate"><span class="pre">i</span></code> in each iteration. That is, the code will use <code class="docutils literal notranslate"><span class="pre">i=0</span></code> for one iteration. Then, it will go back and do everything again, except using <code class="docutils literal notranslate"><span class="pre">i=1</span></code>. This keeps going until it hits <code class="docutils literal notranslate"><span class="pre">i=9</span></code>, after which it stops.</p>
-<p>Notice that the second line is indented. In Python, we use the indentation to delineate when the loop starts and ends. Everything after the colon that is indented is part of the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop ends when a line isn’t indented.</p>
-<p>Consider the following code and think about what you expect it to print out before running it.</p>
+<p>Pandas Series have some specific useful properties that make them useful for creating measures and working with the data. For example, you can do arithmetic with Series and have it do the same operation for each value within the Series.</p>
+<p>Let’s look at an example by finding the proportion of workers who are in the first age category (29 or younger) within each census block.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;We&#39;re done now.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prop_young</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">CA01</span><span class="o">/</span><span class="n">df</span><span class="o">.</span><span class="n">C000</span>
+<span class="n">prop_young</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-We&#39;re done now.
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0         0.066667
+1         0.000000
+2         0.666667
+3         0.272727
+4         0.300000
+            ...   
+243457    0.000000
+243458    0.166667
+243459    0.181818
+243460    0.750000
+243461    0.100000
+Length: 243462, dtype: float64
 </pre></div>
 </div>
 </div>
 </div>
-<p>Since the line with <code class="docutils literal notranslate"><span class="pre">print(&quot;We're</span> <span class="pre">done</span> <span class="pre">now.&quot;)</span></code> isn’t indented, it isn’t repeated. The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop goes through the loop with just <code class="docutils literal notranslate"><span class="pre">print(i)</span></code>.</p>
-<section id="using-a-for-loop-to-read-in-csv-files">
-<h2>Using a For Loop to Read In CSV Files<a class="headerlink" href="#using-a-for-loop-to-read-in-csv-files" title="Permalink to this headline">#</a></h2>
-<p>Now that we’ve gone over the basics of how a for loop works, let’s apply it to reading in multiple CSV files. We’ve already created a function that takes a year and reads a CSV file. We want to do this for multiple years automatically, so that we don’t need to keep on changing the year and running the code again (if, for example, we want to do this for many years). So, in other words, we want to create a loop that runs the same code multiple times, with only the year changed.</p>
-<p>Part of our task is a bit easier, since we’ve already created a function that does what we want. Now, all we need to do is loop through the years we want, calling that function with a different argument for the year.</p>
-<p>There’s one small complication though: how will we automate storage of these Data Frame objects? There’s multiple possibilities, but the way we’ll do it is using a Python <strong>dictionary</strong>.</p>
-<section id="span-style-color-green-using-loops-and-functions-to-bring-in-multiple-datasets-video-span">
-<h3><span style="color:green">Using Loops and Functions to Bring in Multiple Datasets  (VIDEO)</span><a class="headerlink" href="#span-style-color-green-using-loops-and-functions-to-bring-in-multiple-datasets-video-span" title="Permalink to this headline">#</a></h3>
-<p>We’ll start by creating an empty dictionary in which we’ll store the Data Frames that we read in. Then, we’re going to loop through a few years (here, we’ll do 2009 to 2015), calling the <code class="docutils literal notranslate"><span class="pre">get_wac</span></code> function we created earlier to store the appropriate dataset in the dictionary. We’ll also make sure to provide the proper key when storing the dataset, so that we can easily access it.</p>
+<p>The first value in the <code class="docutils literal notranslate"><span class="pre">prop_young</span></code> Series is calculated by dividing the first value of <code class="docutils literal notranslate"><span class="pre">df.CA01</span></code> by the first value of <code class="docutils literal notranslate"><span class="pre">df.C000</span></code>. The same is done for the second value and for the third, and so on. Note that the two Series that you are dividing do need to be the same length for this to work.</p>
+<p>Now that we have calculated the proportion, we can then easily add that back into the original dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize an empty dictionary.</span>
-<span class="n">wac_all_years</span> <span class="o">=</span> <span class="p">{}</span>
-
-<span class="c1"># This loop might take a little bit of time.</span>
-<span class="c1"># If you want to see progress while it runs, uncomment the second line in the loop.</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2009</span><span class="p">,</span><span class="mi">2016</span><span class="p">):</span>
-    <span class="n">wac_all_years</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_wac</span><span class="p">(</span><span class="n">year</span> <span class="o">=</span> <span class="n">i</span><span class="p">)</span>
-    <span class="c1"># print(&quot;WAC for &quot; + str(i) + &quot; obtained.&quot;)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_with_CA01_proportion</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;CA01_proportion&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">prop_young</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>After running the loop, <code class="docutils literal notranslate"><span class="pre">wac_all_years</span></code> should contain seven Data Frames, each accessible using the year as the key.</p>
-<p>Let’s look at one of the years.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wac_all_years</span><span class="p">[</span><span class="mi">2009</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_with_CA01_proportion</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    0.066667
+1    0.000000
+2    0.666667
+3    0.272727
+4    0.300000
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="lists">
+<h2>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">#</a></h2>
+<p>Another useful type of object in Python is the <strong>List</strong>. Lists are similar to Series in that they contain a set of values, but they have slightly different properties.</p>
+<p>Let’s take a look at a simple list first. We can create a list using brackets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">mylist</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lists are useful with DataFrames in particular because they can be used to select multiple columns easily.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Look at rows 10 - 20 for total number of jobs (C000) and jobs by age group</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">,[</span><span class="s1">&#39;C000&#39;</span><span class="p">,</span><span class="s1">&#39;CA01&#39;</span><span class="p">,</span><span class="s1">&#39;CA02&#39;</span><span class="p">,</span><span class="s1">&#39;CA03&#39;</span><span class="p">]</span> <span class="p">]</span> 
 </pre></div>
 </div>
 </div>
@@ -761,290 +740,329 @@ We&#39;re done now.
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>w_geocode</th>
       <th>C000</th>
       <th>CA01</th>
       <th>CA02</th>
       <th>CA03</th>
-      <th>CE01</th>
-      <th>CE02</th>
-      <th>CE03</th>
-      <th>CNS01</th>
-      <th>CNS02</th>
-      <th>...</th>
-      <th>CFA02</th>
-      <th>CFA03</th>
-      <th>CFA04</th>
-      <th>CFA05</th>
-      <th>CFS01</th>
-      <th>CFS02</th>
-      <th>CFS03</th>
-      <th>CFS04</th>
-      <th>CFS05</th>
-      <th>createdate</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>60014001001000</td>
-      <td>11</td>
-      <td>1</td>
-      <td>6</td>
-      <td>4</td>
-      <td>0</td>
-      <td>4</td>
-      <td>7</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>20160228</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>60014001001007</td>
-      <td>27</td>
-      <td>7</td>
-      <td>15</td>
-      <td>5</td>
+      <th>10</th>
+      <td>14</td>
       <td>2</td>
-      <td>6</td>
-      <td>19</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>20160228</td>
+      <td>9</td>
+      <td>3</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>60014001001008</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
+      <th>11</th>
+      <td>3</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>20160228</td>
+      <td>3</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>60014001001009</td>
-      <td>1</td>
-      <td>0</td>
+      <th>12</th>
       <td>1</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
       <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>20160228</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>60014001001010</td>
-      <td>1</td>
+      <th>13</th>
+      <td>9</td>
       <td>0</td>
-      <td>1</td>
+      <td>9</td>
       <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>20160228</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>60014001001012</td>
+      <th>14</th>
       <td>3</td>
       <td>1</td>
       <td>1</td>
       <td>1</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>1</td>
       <td>0</td>
       <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>7</td>
+      <td>0</td>
+      <td>4</td>
       <td>3</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>20160228</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>60014001001013</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>20160228</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>60014001001014</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>20160228</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>60014001001015</td>
+      <th>20</th>
       <td>1</td>
       <td>0</td>
       <td>1</td>
       <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>20160228</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>60014001001016</td>
-      <td>2</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>20160228</td>
     </tr>
   </tbody>
 </table>
-<p>10 rows × 53 columns</p>
 </div></div></div>
 </div>
-<p>Here, we’re looking at the value in the dictionary <code class="docutils literal notranslate"><span class="pre">wac_all_years</span></code> that has the key <code class="docutils literal notranslate"><span class="pre">2009</span></code>, then using the <code class="docutils literal notranslate"><span class="pre">head()</span></code> method on that Data Frame object to take a peek at what the first few lines of the data looks like.</p>
-<p>If we wanted to work more extensively with one of the years (rather than just looking at it as we’ve done here), we might want to use something like</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wac_09</span> <span class="o">=</span> <span class="n">wac_all_years</span><span class="p">[</span><span class="mi">2009</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">([</span><span class="s1">&#39;C000&#39;</span><span class="p">,</span><span class="s1">&#39;CA01&#39;</span><span class="p">,</span><span class="s1">&#39;CA02&#39;</span><span class="p">,</span><span class="s1">&#39;CA03&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list
 </pre></div>
 </div>
 </div>
 </div>
-<p>That way, we can just use <code class="docutils literal notranslate"><span class="pre">wac_09</span></code>.</p>
+<p>Here, we wanted to select 4 variables to look at. Notice that we replaced <code class="docutils literal notranslate"><span class="pre">&quot;C000&quot;</span></code> with <code class="docutils literal notranslate"><span class="pre">['C000','CA01','CA02','CA03']</span></code>. The square brackets create a list with 4 elements, <code class="docutils literal notranslate"><span class="pre">'C000'</span></code>,<code class="docutils literal notranslate"><span class="pre">'CA01'</span></code>,<code class="docutils literal notranslate"><span class="pre">'CA02'</span></code>, and <code class="docutils literal notranslate"><span class="pre">'CA03'</span></code>.</p>
+<p>We also could have done this using colon notation, but the list is helpful is the columns that we want to explore are not in order. For example, we can include the columns for total jobs as well as jobs by sex using the list notation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">,[</span><span class="s1">&#39;C000&#39;</span><span class="p">,</span><span class="s1">&#39;CS01&#39;</span><span class="p">,</span><span class="s1">&#39;CS02&#39;</span><span class="p">]</span> <span class="p">]</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>C000</th>
+      <th>CS01</th>
+      <th>CS02</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>10</th>
+      <td>14</td>
+      <td>3</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>3</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>9</td>
+      <td>8</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>3</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>7</td>
+      <td>4</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vars_to_show</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CA01&#39;</span><span class="p">,</span><span class="s1">&#39;CA02&#39;</span><span class="p">,</span><span class="s1">&#39;CA03&#39;</span><span class="p">]</span> <span class="c1"># A list of strings containing names of variables (jobs by age group)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:][</span><span class="n">vars_to_show</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CA01</th>
+      <th>CA02</th>
+      <th>CA03</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>243457</th>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>243458</th>
+      <td>3</td>
+      <td>7</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>243459</th>
+      <td>2</td>
+      <td>5</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>243460</th>
+      <td>6</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>243461</th>
+      <td>1</td>
+      <td>5</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Note that Lists are a little bit different in how arithmetic works with them. Take a look at the following code and see if you can see what is happening, and how it is different from a Series object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5, 6]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is one of the reasons why it is important to make sure you are using the right type of object. Even simple arithmetic operations will work differently depending on what type of object is being used.</p>
 </section>
-</section>
-<section id="span-style-color-red-checkpoint-2-use-functions-and-loops-to-bring-in-your-data-for-multiple-years-span">
-<h2><span style="color:red">Checkpoint 2: Use Functions and Loops to Bring in Your Data for Multiple Years</span><a class="headerlink" href="#span-style-color-red-checkpoint-2-use-functions-and-loops-to-bring-in-your-data-for-multiple-years-span" title="Permalink to this headline">#</a></h2>
-<p>Using what we’ve learned above, try to apply the same methods to bring in multiple years’ worth of data for a different state. Remember to name objects differently so that you don’t overwrite anything.</p>
+<section id="dictionaries">
+<h2>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">#</a></h2>
+<p>A <strong>dictionary</strong> is like a list, except it doesn’t have an order in which <strong>values</strong> (which can be any Python object) are stored, and you access the elements of a dictionary using a <strong>key</strong>. Think of a dictionary like a bag of objects, from which we can find the object we want by using the appropriate label. In our case, we’ll create a dictionary that has the year as the key and the Data Frame for that year as the value. This give us an easy way of both storing and accessing the Data Frames that we want to get.</p>
+<p>To create a dictionary, we can use curly braces, with colons separating key-value pairs. For example, we can create a dictionary called <code class="docutils literal notranslate"><span class="pre">example_dict</span></code> with three keys (<code class="docutils literal notranslate"><span class="pre">2009</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;2010&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">2011</span></code>) with some values. We can access the values we assigned to the keys using square brackets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating a dictionary called example_dict</span>
+<span class="n">example_dict</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2009</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;2010&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2011</span><span class="p">:</span><span class="kc">None</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our <code class="docutils literal notranslate"><span class="pre">example_dict</span></code> dictionary is storing three values: <code class="docutils literal notranslate"><span class="pre">5</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, and <code class="docutils literal notranslate"><span class="pre">None</span></code>. The keys associated with these three values are <code class="docutils literal notranslate"><span class="pre">2009</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;2010&quot;</span></code>, and <code class="docutils literal notranslate"><span class="pre">2011</span></code>. Notice that <code class="docutils literal notranslate"><span class="pre">&quot;2010&quot;</span></code> is in quotes, indicating that it is a string, as opposed to <code class="docutils literal notranslate"><span class="pre">2009</span></code> or <code class="docutils literal notranslate"><span class="pre">2011</span></code>, which are integers. This is important, because we need to make sure to use the correct type to access the dictionary values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># What do you think this will output?</span>
+<span class="n">example_dict</span><span class="p">[</span><span class="mi">2009</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Since keys can be any type, we need to make sure to use the appropriate type</span>
+<span class="n">example_dict</span><span class="p">[</span><span class="s2">&quot;2010&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -1061,7 +1079,7 @@ We&#39;re done now.
         },
         kernelOptions: {
             name: "python3",
-            path: "./content/03-functions-loops"
+            path: "./content/01-intro-python"
         },
         predefinedOutput: true
     }
@@ -1075,17 +1093,17 @@ We&#39;re done now.
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="01-functions.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="02-data-exploration.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Functions</p>
+            <p class="prev-next-title">Exploring the Data Frame</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../04-visualizations/00-intro.html" title="next page">
+    <a class='right-next' id="next-link" href="04-documentation.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Visualizations</p>
+        <p class="prev-next-title">Error Messages and Documentation</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Error Messages and Documentation" href="03-documentation.html" />
+    <link rel="next" title="Data Types in Python" href="03-data-types.html" />
     <link rel="prev" title="Reading Data" href="01-reading-data.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -157,7 +157,12 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03-documentation.html">
+    <a class="reference internal" href="03-data-types.html">
+     Data Types in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-documentation.html">
      Error Messages and Documentation
     </a>
    </li>
@@ -174,18 +179,18 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-data-management/01-data-types.html">
-     Data Types in Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-data-management/02-subsetting.html">
+    <a class="reference internal" href="../02-data-management/01-subsetting.html">
      Creating Subsets of the Data
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-data-management/03-missing.html">
+    <a class="reference internal" href="../02-data-management/02-missing.html">
      Checking for Missing Values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-data-management/03-descriptive-statistics.html">
+     Descriptive Statistics
     </a>
    </li>
   </ul>
@@ -340,6 +345,16 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../07-python-sql/02-tables-df.html">
      Reading SQL tables using Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-python-sql/03-to-sql.html">
+     Writing Data Frames to an SQL Database
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-python-sql/04-jobs-county-years.html">
+     Example: Finding Jobs by County over Years
     </a>
    </li>
   </ul>
@@ -559,9 +574,9 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-read-in-other-data-span">
+  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-explore-other-data-span">
    <span style="color:red">
-    Checkpoint: Read in Other Data
+    Checkpoint: Explore Other Data
    </span>
   </a>
  </li>
@@ -602,9 +617,9 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-read-in-other-data-span">
+  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-explore-other-data-span">
    <span style="color:red">
-    Checkpoint: Read in Other Data
+    Checkpoint: Explore Other Data
    </span>
   </a>
  </li>
@@ -660,6 +675,78 @@ title="Print to PDF"
        &#39;CS02&#39;, &#39;CFA01&#39;, &#39;CFA02&#39;, &#39;CFA03&#39;, &#39;CFA04&#39;, &#39;CFA05&#39;, &#39;CFS01&#39;, &#39;CFS02&#39;,
        &#39;CFS03&#39;, &#39;CFS04&#39;, &#39;CFS05&#39;, &#39;createdate&#39;],
       dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>To get more information about the contents of the Data Frame, we can use the <code class="docutils literal notranslate"><span class="pre">.info()</span></code> method. This will give us the number of non-null values and the type of data (these have all been read in as integers) for each column.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 243462 entries, 0 to 243461
+Data columns (total 53 columns):
+ #   Column      Non-Null Count   Dtype
+---  ------      --------------   -----
+ 0   w_geocode   243462 non-null  int64
+ 1   C000        243462 non-null  int64
+ 2   CA01        243462 non-null  int64
+ 3   CA02        243462 non-null  int64
+ 4   CA03        243462 non-null  int64
+ 5   CE01        243462 non-null  int64
+ 6   CE02        243462 non-null  int64
+ 7   CE03        243462 non-null  int64
+ 8   CNS01       243462 non-null  int64
+ 9   CNS02       243462 non-null  int64
+ 10  CNS03       243462 non-null  int64
+ 11  CNS04       243462 non-null  int64
+ 12  CNS05       243462 non-null  int64
+ 13  CNS06       243462 non-null  int64
+ 14  CNS07       243462 non-null  int64
+ 15  CNS08       243462 non-null  int64
+ 16  CNS09       243462 non-null  int64
+ 17  CNS10       243462 non-null  int64
+ 18  CNS11       243462 non-null  int64
+ 19  CNS12       243462 non-null  int64
+ 20  CNS13       243462 non-null  int64
+ 21  CNS14       243462 non-null  int64
+ 22  CNS15       243462 non-null  int64
+ 23  CNS16       243462 non-null  int64
+ 24  CNS17       243462 non-null  int64
+ 25  CNS18       243462 non-null  int64
+ 26  CNS19       243462 non-null  int64
+ 27  CNS20       243462 non-null  int64
+ 28  CR01        243462 non-null  int64
+ 29  CR02        243462 non-null  int64
+ 30  CR03        243462 non-null  int64
+ 31  CR04        243462 non-null  int64
+ 32  CR05        243462 non-null  int64
+ 33  CR07        243462 non-null  int64
+ 34  CT01        243462 non-null  int64
+ 35  CT02        243462 non-null  int64
+ 36  CD01        243462 non-null  int64
+ 37  CD02        243462 non-null  int64
+ 38  CD03        243462 non-null  int64
+ 39  CD04        243462 non-null  int64
+ 40  CS01        243462 non-null  int64
+ 41  CS02        243462 non-null  int64
+ 42  CFA01       243462 non-null  int64
+ 43  CFA02       243462 non-null  int64
+ 44  CFA03       243462 non-null  int64
+ 45  CFA04       243462 non-null  int64
+ 46  CFA05       243462 non-null  int64
+ 47  CFS01       243462 non-null  int64
+ 48  CFS02       243462 non-null  int64
+ 49  CFS03       243462 non-null  int64
+ 50  CFS04       243462 non-null  int64
+ 51  CFS05       243462 non-null  int64
+ 52  createdate  243462 non-null  int64
+dtypes: int64(53)
+memory usage: 98.4 MB
 </pre></div>
 </div>
 </div>
@@ -1436,12 +1523,33 @@ title="Print to PDF"
 <section id="accessing-columns">
 <h3>Accessing Columns<a class="headerlink" href="#accessing-columns" title="Permalink to this headline">#</a></h3>
 <p>To access individual columns, we can use square brackets or we can simply use dot notation.</p>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Look at just total number of jobs (C000)</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;C000&quot;</span><span class="p">]</span> 
-
-<span class="c1"># This does the same thing</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0         30
+1          4
+2          3
+3         11
+4         10
+          ..
+243457     3
+243458    18
+243459    11
+243460     8
+243461    10
+Name: C000, Length: 243462, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This does the same thing</span>
 <span class="n">df</span><span class="o">.</span><span class="n">C000</span> 
 </pre></div>
 </div>
@@ -2487,6 +2595,121 @@ Name: C000, dtype: int64
 </div>
 </div>
 </div>
+<p>To get a range of columns, we can use the same colon notation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Look at rows 10 - 20 for total number of jobs (C000) and jobs by age group</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="s1">&#39;C000&#39;</span><span class="p">:</span><span class="s1">&#39;CA03&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>C000</th>
+      <th>CA01</th>
+      <th>CA02</th>
+      <th>CA03</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>10</th>
+      <td>14</td>
+      <td>2</td>
+      <td>9</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>9</td>
+      <td>0</td>
+      <td>9</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>7</td>
+      <td>0</td>
+      <td>4</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 <p>An alternative to <code class="docutils literal notranslate"><span class="pre">loc</span></code> is <code class="docutils literal notranslate"><span class="pre">iloc</span></code>. This takes rows from specific positions in the Data Frame rather than the row labels. Most of the time, row labels are going to be numbered sequentially, so <code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">iloc</span></code> should act similarly. However, sometimes, especially when creating subsets of the data, you might end up with row labels that aren’t ordered sequentially and go up by one. In those cases, <code class="docutils literal notranslate"><span class="pre">iloc</span></code> might be more useful.</p>
 <p>Another use case for <code class="docutils literal notranslate"><span class="pre">iloc</span></code> is in using negative numbers.</p>
 <div class="cell docutils container">
@@ -2509,8 +2732,8 @@ Name: C000, dtype: int64
 <p>In this case, we were able to use the “<code class="docutils literal notranslate"><span class="pre">-5:</span></code>” to indicate that we want the last 5 rows of the data frame. Note that we can’t do the same with <code class="docutils literal notranslate"><span class="pre">.loc</span></code>. This is because <code class="docutils literal notranslate"><span class="pre">.loc</span></code> retrieves the rows from a particular <em>label</em> in the Data Frame, while <code class="docutils literal notranslate"><span class="pre">.iloc</span></code> retrieves them from particular <em>positions</em>.</p>
 </section>
 </section>
-<section id="span-style-color-red-checkpoint-read-in-other-data-span">
-<h2><span style="color:red">Checkpoint: Read in Other Data</span><a class="headerlink" href="#span-style-color-red-checkpoint-read-in-other-data-span" title="Permalink to this headline">#</a></h2>
+<section id="span-style-color-red-checkpoint-explore-other-data-span">
+<h2><span style="color:red">Checkpoint: Explore Other Data</span><a class="headerlink" href="#span-style-color-red-checkpoint-explore-other-data-span" title="Permalink to this headline">#</a></h2>
 <p>Copy the code you used in the previous section to bring in another dataset. Try to access different values within the dataset. Can you isolate a certain variable? Look at the documentation and identify a variable to pull out of the dataset.</p>
 </section>
 </section>
@@ -2549,10 +2772,10 @@ Name: C000, dtype: int64
             <p class="prev-next-title">Reading Data</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="03-documentation.html" title="next page">
+    <a class='right-next' id="next-link" href="03-data-types.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Error Messages and Documentation</p>
+        <p class="prev-next-title">Data Types in Python</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

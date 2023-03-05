@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Loops &#8212; Introduction to Python and SQL for Data Analysis</title>
+    <title>Checking for Missing Values &#8212; Introduction to Python and SQL for Data Analysis</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Visualizations" href="../04-visualizations/00-intro.html" />
-    <link rel="prev" title="Functions" href="01-functions.html" />
+    <link rel="next" title="Descriptive Statistics" href="03-descriptive-statistics.html" />
+    <link rel="prev" title="Creating Subsets of the Data" href="01-subsetting.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -168,50 +168,50 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../02-data-management/00-intro.html">
-   Data Management in Python
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-data-management/01-subsetting.html">
-     Creating Subsets of the Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-data-management/02-missing.html">
-     Checking for Missing Values
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-data-management/03-descriptive-statistics.html">
-     Descriptive Statistics
-    </a>
-   </li>
-  </ul>
- </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="00-intro.html">
-   Functions and Loops
+   Data Management in Python
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="01-functions.html">
-     Functions
+    <a class="reference internal" href="01-subsetting.html">
+     Creating Subsets of the Data
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
+     Checking for Missing Values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-descriptive-statistics.html">
+     Descriptive Statistics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-functions-loops/00-intro.html">
+   Functions and Loops
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-functions-loops/01-functions.html">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-functions-loops/02-loops.html">
      Loops
     </a>
    </li>
@@ -347,16 +347,6 @@ const thebe_selector_output = ".output, .cell_output"
      Reading SQL tables using Pandas
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../07-python-sql/03-to-sql.html">
-     Writing Data Frames to an SQL Database
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../07-python-sql/04-jobs-county-years.html">
-     Example: Finding Jobs by County over Years
-    </a>
-   </li>
   </ul>
  </li>
 </ul>
@@ -418,7 +408,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/kimbrianj/Introduction-Python-SQL/master?urlpath=lab/tree/content/03-functions-loops/02-loops.ipynb"
+        <a href="https://mybinder.org/v2/gh/kimbrianj/Introduction-Python-SQL/master?urlpath=lab/tree/content/02-data-management/02-missing.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -436,7 +426,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/kimbrianj/Introduction-Python-SQL/blob/master/content/03-functions-loops/02-loops.ipynb"
+        <a href="https://colab.research.google.com/github/kimbrianj/Introduction-Python-SQL/blob/master/content/02-data-management/02-missing.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -497,7 +487,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/content/03-functions-loops/02-loops.ipynb"
+        <a href="../../_sources/content/02-data-management/02-missing.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -557,23 +547,19 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-a-for-loop-to-read-in-csv-files">
-   Using a For Loop to Read In CSV Files
+  <a class="reference internal nav-link" href="#checking-for-inconsistencies">
+   Checking for Inconsistencies
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#span-style-color-green-using-loops-and-functions-to-bring-in-multiple-datasets-video-span">
-     <span style="color:green">
-      Using Loops and Functions to Bring in Multiple Datasets  (VIDEO)
-     </span>
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-2-use-functions-and-loops-to-bring-in-your-data-for-multiple-years-span">
+  <a class="reference internal nav-link" href="#checking-for-outliers">
+   Checking for Outliers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-descriptive-statistics-on-your-data-span">
    <span style="color:red">
-    Checkpoint 2: Use Functions and Loops to Bring in Your Data for Multiple Years
+    Checkpoint: Descriptive Statistics on Your Data
    </span>
   </a>
  </li>
@@ -586,7 +572,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Loops</h1>
+                <h1>Checking for Missing Values</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -597,23 +583,19 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-a-for-loop-to-read-in-csv-files">
-   Using a For Loop to Read In CSV Files
+  <a class="reference internal nav-link" href="#checking-for-inconsistencies">
+   Checking for Inconsistencies
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#span-style-color-green-using-loops-and-functions-to-bring-in-multiple-datasets-video-span">
-     <span style="color:green">
-      Using Loops and Functions to Bring in Multiple Datasets  (VIDEO)
-     </span>
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-2-use-functions-and-loops-to-bring-in-your-data-for-multiple-years-span">
+  <a class="reference internal nav-link" href="#checking-for-outliers">
+   Checking for Outliers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-descriptive-statistics-on-your-data-span">
    <span style="color:red">
-    Checkpoint 2: Use Functions and Loops to Bring in Your Data for Multiple Years
+    Checkpoint: Descriptive Statistics on Your Data
    </span>
   </a>
  </li>
@@ -627,118 +609,202 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="cell docutils container">
+  <div class="cell tag_hide_input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start (as usual) by loading libraries</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="k">def</span> <span class="nf">get_wac</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;ca&quot;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Arguments</span>
-<span class="sd">    state: string, two-letter code of state for which we want the data</span>
-<span class="sd">    year: int, the year we want to bring in data for</span>
-<span class="sd">    </span>
-<span class="sd">    Returns</span>
-<span class="sd">    A pandas DataFrame with the WAC for a specific state and year</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    
-    <span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://lehd.ces.census.gov/data/lodes/LODES7/&#39;</span>
-    <span class="n">file_specs</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{st}</span><span class="s1">/wac/</span><span class="si">{st}</span><span class="s1">_wac_S000_JT00_</span><span class="si">{yr}</span><span class="s1">.csv.gz&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">st</span> <span class="o">=</span> <span class="n">state</span><span class="p">,</span> <span class="n">yr</span> <span class="o">=</span> <span class="n">year</span><span class="p">)</span>
-    <span class="n">file_name</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="n">file_specs</span>
-    
-    <span class="c1"># print(&quot;The URL for the file is at: &quot; + file_name)</span>
-    <span class="n">output</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span><span class="n">compression</span><span class="o">=</span><span class="s1">&#39;gzip&#39;</span><span class="p">)</span>
-    <span class="k">return</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+<span class="n">data_url</span> <span class="o">=</span> <span class="s1">&#39;https://lehd.ces.census.gov/data/lodes/LODES7/ca/wac/ca_wac_S000_JT00_2015.csv.gz&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_url</span><span class="p">,</span><span class="n">compression</span><span class="o">=</span><span class="s1">&#39;gzip&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<section class="tex2jax_ignore mathjax_ignore" id="loops">
-<h1>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">#</a></h1>
-<p>Sometimes, we want to run the same code many times over. In these case, we can use loops so that we don’t have to copy and paste the code over and over. To demonstrate how loops work, we’ll first look at a basic <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
+<section class="tex2jax_ignore mathjax_ignore" id="checking-for-missing-values">
+<h1>Checking for Missing Values<a class="headerlink" href="#checking-for-missing-values" title="Permalink to this headline">#</a></h1>
+<p>Now that we have our data set, let’s do a quick check for missing values. This is typically one of the first things you’ll want to do when exploring a new data set.</p>
+<p>Below, we’ve shown two different ways of writing the same thing. Using <code class="docutils literal notranslate"><span class="pre">isnull()</span></code> gives us a data frame of the same size with <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> values depending on whether it was a missing value or not. Then, <code class="docutils literal notranslate"><span class="pre">sum()</span></code> sums each column. Since Python treats <code class="docutils literal notranslate"><span class="pre">True</span></code> as <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> as <code class="docutils literal notranslate"><span class="pre">0</span></code>, the sum of each column gives us the total number of missing values for each variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_null</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
+<span class="n">df_null</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-1
-2
-3
-4
-5
-6
-7
-8
-9
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>w_geocode     0
+C000          0
+CA01          0
+CA02          0
+CA03          0
+CE01          0
+CE02          0
+CE03          0
+CNS01         0
+CNS02         0
+CNS03         0
+CNS04         0
+CNS05         0
+CNS06         0
+CNS07         0
+CNS08         0
+CNS09         0
+CNS10         0
+CNS11         0
+CNS12         0
+CNS13         0
+CNS14         0
+CNS15         0
+CNS16         0
+CNS17         0
+CNS18         0
+CNS19         0
+CNS20         0
+CR01          0
+CR02          0
+CR03          0
+CR04          0
+CR05          0
+CR07          0
+CT01          0
+CT02          0
+CD01          0
+CD02          0
+CD03          0
+CD04          0
+CS01          0
+CS02          0
+CFA01         0
+CFA02         0
+CFA03         0
+CFA04         0
+CFA05         0
+CFS01         0
+CFS02         0
+CFS03         0
+CFS04         0
+CFS05         0
+createdate    0
+dtype: int64
 </pre></div>
 </div>
 </div>
 </div>
-<p>Here, we are looping through the numbers 0 to 9 and printing them out. Let’s break down how each part works.</p>
-<p>First, consider the first line.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for i in range(0,10):
-</pre></div>
-</div>
-<p>This indicates that we will be looping through the values of 0 to 9, incrementing <code class="docutils literal notranslate"><span class="pre">i</span></code> in each iteration. That is, the code will use <code class="docutils literal notranslate"><span class="pre">i=0</span></code> for one iteration. Then, it will go back and do everything again, except using <code class="docutils literal notranslate"><span class="pre">i=1</span></code>. This keeps going until it hits <code class="docutils literal notranslate"><span class="pre">i=9</span></code>, after which it stops.</p>
-<p>Notice that the second line is indented. In Python, we use the indentation to delineate when the loop starts and ends. Everything after the colon that is indented is part of the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop ends when a line isn’t indented.</p>
-<p>Consider the following code and think about what you expect it to print out before running it.</p>
+<p>We did this in two separate lines, but that’s actually not necessary. In fact, we can do it all in one go:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;We&#39;re done now.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-We&#39;re done now.
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>w_geocode     0
+C000          0
+CA01          0
+CA02          0
+CA03          0
+CE01          0
+CE02          0
+CE03          0
+CNS01         0
+CNS02         0
+CNS03         0
+CNS04         0
+CNS05         0
+CNS06         0
+CNS07         0
+CNS08         0
+CNS09         0
+CNS10         0
+CNS11         0
+CNS12         0
+CNS13         0
+CNS14         0
+CNS15         0
+CNS16         0
+CNS17         0
+CNS18         0
+CNS19         0
+CNS20         0
+CR01          0
+CR02          0
+CR03          0
+CR04          0
+CR05          0
+CR07          0
+CT01          0
+CT02          0
+CD01          0
+CD02          0
+CD03          0
+CD04          0
+CS01          0
+CS02          0
+CFA01         0
+CFA02         0
+CFA03         0
+CFA04         0
+CFA05         0
+CFS01         0
+CFS02         0
+CFS03         0
+CFS04         0
+CFS05         0
+createdate    0
+dtype: int64
 </pre></div>
 </div>
 </div>
 </div>
-<p>Since the line with <code class="docutils literal notranslate"><span class="pre">print(&quot;We're</span> <span class="pre">done</span> <span class="pre">now.&quot;)</span></code> isn’t indented, it isn’t repeated. The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop goes through the loop with just <code class="docutils literal notranslate"><span class="pre">print(i)</span></code>.</p>
-<section id="using-a-for-loop-to-read-in-csv-files">
-<h2>Using a For Loop to Read In CSV Files<a class="headerlink" href="#using-a-for-loop-to-read-in-csv-files" title="Permalink to this headline">#</a></h2>
-<p>Now that we’ve gone over the basics of how a for loop works, let’s apply it to reading in multiple CSV files. We’ve already created a function that takes a year and reads a CSV file. We want to do this for multiple years automatically, so that we don’t need to keep on changing the year and running the code again (if, for example, we want to do this for many years). So, in other words, we want to create a loop that runs the same code multiple times, with only the year changed.</p>
-<p>Part of our task is a bit easier, since we’ve already created a function that does what we want. Now, all we need to do is loop through the years we want, calling that function with a different argument for the year.</p>
-<p>There’s one small complication though: how will we automate storage of these Data Frame objects? There’s multiple possibilities, but the way we’ll do it is using a Python <strong>dictionary</strong>.</p>
-<section id="span-style-color-green-using-loops-and-functions-to-bring-in-multiple-datasets-video-span">
-<h3><span style="color:green">Using Loops and Functions to Bring in Multiple Datasets  (VIDEO)</span><a class="headerlink" href="#span-style-color-green-using-loops-and-functions-to-bring-in-multiple-datasets-video-span" title="Permalink to this headline">#</a></h3>
-<p>We’ll start by creating an empty dictionary in which we’ll store the Data Frames that we read in. Then, we’re going to loop through a few years (here, we’ll do 2009 to 2015), calling the <code class="docutils literal notranslate"><span class="pre">get_wac</span></code> function we created earlier to store the appropriate dataset in the dictionary. We’ll also make sure to provide the proper key when storing the dataset, so that we can easily access it.</p>
+<p>We can also drop any duplicated rows.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize an empty dictionary.</span>
-<span class="n">wac_all_years</span> <span class="o">=</span> <span class="p">{}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_no_dups</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+<span class="n">df_no_dups</span><span class="o">.</span><span class="n">shape</span> <span class="c1"># Check how many rows there are after dropping duplicates</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(243462, 53)
+</pre></div>
+</div>
+</div>
+</div>
+<section id="checking-for-inconsistencies">
+<h2>Checking for Inconsistencies<a class="headerlink" href="#checking-for-inconsistencies" title="Permalink to this headline">#</a></h2>
+<p>If you check the data documentation, you’ll see that <code class="docutils literal notranslate"><span class="pre">C000</span></code> is the total number of jobs. Therefore, it would make sense for the other groups to columns to add up to the values in <code class="docutils literal notranslate"><span class="pre">C000</span></code>. For example, you’d expect <code class="docutils literal notranslate"><span class="pre">CA01</span></code>, <code class="docutils literal notranslate"><span class="pre">CA02</span></code>, and <code class="docutils literal notranslate"><span class="pre">CA03</span></code> to add up to <code class="docutils literal notranslate"><span class="pre">C000</span></code> for each row. Let’s check to see if this is true.</p>
+<p>We’ll first take the sum of <code class="docutils literal notranslate"><span class="pre">CA01</span></code>, <code class="docutils literal notranslate"><span class="pre">CA02</span></code>, and <code class="docutils literal notranslate"><span class="pre">CA03</span></code> in each row and put that in a new column called <code class="docutils literal notranslate"><span class="pre">CA_sum</span></code>. Then, we’ll compare our new <code class="docutils literal notranslate"><span class="pre">CA_sum</span></code> column to the existing <code class="docutils literal notranslate"><span class="pre">C000</span></code> column to see if they match. We’ll first show all the code, then explain each section.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a list with the columns we want to add up</span>
+<span class="n">vars_to_check</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CA01&#39;</span><span class="p">,</span><span class="s1">&#39;CA02&#39;</span><span class="p">,</span><span class="s1">&#39;CA03&#39;</span><span class="p">]</span>
 
-<span class="c1"># This loop might take a little bit of time.</span>
-<span class="c1"># If you want to see progress while it runs, uncomment the second line in the loop.</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2009</span><span class="p">,</span><span class="mi">2016</span><span class="p">):</span>
-    <span class="n">wac_all_years</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_wac</span><span class="p">(</span><span class="n">year</span> <span class="o">=</span> <span class="n">i</span><span class="p">)</span>
-    <span class="c1"># print(&quot;WAC for &quot; + str(i) + &quot; obtained.&quot;)</span>
+<span class="c1"># Using apply to sum the columns for each row</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;CA_sum&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">vars_to_check</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">sum</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Check how many rows don&#39;t match</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">CA_sum</span> <span class="o">!=</span> <span class="n">df</span><span class="o">.</span><span class="n">C000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
 </pre></div>
 </div>
 </div>
 </div>
-<p>After running the loop, <code class="docutils literal notranslate"><span class="pre">wac_all_years</span></code> should contain seven Data Frames, each accessible using the year as the key.</p>
-<p>Let’s look at one of the years.</p>
+<p>We first created a list called <code class="docutils literal notranslate"><span class="pre">vars_to_check</span></code>, which contains the columns that we want to add up. Then, we took those columns from <code class="docutils literal notranslate"><span class="pre">df</span></code> and used the <code class="docutils literal notranslate"><span class="pre">apply()</span></code> method, which applies the same function to each row (or column, if we used <code class="docutils literal notranslate"><span class="pre">0</span></code> in the second argument instead of <code class="docutils literal notranslate"><span class="pre">1</span></code>). In this case, we want to find the sum of each row, so the first argument is <code class="docutils literal notranslate"><span class="pre">sum</span></code>. We want to create a new column that contains this sum, so we assign that to a new column in <code class="docutils literal notranslate"><span class="pre">df</span></code>, <code class="docutils literal notranslate"><span class="pre">CA_sum</span></code>. Notice that this is the first place we see <code class="docutils literal notranslate"><span class="pre">'CA_sum'</span></code>, because this is where we are creating it.</p>
+<p>Lastly, we want to check how many rows in which <code class="docutils literal notranslate"><span class="pre">C000</span></code> and <code class="docutils literal notranslate"><span class="pre">CA_sum</span></code> differ. We do this by using</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>df.CA_sum != df.C000
+</pre></div>
+</div>
+<p>which outputs a Series of <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> values: <code class="docutils literal notranslate"><span class="pre">True</span></code> if the value in <code class="docutils literal notranslate"><span class="pre">CA_sum</span></code> is not equal to the value in <code class="docutils literal notranslate"><span class="pre">C000</span></code> for that row, and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise. In other words, this is a Series of <code class="docutils literal notranslate"><span class="pre">True</span></code>s and <code class="docutils literal notranslate"><span class="pre">False</span></code>s indicating whether the values for the row didn’t match. We can then use the <code class="docutils literal notranslate"><span class="pre">sum</span></code> function from NumPy to add up how many times they didn’t match. If there are no errors, the sum should be 0.</p>
+</section>
+<section id="checking-for-outliers">
+<h2>Checking for Outliers<a class="headerlink" href="#checking-for-outliers" title="Permalink to this headline">#</a></h2>
+<p>Suppose we want to check if there are any outliers in total number of jobs by census block. We can sort the values in <code class="docutils literal notranslate"><span class="pre">C000</span></code> in order to figure this out. Let’s say we want to find the top ten census blocks by total number of jobs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wac_all_years</span><span class="p">[</span><span class="mi">2009</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;C000&quot;</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -772,7 +838,6 @@ We&#39;re done now.
       <th>CNS01</th>
       <th>CNS02</th>
       <th>...</th>
-      <th>CFA02</th>
       <th>CFA03</th>
       <th>CFA04</th>
       <th>CFA05</th>
@@ -782,19 +847,20 @@ We&#39;re done now.
       <th>CFS04</th>
       <th>CFS05</th>
       <th>createdate</th>
+      <th>CA_sum</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>60014001001000</td>
-      <td>11</td>
-      <td>1</td>
-      <td>6</td>
-      <td>4</td>
-      <td>0</td>
-      <td>4</td>
-      <td>7</td>
+      <th>52952</th>
+      <td>60372074001016</td>
+      <td>72275</td>
+      <td>5546</td>
+      <td>47140</td>
+      <td>19589</td>
+      <td>2129</td>
+      <td>6625</td>
+      <td>63521</td>
       <td>0</td>
       <td>0</td>
       <td>...</td>
@@ -806,19 +872,19 @@ We&#39;re done now.
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>20160228</td>
+      <td>20190826</td>
+      <td>72275</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>60014001001007</td>
-      <td>27</td>
-      <td>7</td>
-      <td>15</td>
-      <td>5</td>
-      <td>2</td>
-      <td>6</td>
-      <td>19</td>
+      <th>64327</th>
+      <td>60373104003007</td>
+      <td>50650</td>
+      <td>6975</td>
+      <td>31905</td>
+      <td>11770</td>
+      <td>33722</td>
+      <td>5798</td>
+      <td>11130</td>
       <td>0</td>
       <td>0</td>
       <td>...</td>
@@ -830,20 +896,20 @@ We&#39;re done now.
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>20160228</td>
+      <td>20190826</td>
+      <td>50650</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>60014001001008</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
+      <th>59358</th>
+      <td>60372655101002</td>
+      <td>24628</td>
+      <td>3643</td>
+      <td>15326</td>
+      <td>5659</td>
+      <td>2238</td>
+      <td>4323</td>
+      <td>18067</td>
+      <td>45</td>
       <td>0</td>
       <td>...</td>
       <td>0</td>
@@ -854,19 +920,19 @@ We&#39;re done now.
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>20160228</td>
+      <td>20190826</td>
+      <td>24628</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>60014001001009</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
+      <th>186347</th>
+      <td>60750177002001</td>
+      <td>23553</td>
+      <td>1858</td>
+      <td>15018</td>
+      <td>6677</td>
+      <td>1237</td>
+      <td>1750</td>
+      <td>20566</td>
       <td>0</td>
       <td>0</td>
       <td>...</td>
@@ -878,19 +944,19 @@ We&#39;re done now.
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>20160228</td>
+      <td>20190826</td>
+      <td>23553</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>60014001001010</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
+      <th>130619</th>
+      <td>60599800001001</td>
+      <td>23071</td>
+      <td>9319</td>
+      <td>9436</td>
+      <td>4316</td>
+      <td>7413</td>
+      <td>10538</td>
+      <td>5120</td>
       <td>0</td>
       <td>0</td>
       <td>...</td>
@@ -902,19 +968,19 @@ We&#39;re done now.
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>20160228</td>
+      <td>20190826</td>
+      <td>23071</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>60014001001012</td>
-      <td>3</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>3</td>
+      <th>48981</th>
+      <td>60371437001000</td>
+      <td>22683</td>
+      <td>4736</td>
+      <td>12397</td>
+      <td>5550</td>
+      <td>14933</td>
+      <td>3456</td>
+      <td>4294</td>
       <td>0</td>
       <td>0</td>
       <td>...</td>
@@ -926,19 +992,19 @@ We&#39;re done now.
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>20160228</td>
+      <td>20190826</td>
+      <td>22683</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>60014001001013</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
+      <th>97829</th>
+      <td>60377030012000</td>
+      <td>21971</td>
+      <td>1963</td>
+      <td>13008</td>
+      <td>7000</td>
+      <td>14741</td>
+      <td>925</td>
+      <td>6305</td>
       <td>0</td>
       <td>0</td>
       <td>...</td>
@@ -950,19 +1016,19 @@ We&#39;re done now.
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>20160228</td>
+      <td>20190826</td>
+      <td>21971</td>
     </tr>
     <tr>
-      <th>7</th>
-      <td>60014001001014</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
+      <th>64362</th>
+      <td>60373105011027</td>
+      <td>20663</td>
+      <td>3268</td>
+      <td>13510</td>
+      <td>3885</td>
+      <td>7717</td>
+      <td>4444</td>
+      <td>8502</td>
       <td>0</td>
       <td>0</td>
       <td>...</td>
@@ -974,19 +1040,19 @@ We&#39;re done now.
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>20160228</td>
+      <td>20190826</td>
+      <td>20663</td>
     </tr>
     <tr>
-      <th>8</th>
-      <td>60014001001015</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
+      <th>212152</th>
+      <td>60855081012002</td>
+      <td>20104</td>
+      <td>3603</td>
+      <td>14572</td>
+      <td>1929</td>
+      <td>246</td>
+      <td>1643</td>
+      <td>18215</td>
       <td>0</td>
       <td>0</td>
       <td>...</td>
@@ -998,19 +1064,19 @@ We&#39;re done now.
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>20160228</td>
+      <td>20190826</td>
+      <td>20104</td>
     </tr>
     <tr>
-      <th>9</th>
-      <td>60014001001016</td>
-      <td>2</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2</td>
+      <th>52965</th>
+      <td>60372074001037</td>
+      <td>19469</td>
+      <td>1995</td>
+      <td>12795</td>
+      <td>4679</td>
+      <td>1603</td>
+      <td>1839</td>
+      <td>16027</td>
       <td>0</td>
       <td>0</td>
       <td>...</td>
@@ -1022,29 +1088,29 @@ We&#39;re done now.
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>20160228</td>
+      <td>20190826</td>
+      <td>19469</td>
     </tr>
   </tbody>
 </table>
-<p>10 rows × 53 columns</p>
+<p>10 rows × 54 columns</p>
 </div></div></div>
 </div>
-<p>Here, we’re looking at the value in the dictionary <code class="docutils literal notranslate"><span class="pre">wac_all_years</span></code> that has the key <code class="docutils literal notranslate"><span class="pre">2009</span></code>, then using the <code class="docutils literal notranslate"><span class="pre">head()</span></code> method on that Data Frame object to take a peek at what the first few lines of the data looks like.</p>
-<p>If we wanted to work more extensively with one of the years (rather than just looking at it as we’ve done here), we might want to use something like</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wac_09</span> <span class="o">=</span> <span class="n">wac_all_years</span><span class="p">[</span><span class="mi">2009</span><span class="p">]</span>
+<p>Let’s break this down piece by piece. First, we use the <code class="docutils literal notranslate"><span class="pre">sort_values()</span></code> method to sort the Data Frame by <code class="docutils literal notranslate"><span class="pre">C000</span></code>. We use <code class="docutils literal notranslate"><span class="pre">ascending=False</span></code> so that the highest values are at the top (the default is to sort in ascending order). This would give us</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>df.sort_values(&quot;C000&quot;,ascending=False)
 </pre></div>
 </div>
-</div>
-</div>
-<p>That way, we can just use <code class="docutils literal notranslate"><span class="pre">wac_09</span></code>.</p>
+<p>However, we don’t want to look at everything. Here, we use <code class="docutils literal notranslate"><span class="pre">head()</span></code> to give us only the top ten values after sorting. This gives us the final code, <code class="docutils literal notranslate"><span class="pre">df.sort_values(&quot;C000&quot;,ascending=False).head(10)</span></code>.</p>
 </section>
-</section>
-<section id="span-style-color-red-checkpoint-2-use-functions-and-loops-to-bring-in-your-data-for-multiple-years-span">
-<h2><span style="color:red">Checkpoint 2: Use Functions and Loops to Bring in Your Data for Multiple Years</span><a class="headerlink" href="#span-style-color-red-checkpoint-2-use-functions-and-loops-to-bring-in-your-data-for-multiple-years-span" title="Permalink to this headline">#</a></h2>
-<p>Using what we’ve learned above, try to apply the same methods to bring in multiple years’ worth of data for a different state. Remember to name objects differently so that you don’t overwrite anything.</p>
+<section id="span-style-color-red-checkpoint-descriptive-statistics-on-your-data-span">
+<h2><span style="color:red">Checkpoint: Descriptive Statistics on Your Data</span><a class="headerlink" href="#span-style-color-red-checkpoint-descriptive-statistics-on-your-data-span" title="Permalink to this headline">#</a></h2>
+<p>Using the tools described above, look at the data you loaded in earlier. Make sure you know the answers to each of the following questions:</p>
+<ul class="simple">
+<li><p>Are there any missing values?</p></li>
+<li><p>Are there any inconsistencies in the data?</p></li>
+<li><p>Are there missing values that may not have been coded as missing?</p></li>
+<li><p>Are there any interesting outliers?</p></li>
+</ul>
 </section>
 </section>
 
@@ -1061,7 +1127,7 @@ We&#39;re done now.
         },
         kernelOptions: {
             name: "python3",
-            path: "./content/03-functions-loops"
+            path: "./content/02-data-management"
         },
         predefinedOutput: true
     }
@@ -1075,17 +1141,17 @@ We&#39;re done now.
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="01-functions.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="01-subsetting.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Functions</p>
+            <p class="prev-next-title">Creating Subsets of the Data</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../04-visualizations/00-intro.html" title="next page">
+    <a class='right-next' id="next-link" href="03-descriptive-statistics.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Visualizations</p>
+        <p class="prev-next-title">Descriptive Statistics</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

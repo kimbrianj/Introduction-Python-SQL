@@ -157,7 +157,12 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03-documentation.html">
+    <a class="reference internal" href="03-data-types.html">
+     Data Types in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-documentation.html">
      Error Messages and Documentation
     </a>
    </li>
@@ -174,18 +179,18 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-data-management/01-data-types.html">
-     Data Types in Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-data-management/02-subsetting.html">
+    <a class="reference internal" href="../02-data-management/01-subsetting.html">
      Creating Subsets of the Data
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-data-management/03-missing.html">
+    <a class="reference internal" href="../02-data-management/02-missing.html">
      Checking for Missing Values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-data-management/03-descriptive-statistics.html">
+     Descriptive Statistics
     </a>
    </li>
   </ul>
@@ -340,6 +345,16 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../07-python-sql/02-tables-df.html">
      Reading SQL tables using Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-python-sql/03-to-sql.html">
+     Writing Data Frames to an SQL Database
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-python-sql/04-jobs-county-years.html">
+     Example: Finding Jobs by County over Years
     </a>
    </li>
   </ul>
@@ -592,16 +607,15 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-python-and-pandas">
 <h1>Introduction to Python and Pandas<a class="headerlink" href="#introduction-to-python-and-pandas" title="Permalink to this headline">#</a></h1>
-<p>SQL is very useful for querying databases to explore datasets and cleaning data. However, there’s a lot that it isn’t able to do. If you want to display visualizations, perform text analysis, or fit machine learning models, you’ll need to use something else besides SQL. There are many options for doing this, but one popular programming language is Python.</p>
 <p>Python is a general-purpose programming language that has seen a rise in use for data analysis. As of 2017, Python is near or at the top in terms of popularity in programming languages for data analysis (see <a class="reference external" href="https://www.kdnuggets.com/2017/05/poll-analytics-data-science-machine-learning-software-leaders.html">the kdnuggets post</a> or <a class="reference external" href="http://makemeanalyst.com/most-popular-languages-for-data-science-and-analytics-2017/">a look at multiple surveys</a>).</p>
 <p>In addition, unlike other tools for statistical analysis, like Excel or Stata, Python is designed to be general-purpose. This means that we aren’t limited to only doing certain statistical analyses and gives us much more flexibility in what we can do.</p>
-<p>As with the SQL material, we will start with a motivating question, then walk through the process we need to go through in order to answer the motivating question. Along the way, we will walk through various Python commands and develop skills as we work towards answering the question.</p>
+<p>As with the other chapters in this book, we will start with a motivating question, then walk through the process we need to go through in order to answer the motivating question. Along the way, we will walk through various Python commands and develop skills as we work towards answering the question.</p>
 <blockquote>
 <div><p>NOTE: When you open a notebook, make sure you run each cell containing code from the beginning. Since the code we’re writing builds on everything written before, if you don’t make sure to run everything from the beginning, some things may not work.</p>
 </div></blockquote>
 <section id="longitudinal-employer-household-dynamics-lehd-data">
 <h2>Longitudinal Employer-Household Dynamics (LEHD) Data<a class="headerlink" href="#longitudinal-employer-household-dynamics-lehd-data" title="Permalink to this headline">#</a></h2>
-<p>Just as we did with in the SQL chapters, we will be using LEHD data. These are public-use data sets containing information about employers and employees. Information about the LEHD Data can be found at <a class="reference external" href="https://lehd.ces.census.gov/">https://lehd.ces.census.gov/</a> and the data documentation can be found <a class="reference external" href="https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.3.pdf">here</a>.</p>
+<p>Throughout this book, we will be using LEHD data. These are public-use data sets containing information about employers and employees. Information about the LEHD Data can be found at <a class="reference external" href="https://lehd.ces.census.gov/">https://lehd.ces.census.gov/</a> and the data documentation can be found <a class="reference external" href="https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.3.pdf">here</a>.</p>
 </section>
 <section id="motivating-question">
 <h2>Motivating Question<a class="headerlink" href="#motivating-question" title="Permalink to this headline">#</a></h2>

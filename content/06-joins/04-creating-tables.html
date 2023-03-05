@@ -157,7 +157,12 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01-intro-python/03-documentation.html">
+    <a class="reference internal" href="../01-intro-python/03-data-types.html">
+     Data Types in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-intro-python/04-documentation.html">
      Error Messages and Documentation
     </a>
    </li>
@@ -174,18 +179,18 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-data-management/01-data-types.html">
-     Data Types in Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-data-management/02-subsetting.html">
+    <a class="reference internal" href="../02-data-management/01-subsetting.html">
      Creating Subsets of the Data
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-data-management/03-missing.html">
+    <a class="reference internal" href="../02-data-management/02-missing.html">
      Checking for Missing Values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-data-management/03-descriptive-statistics.html">
+     Descriptive Statistics
     </a>
    </li>
   </ul>
@@ -614,6 +619,11 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">Error</span>: table joinedtable already exists
+</pre></div>
+</div>
+</div>
 </div>
 <p>This should look mostly familiar, since everything after the first line is stuff we’ve already done. The first line creates a new table called <code class="docutils literal notranslate"><span class="pre">joinedtable</span></code> from the output.</p>
 <p>This is a bit of a mess, though. We usually don’t need everything from the tables that we do join, so we can choose what we keep. Let’s create a new table that has just the information we need.</p>
@@ -625,11 +635,6 @@ title="Print to PDF"
 <span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">ca_xwalk</span><span class="w"> </span><span class="n">b</span>
 <span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">w_geocode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">tabblk2010</span>
 <span class="k">LIMIT</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">Error</span>: table joinedtable2 already exists
 </pre></div>
 </div>
 </div>

@@ -157,7 +157,12 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01-intro-python/03-documentation.html">
+    <a class="reference internal" href="../01-intro-python/03-data-types.html">
+     Data Types in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-intro-python/04-documentation.html">
      Error Messages and Documentation
     </a>
    </li>
@@ -174,18 +179,18 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-data-management/01-data-types.html">
-     Data Types in Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-data-management/02-subsetting.html">
+    <a class="reference internal" href="../02-data-management/01-subsetting.html">
      Creating Subsets of the Data
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-data-management/03-missing.html">
+    <a class="reference internal" href="../02-data-management/02-missing.html">
      Checking for Missing Values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-data-management/03-descriptive-statistics.html">
+     Descriptive Statistics
     </a>
    </li>
   </ul>
@@ -340,6 +345,16 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../07-python-sql/02-tables-df.html">
      Reading SQL tables using Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-python-sql/03-to-sql.html">
+     Writing Data Frames to an SQL Database
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-python-sql/04-jobs-county-years.html">
+     Example: Finding Jobs by County over Years
     </a>
    </li>
   </ul>
@@ -624,7 +639,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x10fbca3a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x137314880&gt;
 </pre></div>
 </div>
 <img alt="../../_images/02-seaborn-ggplot_4_1.png" src="../../_images/02-seaborn-ggplot_4_1.png" />
@@ -643,15 +658,13 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ggplot</span><span class="p">(</span><span class="n">df_2015</span><span class="p">)</span> <span class="o">+</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;CA01&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">geom_histogram</span><span class="p">(</span><span class="n">bins</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span> <span class="o">+</span> <span class="n">labs</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ggplot</span><span class="p">(</span><span class="n">df_2015</span><span class="p">)</span> <span class="o">+</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;CA01&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">geom_histogram</span><span class="p">(</span><span class="n">bins</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-    <span class="n">ggplot</span><span class="p">(</span><span class="n">df_2015</span><span class="p">)</span> <span class="o">+</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;CA01&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">geom_histogram</span><span class="p">(</span><span class="n">bins</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span> <span class="o">+</span> <span class="n">labs</span><span class="p">(</span>
-                                                                         <span class="o">^</span>
-<span class="ne">SyntaxError</span>: unexpected EOF while parsing
+<img alt="../../_images/02-seaborn-ggplot_7_0.png" src="../../_images/02-seaborn-ggplot_7_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (333858030)&gt;
 </pre></div>
 </div>
 </div>

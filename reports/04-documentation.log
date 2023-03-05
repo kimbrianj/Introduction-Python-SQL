@@ -17,13 +17,13 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-CREATE TABLE joinedtable AS 
-SELECT * FROM ca_wac_2015
-LEFT JOIN ca_xwalk 
-ON ca_wac_2015.w_geocode = ca_xwalk.tabblk2010
-LIMIT 1000;
+print('Here is some text'
 ------------------
 
+[0;36m  Cell [0;32mIn[2], line 1[0;36m[0m
+[0;31m    print('Here is some text'[0m
+[0m                             ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m unexpected EOF while parsing
 
-Error: table joinedtable already exists
+SyntaxError: unexpected EOF while parsing (1139915029.py, line 1)
 

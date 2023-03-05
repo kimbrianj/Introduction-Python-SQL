@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Reading SQL tables using Pandas &#8212; Introduction to Python and SQL for Data Analysis</title>
+    <title>Writing Data Frames to an SQL Database &#8212; Introduction to Python and SQL for Data Analysis</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Writing Data Frames to an SQL Database" href="03-to-sql.html" />
-    <link rel="prev" title="Creating a Connection" href="01-connecting.html" />
+    <link rel="next" title="Example: Finding Jobs by County over Years" href="04-jobs-county-years.html" />
+    <link rel="prev" title="Reading SQL tables using Pandas" href="02-tables-df.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -342,13 +342,13 @@ const thebe_selector_output = ".output, .cell_output"
      Creating a Connection
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-tables-df.html">
      Reading SQL tables using Pandas
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03-to-sql.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Writing Data Frames to an SQL Database
     </a>
    </li>
@@ -418,7 +418,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/kimbrianj/Introduction-Python-SQL/master?urlpath=lab/tree/content/07-python-sql/02-tables-df.ipynb"
+        <a href="https://mybinder.org/v2/gh/kimbrianj/Introduction-Python-SQL/master?urlpath=lab/tree/content/07-python-sql/03-to-sql.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -436,7 +436,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/kimbrianj/Introduction-Python-SQL/blob/master/content/07-python-sql/02-tables-df.ipynb"
+        <a href="https://colab.research.google.com/github/kimbrianj/Introduction-Python-SQL/blob/master/content/07-python-sql/03-to-sql.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -497,7 +497,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/content/07-python-sql/02-tables-df.ipynb"
+        <a href="../../_sources/content/07-python-sql/03-to-sql.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -534,23 +534,64 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-put-more-datasets-into-the-database-span">
+   <span style="color:red">
+    Checkpoint: Put More Datasets into the Database
+   </span>
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Reading SQL tables using Pandas</h1>
+                <h1>Writing Data Frames to an SQL Database</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-put-more-datasets-into-the-database-span">
+   <span style="color:red">
+    Checkpoint: Put More Datasets into the Database
+   </span>
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -570,21 +611,20 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<section class="tex2jax_ignore mathjax_ignore" id="reading-sql-tables-using-pandas">
-<h1>Reading SQL tables using Pandas<a class="headerlink" href="#reading-sql-tables-using-pandas" title="Permalink to this headline">#</a></h1>
-<p>Now that we’ve created our engine to connect to the database, we can use the <code class="docutils literal notranslate"><span class="pre">read_sql</span></code> function in <code class="docutils literal notranslate"><span class="pre">pandas</span></code> to write SQL queries and get tables out as DataFrames.</p>
+<section class="tex2jax_ignore mathjax_ignore" id="writing-data-frames-to-an-sql-database">
+<h1>Writing Data Frames to an SQL Database<a class="headerlink" href="#writing-data-frames-to-an-sql-database" title="Permalink to this headline">#</a></h1>
+<p>We can use our engine that we used to connect to the database to also write tables to a database. We do this using the <code class="docutils literal notranslate"><span class="pre">to_sql</span></code> Data Frame method in <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. Let’s try this out by putting a new state’s data into our lodes.db database.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM ca_wac_2015&quot;</span><span class="p">,</span><span class="n">conn</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_url</span> <span class="o">=</span> <span class="s1">&#39;https://lehd.ces.census.gov/data/lodes/LODES7/md/wac/md_wac_S000_JT00_2015.csv.gz&#39;</span>
+<span class="n">df_md</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_url</span><span class="p">,</span><span class="n">compression</span><span class="o">=</span><span class="s1">&#39;gzip&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Here, <code class="docutils literal notranslate"><span class="pre">pd.read_sql()</span></code> outputs the table that the SQL query that we wrote as a string would return. In this case, it’s simply the <code class="docutils literal notranslate"><span class="pre">ca_wac_2015</span></code> table. Of course, you can include more complicated queries, such as joins, if you’d like.</p>
-<p>Let’s look at the data to make sure we got what we wanted.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_md</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -607,6 +647,217 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>w_geocode</th>
+      <th>C000</th>
+      <th>CA01</th>
+      <th>CA02</th>
+      <th>CA03</th>
+      <th>CE01</th>
+      <th>CE02</th>
+      <th>CE03</th>
+      <th>CNS01</th>
+      <th>CNS02</th>
+      <th>...</th>
+      <th>CFA02</th>
+      <th>CFA03</th>
+      <th>CFA04</th>
+      <th>CFA05</th>
+      <th>CFS01</th>
+      <th>CFS02</th>
+      <th>CFS03</th>
+      <th>CFS04</th>
+      <th>CFS05</th>
+      <th>createdate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>240010001001023</td>
+      <td>8</td>
+      <td>3</td>
+      <td>4</td>
+      <td>1</td>
+      <td>4</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>20190826</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>240010001001025</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>20190826</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>240010001001054</td>
+      <td>10</td>
+      <td>2</td>
+      <td>3</td>
+      <td>5</td>
+      <td>7</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>20190826</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>240010001001113</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>20190826</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>240010001002061</td>
+      <td>8</td>
+      <td>4</td>
+      <td>4</td>
+      <td>0</td>
+      <td>7</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>20190826</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 53 columns</p>
+</div></div></div>
+</div>
+<p>First, we will lowercase all column names to make it easier to work with in SQL. Remember, SQL lowercases everything by default, so if we bring this data into the database with uppercase column names, we’ll need to use double quotes to refer to all column names, which can become a headache to manage down the road.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_md</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">df_md</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">df_md</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;w_geocode&#39;, &#39;c000&#39;, &#39;ca01&#39;, &#39;ca02&#39;, &#39;ca03&#39;, &#39;ce01&#39;, &#39;ce02&#39;, &#39;ce03&#39;,
+       &#39;cns01&#39;, &#39;cns02&#39;, &#39;cns03&#39;, &#39;cns04&#39;, &#39;cns05&#39;, &#39;cns06&#39;, &#39;cns07&#39;, &#39;cns08&#39;,
+       &#39;cns09&#39;, &#39;cns10&#39;, &#39;cns11&#39;, &#39;cns12&#39;, &#39;cns13&#39;, &#39;cns14&#39;, &#39;cns15&#39;, &#39;cns16&#39;,
+       &#39;cns17&#39;, &#39;cns18&#39;, &#39;cns19&#39;, &#39;cns20&#39;, &#39;cr01&#39;, &#39;cr02&#39;, &#39;cr03&#39;, &#39;cr04&#39;,
+       &#39;cr05&#39;, &#39;cr07&#39;, &#39;ct01&#39;, &#39;ct02&#39;, &#39;cd01&#39;, &#39;cd02&#39;, &#39;cd03&#39;, &#39;cd04&#39;, &#39;cs01&#39;,
+       &#39;cs02&#39;, &#39;cfa01&#39;, &#39;cfa02&#39;, &#39;cfa03&#39;, &#39;cfa04&#39;, &#39;cfa05&#39;, &#39;cfs01&#39;, &#39;cfs02&#39;,
+       &#39;cfs03&#39;, &#39;cfs04&#39;, &#39;cfs05&#39;, &#39;createdate&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_md</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">&#39;md_wac_2015&#39;</span><span class="p">,</span> <span class="n">conn</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>33450
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">to_sql()</span></code> takes the Data Frame and puts it into the database in the connection <code class="docutils literal notranslate"><span class="pre">conn</span></code>, naming it as the value given in the first argument (in this case, we named it <code class="docutils literal notranslate"><span class="pre">md_wac_2015</span></code>. The last argument, <code class="docutils literal notranslate"><span class="pre">if_exists='replace'</span></code>, makes it so that we replace the table if it exists already. This isn’t necessarily always the best to use, because it will overwrite any updates you might have made, but it works for our purposes because if we are bringing in a new table, we haven’t done anything about the old one to warrant keeping it.</p>
+<p>Let’s bring this dataset back to make sure we got what we wanted.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM md_wac_2015&quot;</span><span class="p">,</span><span class="n">conn</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>index</th>
       <th>w_geocode</th>
       <th>c000</th>
       <th>ca01</th>
@@ -616,8 +867,8 @@ title="Print to PDF"
       <th>ce02</th>
       <th>ce03</th>
       <th>cns01</th>
-      <th>cns02</th>
       <th>...</th>
+      <th>cfa02</th>
       <th>cfa03</th>
       <th>cfa04</th>
       <th>cfa05</th>
@@ -627,20 +878,19 @@ title="Print to PDF"
       <th>cfs04</th>
       <th>cfs05</th>
       <th>createdate</th>
-      <th>over100</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>060014001001007</td>
-      <td>30</td>
-      <td>2</td>
-      <td>16</td>
-      <td>12</td>
+      <td>0</td>
+      <td>240010001001023</td>
+      <td>8</td>
+      <td>3</td>
       <td>4</td>
-      <td>2</td>
-      <td>24</td>
+      <td>1</td>
+      <td>4</td>
+      <td>4</td>
       <td>0</td>
       <td>0</td>
       <td>...</td>
@@ -652,19 +902,19 @@ title="Print to PDF"
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>20170919</td>
       <td>0</td>
+      <td>20190826</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>060014001001008</td>
-      <td>4</td>
+      <td>1</td>
+      <td>240010001001025</td>
+      <td>1</td>
       <td>0</td>
       <td>1</td>
-      <td>3</td>
       <td>0</td>
       <td>0</td>
-      <td>4</td>
+      <td>1</td>
       <td>0</td>
       <td>0</td>
       <td>...</td>
@@ -676,19 +926,19 @@ title="Print to PDF"
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>20170919</td>
       <td>0</td>
+      <td>20190826</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>060014001001011</td>
-      <td>3</td>
       <td>2</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
+      <td>240010001001054</td>
+      <td>10</td>
+      <td>2</td>
       <td>3</td>
-      <td>0</td>
+      <td>5</td>
+      <td>7</td>
+      <td>3</td>
       <td>0</td>
       <td>0</td>
       <td>...</td>
@@ -700,20 +950,20 @@ title="Print to PDF"
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>20170919</td>
       <td>0</td>
+      <td>20190826</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>060014001001017</td>
-      <td>11</td>
       <td>3</td>
-      <td>3</td>
-      <td>5</td>
+      <td>240010001001113</td>
       <td>2</td>
-      <td>2</td>
-      <td>7</td>
       <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
       <td>0</td>
       <td>...</td>
       <td>0</td>
@@ -724,19 +974,19 @@ title="Print to PDF"
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>20170919</td>
       <td>0</td>
+      <td>20190826</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>060014001001024</td>
-      <td>10</td>
-      <td>3</td>
-      <td>3</td>
       <td>4</td>
+      <td>240010001002061</td>
+      <td>8</td>
+      <td>4</td>
+      <td>4</td>
+      <td>0</td>
       <td>7</td>
       <td>1</td>
-      <td>2</td>
       <td>0</td>
       <td>0</td>
       <td>...</td>
@@ -748,101 +998,18 @@ title="Print to PDF"
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>20170919</td>
       <td>0</td>
+      <td>20190826</td>
     </tr>
   </tbody>
 </table>
 <p>5 rows × 54 columns</p>
 </div></div></div>
 </div>
-<p>We can use more complicated SQL queries as well, bringing in portions of tables. This is more often what you’ll want to do, as tables in SQL can get quite large, and you may want data that has already been joined together.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">SELECT w_geocode, c000, cbsaname, ctyname </span>
-<span class="s2">FROM ca_wac_2015 a</span>
-<span class="s2">JOIN ca_xwalk b</span>
-<span class="s2">ON a.w_geocode = b.tabblk2010;</span>
-<span class="s2">&quot;&quot;&quot;</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">query</span><span class="p">,</span><span class="n">conn</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Here, we are first constructing a query (using the triple quotation marks to create the string over multiple lines for readability), then putting that query into the <code class="docutils literal notranslate"><span class="pre">read_sql()</span></code> function, which outputs the result of the query as a Data Frame. Let’s take a quick look at it.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>w_geocode</th>
-      <th>c000</th>
-      <th>cbsaname</th>
-      <th>ctyname</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>060014001001007</td>
-      <td>30</td>
-      <td>San Francisco-Oakland-Hayward, CA</td>
-      <td>Alameda County, CA</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>060014001001008</td>
-      <td>4</td>
-      <td>San Francisco-Oakland-Hayward, CA</td>
-      <td>Alameda County, CA</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>060014001001011</td>
-      <td>3</td>
-      <td>San Francisco-Oakland-Hayward, CA</td>
-      <td>Alameda County, CA</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>060014001001017</td>
-      <td>11</td>
-      <td>San Francisco-Oakland-Hayward, CA</td>
-      <td>Alameda County, CA</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>060014001001024</td>
-      <td>10</td>
-      <td>San Francisco-Oakland-Hayward, CA</td>
-      <td>Alameda County, CA</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
+<section id="span-style-color-red-checkpoint-put-more-datasets-into-the-database-span">
+<h2><span style="color:red">Checkpoint: Put More Datasets into the Database</span><a class="headerlink" href="#span-style-color-red-checkpoint-put-more-datasets-into-the-database-span" title="Permalink to this headline">#</a></h2>
+<p>Try doing the same process of putting data into a database with a different dataset. Make sure you lowercase all columns, and check to make sure it has been put into the database properly by bringing it back into Python.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -872,17 +1039,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="01-connecting.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="02-tables-df.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Creating a Connection</p>
+            <p class="prev-next-title">Reading SQL tables using Pandas</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="03-to-sql.html" title="next page">
+    <a class='right-next' id="next-link" href="04-jobs-county-years.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Writing Data Frames to an SQL Database</p>
+        <p class="prev-next-title">Example: Finding Jobs by County over Years</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
