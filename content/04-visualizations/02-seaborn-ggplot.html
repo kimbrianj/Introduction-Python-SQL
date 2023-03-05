@@ -566,6 +566,13 @@ title="Print to PDF"
    ggplot
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-using-other-packages-span">
+   <span style="color:red">
+    Checkpoint: Using Other Packages
+   </span>
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -595,6 +602,13 @@ title="Print to PDF"
    ggplot
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-using-other-packages-span">
+   <span style="color:red">
+    Checkpoint: Using Other Packages
+   </span>
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -612,9 +626,8 @@ title="Print to PDF"
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mplib</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
-<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">()</span>
+<span class="n">df_2015</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://lehd.ces.census.gov/data/lodes/LODES7/md/wac/md_wac_S000_JT00_2015.csv.gz&#39;</span><span class="p">,</span> <span class="n">compression</span> <span class="o">=</span> <span class="s1">&#39;gzip&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -624,31 +637,48 @@ title="Print to PDF"
 <p>While <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> can be very useful for creating graphs, it can be easy to get bogged down in all of the intricacies of customizing everything you want to do. In this section, we introduce a</p>
 <section id="seaborn">
 <h2>Seaborn<a class="headerlink" href="#seaborn" title="Permalink to this headline">#</a></h2>
-<p>Seaborn is a package built on top of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> that is meant to make some of the difficult tasks easier to do.</p>
+<p>Seaborn is a package built on top of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> that is meant to make some of the difficult tasks easier to do. We first import it then set the style. We are using the default style for Seaborn here.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_2015</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://lehd.ces.census.gov/data/lodes/LODES7/md/wac/md_wac_S000_JT00_2015.csv.gz&#39;</span><span class="p">,</span> <span class="n">compression</span> <span class="o">=</span> <span class="s1">&#39;gzip&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>A basic histogram can be made using the <code class="docutils literal notranslate"><span class="pre">sns.displot</span></code> function, passing the Data Frame as the first argument, then specifying the <code class="docutils literal notranslate"><span class="pre">x</span></code> variable and any other arguments to adjust the plot as necessary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">df_2015</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;CA01&#39;</span><span class="p">,</span> <span class="n">stat</span><span class="o">=</span><span class="s2">&quot;density&quot;</span><span class="p">,</span> <span class="n">discrete</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">df_2015</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;CA01&#39;</span><span class="p">,</span> <span class="n">stat</span><span class="o">=</span><span class="s2">&quot;density&quot;</span><span class="p">,</span> <span class="n">discrete</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x137314880&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x132082af0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/02-seaborn-ggplot_4_1.png" src="../../_images/02-seaborn-ggplot_4_1.png" />
+<img alt="../../_images/02-seaborn-ggplot_5_1.png" src="../../_images/02-seaborn-ggplot_5_1.png" />
+</div>
+</div>
+<p>This doesn’t look very nice because it’s trying to plot every single value, and there are some big outliers. Let’s limit to a small area.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">df_2015</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;CA01&#39;</span><span class="p">,</span> <span class="n">stat</span><span class="o">=</span><span class="s2">&quot;density&quot;</span><span class="p">,</span> <span class="n">discrete</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x138de75b0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/02-seaborn-ggplot_7_1.png" src="../../_images/02-seaborn-ggplot_7_1.png" />
 </div>
 </div>
 </section>
 <section id="ggplot">
 <h2>ggplot<a class="headerlink" href="#ggplot" title="Permalink to this headline">#</a></h2>
-<p>For people familiar with R and ggplot2, using <code class="docutils literal notranslate"><span class="pre">ggplot</span></code> might be preferable because it uses a lot of the same syntax as the R version.</p>
+<p>For people familiar with R and ggplot2, using <code class="docutils literal notranslate"><span class="pre">ggplot</span></code> might be preferable because it uses a lot of the same syntax as the R version. The <code class="docutils literal notranslate"><span class="pre">ggplot</span></code> visualizations use the grammar of graphics to build a plot, meaning it requires defining the dataset, the aesthetics of the plot, as well as the geometric objects to use to build the plot. For example, to create a histogram, we would need to specify the Data Frame we are using with <code class="docutils literal notranslate"><span class="pre">ggplot</span></code>, add on the aesthetics using <code class="docutils literal notranslate"><span class="pre">aes</span></code>, then use the appropriate <code class="docutils literal notranslate"><span class="pre">geom_histogram</span></code> to add the histogram geometric object on top of that.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">plotnine</span> <span class="kn">import</span> <span class="o">*</span>
@@ -663,12 +693,51 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/02-seaborn-ggplot_7_0.png" src="../../_images/02-seaborn-ggplot_7_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (333858030)&gt;
+<img alt="../../_images/02-seaborn-ggplot_10_0.png" src="../../_images/02-seaborn-ggplot_10_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (337435962)&gt;
 </pre></div>
 </div>
 </div>
 </div>
+<p>Again, this is hard to read, so let’s try limiting the x-axis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ggplot</span><span class="p">(</span><span class="n">df_2015</span><span class="p">)</span> <span class="o">+</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;CA01&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">geom_histogram</span><span class="p">(</span><span class="n">bins</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span> <span class="o">+</span> <span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/bkim/mambaforge/envs/myenv_x86/lib/python3.9/site-packages/plotnine/layer.py:333: PlotnineWarning: stat_bin : Removed 2434 rows containing non-finite values.
+/Users/bkim/mambaforge/envs/myenv_x86/lib/python3.9/site-packages/plotnine/layer.py:411: PlotnineWarning: geom_histogram : Removed 2 rows containing missing values.
+</pre></div>
+</div>
+<img alt="../../_images/02-seaborn-ggplot_12_1.png" src="../../_images/02-seaborn-ggplot_12_1.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (337505455)&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Boxplots can be done similarly except you need supply a “dummy” input for the x value if you want to create a boxplot of just one variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ggplot</span><span class="p">(</span><span class="n">df_2015</span><span class="p">)</span> <span class="o">+</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;CA01&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">geom_boxplot</span><span class="p">()</span> <span class="o">+</span> <span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/bkim/mambaforge/envs/myenv_x86/lib/python3.9/site-packages/plotnine/layer.py:333: PlotnineWarning: stat_boxplot : Removed 2434 rows containing non-finite values.
+</pre></div>
+</div>
+<img alt="../../_images/02-seaborn-ggplot_14_1.png" src="../../_images/02-seaborn-ggplot_14_1.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (337548710)&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="span-style-color-red-checkpoint-using-other-packages-span">
+<h2><span style="color:red">Checkpoint: Using Other Packages</span><a class="headerlink" href="#span-style-color-red-checkpoint-using-other-packages-span" title="Permalink to this headline">#</a></h2>
+<p>Try using the methods we’ve described above, try visualizing your state again. Look at the documentation and see if you can figure out how to do different types of graphs as well.</p>
 </section>
 </section>
 

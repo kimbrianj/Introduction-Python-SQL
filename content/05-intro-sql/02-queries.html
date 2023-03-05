@@ -347,6 +347,16 @@ const thebe_selector_output = ".output, .cell_output"
      Reading SQL tables using Pandas
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-python-sql/03-to-sql.html">
+     Writing Data Frames to an SQL Database
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-python-sql/04-jobs-county-years.html">
+     Example: Finding Jobs by County over Years
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -599,7 +609,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>This is something that is unique to Jupyter Notebooks, and is only there because of how we’ve set up the notebook to interact with the database using SQLite3. THere are other ways to interact with the database, such as using the command line or other software such as DBeaver. We won’t go over the various ways to interact with databases here, since the SQL code is generally the same regardless of how you do it.</p>
+<p>This is something that is unique to Jupyter Notebooks, and is only there because of how we’ve set up the notebook to interact with the database using SQLite3. There are other ways to interact with the database, such as using the command line or other software such as DBeaver. We won’t go over the various ways to interact with databases here, since the SQL code is generally the same regardless of how you do it.</p>
 <p>Now, let’s start with some basics. We’ll start by retrieving all columns from the California Workplace Area Characteristic (<code class="docutils literal notranslate"><span class="pre">ca_wac_2015</span></code>) table. Try running the following query:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1259,7 +1269,7 @@ LIMIT 100;
 </pre></div>
 </div>
 <p>We’ve changed the original query by using <code class="docutils literal notranslate"><span class="pre">w_geocode,</span> <span class="pre">createdate</span></code> instead of <code class="docutils literal notranslate"><span class="pre">*</span></code>, so we’ll only get the values from two columns, <code class="docutils literal notranslate"><span class="pre">w_geocode</span></code> and <code class="docutils literal notranslate"><span class="pre">createdate</span></code>. In addition, we’ve changed the value after <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> to be 100 instead of 10, so we’ll get the first 100 rows instead of the first 10 rows.</p>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">w_geocode</span><span class="p">,</span><span class="w"> </span><span class="n">createdate</span><span class="w"> </span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">ca_wac_2015</span>

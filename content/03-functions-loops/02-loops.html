@@ -560,15 +560,11 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#using-a-for-loop-to-read-in-csv-files">
    Using a For Loop to Read In CSV Files
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#span-style-color-green-using-loops-and-functions-to-bring-in-multiple-datasets-video-span">
-     <span style="color:green">
-      Using Loops and Functions to Bring in Multiple Datasets  (VIDEO)
-     </span>
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-loops-and-functions-to-bring-in-multiple-datasets">
+   Using Loops and Functions to Bring in Multiple Datasets
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-2-use-functions-and-loops-to-bring-in-your-data-for-multiple-years-span">
@@ -600,15 +596,11 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#using-a-for-loop-to-read-in-csv-files">
    Using a For Loop to Read In CSV Files
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#span-style-color-green-using-loops-and-functions-to-bring-in-multiple-datasets-video-span">
-     <span style="color:green">
-      Using Loops and Functions to Bring in Multiple Datasets  (VIDEO)
-     </span>
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-loops-and-functions-to-bring-in-multiple-datasets">
+   Using Loops and Functions to Bring in Multiple Datasets
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-2-use-functions-and-loops-to-bring-in-your-data-for-multiple-years-span">
@@ -717,8 +709,9 @@ We&#39;re done now.
 <p>Now that we’ve gone over the basics of how a for loop works, let’s apply it to reading in multiple CSV files. We’ve already created a function that takes a year and reads a CSV file. We want to do this for multiple years automatically, so that we don’t need to keep on changing the year and running the code again (if, for example, we want to do this for many years). So, in other words, we want to create a loop that runs the same code multiple times, with only the year changed.</p>
 <p>Part of our task is a bit easier, since we’ve already created a function that does what we want. Now, all we need to do is loop through the years we want, calling that function with a different argument for the year.</p>
 <p>There’s one small complication though: how will we automate storage of these Data Frame objects? There’s multiple possibilities, but the way we’ll do it is using a Python <strong>dictionary</strong>.</p>
-<section id="span-style-color-green-using-loops-and-functions-to-bring-in-multiple-datasets-video-span">
-<h3><span style="color:green">Using Loops and Functions to Bring in Multiple Datasets  (VIDEO)</span><a class="headerlink" href="#span-style-color-green-using-loops-and-functions-to-bring-in-multiple-datasets-video-span" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="using-loops-and-functions-to-bring-in-multiple-datasets">
+<h2>Using Loops and Functions to Bring in Multiple Datasets<a class="headerlink" href="#using-loops-and-functions-to-bring-in-multiple-datasets" title="Permalink to this headline">#</a></h2>
 <p>We’ll start by creating an empty dictionary in which we’ll store the Data Frames that we read in. Then, we’re going to loop through a few years (here, we’ll do 2009 to 2015), calling the <code class="docutils literal notranslate"><span class="pre">get_wac</span></code> function we created earlier to store the appropriate dataset in the dictionary. We’ll also make sure to provide the proper key when storing the dataset, so that we can easily access it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1040,7 +1033,6 @@ We&#39;re done now.
 </div>
 </div>
 <p>That way, we can just use <code class="docutils literal notranslate"><span class="pre">wac_09</span></code>.</p>
-</section>
 </section>
 <section id="span-style-color-red-checkpoint-2-use-functions-and-loops-to-bring-in-your-data-for-multiple-years-span">
 <h2><span style="color:red">Checkpoint 2: Use Functions and Loops to Bring in Your Data for Multiple Years</span><a class="headerlink" href="#span-style-color-red-checkpoint-2-use-functions-and-loops-to-bring-in-your-data-for-multiple-years-span" title="Permalink to this headline">#</a></h2>

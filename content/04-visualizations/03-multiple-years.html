@@ -347,6 +347,16 @@ const thebe_selector_output = ".output, .cell_output"
      Reading SQL tables using Pandas
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-python-sql/03-to-sql.html">
+     Writing Data Frames to an SQL Database
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-python-sql/04-jobs-county-years.html">
+     Example: Finding Jobs by County over Years
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -559,9 +569,9 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-3-visualize-your-data-span">
+  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-visualize-your-data-span">
    <span style="color:red">
-    Checkpoint 3: Visualize Your Data
+    Checkpoint: Visualize Your Data
    </span>
   </a>
  </li>
@@ -597,9 +607,9 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-3-visualize-your-data-span">
+  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-visualize-your-data-span">
    <span style="color:red">
-    Checkpoint 3: Visualize Your Data
+    Checkpoint: Visualize Your Data
    </span>
   </a>
  </li>
@@ -641,7 +651,7 @@ title="Print to PDF"
 <span class="sd">    &#39;&#39;&#39;</span>
     
     <span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://lehd.ces.census.gov/data/lodes/LODES7/&#39;</span>
-    <span class="n">file_specs</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{st}</span><span class="s1">/wac/</span><span class="si">{st}</span><span class="s1">_wac_S000_JT00_</span><span class="si">{yr}</span><span class="s1">.csv.gz&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">st</span> <span class="o">=</span> <span class="n">state</span><span class="p">,</span> <span class="n">yr</span> <span class="o">=</span> <span class="n">year</span><span class="p">)</span>
+    <span class="n">file_specs</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">state</span><span class="si">}</span><span class="s1">/wac/</span><span class="si">{</span><span class="n">state</span><span class="si">}</span><span class="s1">_wac_S000_JT00_</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">.csv.gz&#39;</span>
     <span class="n">file_name</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="n">file_specs</span>
     
     <span class="c1"># print(&quot;The URL for the file is at: &quot; + file_name)</span>
@@ -826,7 +836,7 @@ ax.get_xaxis().get_major_formatter().set_useOffset(False)
 <p>The last line is simply to make the years look nicer on the x-axis. You can try plotting without the last line (i.e. comment it out) to see what happens without it.</p>
 <section id="using-seaborn">
 <h2>Using Seaborn<a class="headerlink" href="#using-seaborn" title="Permalink to this headline">#</a></h2>
-<p><strong>Seaborn</strong> is a popular Python visualization package, that allows you to create graphs that look nicer than just using <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, and can many times be easier to use. For example, to obtain the above graph, you can actually use the <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> function <code class="docutils literal notranslate"><span class="pre">lineplot</span></code> with the <code class="docutils literal notranslate"><span class="pre">plot_df</span></code> DataFrame to get the same thing.</p>
+<p>To obtain the above graph, you can actually use the <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> function <code class="docutils literal notranslate"><span class="pre">lineplot</span></code> with the <code class="docutils literal notranslate"><span class="pre">plot_df</span></code> DataFrame to get the same thing.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">plot_df</span><span class="p">)</span>
@@ -867,8 +877,8 @@ ax.get_xaxis().get_major_formatter().set_useOffset(False)
 </div>
 </section>
 </section>
-<section id="span-style-color-red-checkpoint-3-visualize-your-data-span">
-<h2><span style="color:red">Checkpoint 3: Visualize Your Data</span><a class="headerlink" href="#span-style-color-red-checkpoint-3-visualize-your-data-span" title="Permalink to this headline">#</a></h2>
+<section id="span-style-color-red-checkpoint-visualize-your-data-span">
+<h2><span style="color:red">Checkpoint: Visualize Your Data</span><a class="headerlink" href="#span-style-color-red-checkpoint-visualize-your-data-span" title="Permalink to this headline">#</a></h2>
 <p>Try using the methods we’ve described above, try visualizing your data set. What do the visualizations tell you? How are they different from the data from California? How are they the same? Does this make sense?</p>
 </section>
 </section>
