@@ -624,8 +624,6 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start (as usual) by loading libraries</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mplib</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
@@ -634,6 +632,14 @@ title="Print to PDF"
 <h1>Basic Visualizations<a class="headerlink" href="#basic-visualizations" title="Permalink to this headline">#</a></h1>
 <p>Visualizations can help us look at summaries of the data. They can also aid in providing good presentation aids.</p>
 <p>In this section, we’ll look at a few basic types of visualizations: histograms, boxplots, lineplots. In practice, there are many more types of visualizations. Furthermore, there are many different packages that can help you create these different visualizations. While we’ll focus only on the basics here with the <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> package, keep in mind that there are many tools available.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mplib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
 <section id="making-a-histogram">
 <h2>Making a Histogram<a class="headerlink" href="#making-a-histogram" title="Permalink to this headline">#</a></h2>
 <p>We’ll start with a basic histogram. A histogram is useful for looking at the distribution of a numerical variable (that is, a variable that takes numbers as its values as opposed to categories). They can visually represent the spread and center of the variable, as well as provide insights to the shape of the distribution. For example, we can look at the number of <strong>modes</strong>, or peaks, in the data, which wouldn’t be captured in numerical summaries such as mean or variance. We can also get a better idea of the <strong>skew</strong> of the data, determining whether most units are grouped on the left or right side (lower or higher values), or whether it’s mostly symmetrical.</p>
@@ -649,7 +655,7 @@ title="Print to PDF"
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: ylabel=&#39;Frequency&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/01-basic-visualizations_3_1.png" src="../../_images/01-basic-visualizations_3_1.png" />
+<img alt="../../_images/01-basic-visualizations_4_1.png" src="../../_images/01-basic-visualizations_4_1.png" />
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">plot()</span></code> method is the basic plotting tool that you will use. We’re using it with the <strong>Series</strong> object <code class="docutils literal notranslate"><span class="pre">df_2015['C000']</span></code>, so it takes the values in that Series and plots it. We specify <code class="docutils literal notranslate"><span class="pre">kind='hist'</span></code> to say that we want a histogram. We can also use the <code class="docutils literal notranslate"><span class="pre">hist()</span></code> method to plot a histogram.</p>
@@ -663,7 +669,7 @@ title="Print to PDF"
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="../../_images/01-basic-visualizations_5_1.png" src="../../_images/01-basic-visualizations_5_1.png" />
+<img alt="../../_images/01-basic-visualizations_6_1.png" src="../../_images/01-basic-visualizations_6_1.png" />
 </div>
 </div>
 <p>Now this histogram is quite unhelpful. It’s very hard to see, but it’s probably because there is an outlier that is forcing the boxplot into this scaling, and giving us a very limited view of the data because almost every observation is in one bar. We can fix these using some additional parameters.</p>
@@ -677,7 +683,7 @@ title="Print to PDF"
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="../../_images/01-basic-visualizations_7_1.png" src="../../_images/01-basic-visualizations_7_1.png" />
+<img alt="../../_images/01-basic-visualizations_8_1.png" src="../../_images/01-basic-visualizations_8_1.png" />
 </div>
 </div>
 <p>That looks much better! We specify the number of bins at 20 (that is, how many rectangles we want in the plot), as well as a range for the x-axis. In this case, since there are some very high values that would stretch the graph out, we cut it off at 500.</p>
@@ -695,7 +701,7 @@ title="Print to PDF"
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;California Workplace Area Characteristics (2015) Total Jobs&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/01-basic-visualizations_9_1.png" src="../../_images/01-basic-visualizations_9_1.png" />
+<img alt="../../_images/01-basic-visualizations_10_1.png" src="../../_images/01-basic-visualizations_10_1.png" />
 </div>
 </div>
 <p>Let’s break down each line of the code. First, we used the command</p>
@@ -720,7 +726,7 @@ title="Print to PDF"
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Number of Jobs&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/01-basic-visualizations_12_1.png" src="../../_images/01-basic-visualizations_12_1.png" />
+<img alt="../../_images/01-basic-visualizations_13_1.png" src="../../_images/01-basic-visualizations_13_1.png" />
 </div>
 </div>
 <p>Instead of setting <code class="docutils literal notranslate"><span class="pre">range=[0,100]</span></code> like we did before, we used the Axes method <code class="docutils literal notranslate"><span class="pre">set_ylim</span></code> to set the limits of the y-axis to be 0 and 100. Other than that, the code from before should look very familiar.</p>
@@ -739,7 +745,7 @@ title="Print to PDF"
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Number of Jobs&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/01-basic-visualizations_14_1.png" src="../../_images/01-basic-visualizations_14_1.png" />
+<img alt="../../_images/01-basic-visualizations_15_1.png" src="../../_images/01-basic-visualizations_15_1.png" />
 </div>
 </div>
 <p>Here, we want multiple columns from the Data Frame, so instead of a Series object, we have a Data Frame object. Notice that we were able to select the proper columns from the Data Frame by using a List inside the square brackets.</p>
