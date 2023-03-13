@@ -658,7 +658,7 @@ title="Print to PDF"
     
     <span class="c1"># Bring in data from internet</span>
     <span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://lehd.ces.census.gov/data/lodes/LODES7/&#39;</span>
-    <span class="n">file_specs</span> <span class="o">=</span> <span class="s1">&#39;md/wac/md_wac_S000_JT00_</span><span class="si">{yr}</span><span class="s1">.csv.gz&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">yr</span> <span class="o">=</span> <span class="n">year</span><span class="p">)</span>
+    <span class="n">file_specs</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;md/wac/md_wac_S000_JT00_</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">.csv.gz&#39;</span>
     <span class="n">file_name</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="n">file_specs</span>
     <span class="n">df_md</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span><span class="n">compression</span><span class="o">=</span><span class="s1">&#39;gzip&#39;</span><span class="p">)</span>
     
@@ -709,15 +709,15 @@ title="Print to PDF"
 <span class="sd">    A Data Frame with three columns, county, jobs, and year</span>
 <span class="sd">    &#39;&#39;&#39;</span>    
     
-    <span class="n">base_query</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
-<span class="s1">    SELECT ctyname as county, count(*) as jobs, </span><span class="si">{year}</span><span class="s1"> as year</span>
-<span class="s1">    FROM md_wac_</span><span class="si">{year}</span><span class="s1"> wac</span>
+    <span class="n">base_query</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">    SELECT ctyname as county, count(*) as jobs, </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1"> as year</span>
+<span class="s1">    FROM md_wac_</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1"> wac</span>
 <span class="s1">    JOIN md_xwalk xwalk</span>
 <span class="s1">    ON wac.w_geocode = xwalk.tabblk2010</span>
 <span class="s1">    GROUP BY ctyname</span>
 <span class="s1">    &#39;&#39;&#39;</span>
     
-    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">base_query</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span><span class="p">),</span> <span class="n">conn</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">base_query</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -982,7 +982,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <img alt="../../_images/04-jobs-county-years_16_0.png" src="../../_images/04-jobs-county-years_16_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (331791824)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (336039843)&gt;
 </pre></div>
 </div>
 </div>

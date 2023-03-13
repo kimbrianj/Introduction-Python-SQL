@@ -347,6 +347,16 @@ const thebe_selector_output = ".output, .cell_output"
      Reading SQL tables using Pandas
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-python-sql/03-to-sql.html">
+     Writing Data Frames to an SQL Database
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-python-sql/04-jobs-county-years.html">
+     Example: Finding Jobs by County over Years
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -552,9 +562,9 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-putting-it-all-together-span">
+  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-making-tables-span">
    <span style="color:red">
-    Checkpoint: Putting It All Together
+    Checkpoint: Making Tables
    </span>
   </a>
  </li>
@@ -583,9 +593,9 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-putting-it-all-together-span">
+  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-making-tables-span">
    <span style="color:red">
-    Checkpoint: Putting It All Together
+    Checkpoint: Making Tables
    </span>
   </a>
  </li>
@@ -614,8 +624,7 @@ title="Print to PDF"
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">joinedtable</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span>
 <span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ca_wac_2015</span>
 <span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">ca_xwalk</span><span class="w"> </span>
-<span class="k">ON</span><span class="w"> </span><span class="n">ca_wac_2015</span><span class="p">.</span><span class="n">w_geocode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ca_xwalk</span><span class="p">.</span><span class="n">tabblk2010</span>
-<span class="k">LIMIT</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
+<span class="k">ON</span><span class="w"> </span><span class="n">ca_wac_2015</span><span class="p">.</span><span class="n">w_geocode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ca_xwalk</span><span class="p">.</span><span class="n">tabblk2010</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -633,8 +642,7 @@ title="Print to PDF"
 <span class="k">SELECT</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">w_geocode</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">blockid</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">c000</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total_jobs</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">cty</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">county</span><span class="w"> </span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">ca_wac_2015</span><span class="w"> </span><span class="n">a</span>
 <span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">ca_xwalk</span><span class="w"> </span><span class="n">b</span>
-<span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">w_geocode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">tabblk2010</span>
-<span class="k">LIMIT</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
+<span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">w_geocode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">tabblk2010</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -652,19 +660,18 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">joinedtable2</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>You might be tempted to avoid dropping tables since it seems relatively harmless to simply not use the table anymore without dropping them. However, it is important to keep databases clean and consider the amount of space each table takes up.</p>
 </section>
-<section id="span-style-color-red-checkpoint-putting-it-all-together-span">
-<h2><span style="color:red">Checkpoint: Putting It All Together</span><a class="headerlink" href="#span-style-color-red-checkpoint-putting-it-all-together-span" title="Permalink to this headline">#</a></h2>
-<p>Look back to the motivating question: <strong>What are the characteristics of the distribution of jobs by county and by metropolitan/micropolitan area?</strong></p>
-<p>Using what you know about joins and aggregation functions, try to answer the following questions:</p>
-<ul class="simple">
-<li><p>Which counties have the most jobs?</p></li>
-<li><p>Which counties do the workers live in the most?</p></li>
-<li><p>Which metropolitan/micropolitan areas have the most jobs?</p></li>
-<li><p>What are some summary statistics of jobs at the county or metropolitan/micropolitan level (e.g. average number of jobs per county)?</p></li>
-</ul>
-<p>Then, try creating a new table containing a joined table. You may use this newly created table to answer some of the questions above. After you’re done, drop the table.</p>
+<section id="span-style-color-red-checkpoint-making-tables-span">
+<h2><span style="color:red">Checkpoint: Making Tables</span><a class="headerlink" href="#span-style-color-red-checkpoint-making-tables-span" title="Permalink to this headline">#</a></h2>
+<p>Try creating a new table using a query you’ve practiced previously. After you’re done, drop the table.</p>
 </section>
 </section>
 

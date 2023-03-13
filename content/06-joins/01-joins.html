@@ -347,6 +347,16 @@ const thebe_selector_output = ".output, .cell_output"
      Reading SQL tables using Pandas
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-python-sql/03-to-sql.html">
+     Writing Data Frames to an SQL Database
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-python-sql/04-jobs-county-years.html">
+     Example: Finding Jobs by County over Years
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -691,7 +701,7 @@ title="Print to PDF"
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SELECT * FROM ca_wac_2015
 JOIN ca_xwalk
 ON ca_wac_2015.w_geocode = ca_xwalk.tabblk2010 
-LIMIT 1000;
+LIMIT 10;
 </pre></div>
 </div>
 <p>Let’s look at the first two lines.</p>
@@ -705,10 +715,7 @@ JOIN ca_xwalk
 </pre></div>
 </div>
 <p>This part specifies what we’re joining on. That is, what is the ID variable that is in both tables that we want to match. Notice that they don’t need to be named the same in both tables, though you do need to specify what they are in each table, even if they are the same, as well as which table they are from.</p>
-<p>If you run the full code below, you should see the first 1000 rows (because of the <code class="docutils literal notranslate"><span class="pre">LIMIT</span> <span class="pre">1000</span></code>) of the joined table. You should be able to scroll through all of the variables and see that we’ve managed to merge the <code class="docutils literal notranslate"><span class="pre">ca_wac_2015</span></code> and <code class="docutils literal notranslate"><span class="pre">ca_xwalk</span></code> tables together according to their census block IDs.</p>
-<blockquote>
-<div><p><strong>Side note:</strong> We’re only going to be displaying a few of the columns instead of using <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span></code> like we showed above. This is because we aren’t able to display more than 50 columns here in this notebook format. Joining to get tables with greater than 50 columns is perfectly fine, but we’ll only look at a few at a time to make it easier to follow in these exercises.</p>
-</div></blockquote>
+<p>If you run the full code below, you should see the first 10 rows (because of the <code class="docutils literal notranslate"><span class="pre">LIMIT</span> <span class="pre">10</span></code>) of the joined table. You should be able to scroll through all of the variables and see that we’ve managed to merge the <code class="docutils literal notranslate"><span class="pre">ca_wac_2015</span></code> and <code class="docutils literal notranslate"><span class="pre">ca_xwalk</span></code> tables together according to their census block IDs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">ca_wac_2015</span><span class="p">.</span><span class="n">w_geocode</span><span class="p">,</span><span class="w"> </span><span class="n">ca_xwalk</span><span class="p">.</span><span class="n">tabblk2010</span><span class="p">,</span><span class="w"> </span><span class="n">ca_wac_2015</span><span class="p">.</span><span class="n">c000</span><span class="p">,</span><span class="w"> </span><span class="n">ca_wac_2015</span><span class="p">.</span><span class="n">ca01</span><span class="p">,</span><span class="w"> </span><span class="n">ca_wac_2015</span><span class="p">.</span><span class="n">ca02</span><span class="p">,</span><span class="w"> </span><span class="n">ca_wac_2015</span><span class="p">.</span><span class="n">ca03</span><span class="p">,</span><span class="w"> </span>
@@ -716,7 +723,7 @@ JOIN ca_xwalk
 <span class="k">FROM</span><span class="w"> </span><span class="n">ca_wac_2015</span>
 <span class="k">JOIN</span><span class="w"> </span><span class="n">ca_xwalk</span>
 <span class="k">ON</span><span class="w"> </span><span class="n">ca_wac_2015</span><span class="p">.</span><span class="n">w_geocode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ca_xwalk</span><span class="p">.</span><span class="n">tabblk2010</span><span class="w"> </span>
-<span class="k">LIMIT</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -829,206 +836,6 @@ JOIN ca_xwalk
 <td>0</td>
 <td>0</td>
 <td>1</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001036</td>
-<td>060014001001036</td>
-<td>14</td>
-<td>2</td>
-<td>9</td>
-<td>3</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001038</td>
-<td>060014001001038</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
-<td>3</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001041</td>
-<td>060014001001041</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001042</td>
-<td>060014001001042</td>
-<td>9</td>
-<td>0</td>
-<td>9</td>
-<td>0</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001043</td>
-<td>060014001001043</td>
-<td>3</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001044</td>
-<td>060014001001044</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001047</td>
-<td>060014001001047</td>
-<td>2</td>
-<td>0</td>
-<td>2</td>
-<td>0</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001049</td>
-<td>060014001001049</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001053</td>
-<td>060014001001053</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001054</td>
-<td>060014001001054</td>
-<td>7</td>
-<td>0</td>
-<td>4</td>
-<td>3</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001056</td>
-<td>060014001001056</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001057</td>
-<td>060014001001057</td>
-<td>2</td>
-<td>0</td>
-<td>2</td>
-<td>0</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001058</td>
-<td>060014001001058</td>
-<td>3</td>
-<td>2</td>
-<td>0</td>
-<td>1</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001060</td>
-<td>060014001001060</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001062</td>
-<td>060014001001062</td>
-<td>25</td>
-<td>3</td>
-<td>13</td>
-<td>9</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001065</td>
-<td>060014001001065</td>
-<td>72</td>
-<td>14</td>
-<td>48</td>
-<td>10</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001068</td>
-<td>060014001001068</td>
-<td>595</td>
-<td>87</td>
-<td>326</td>
-<td>182</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001074</td>
-<td>060014001001074</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>2</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014002001001</td>
-<td>060014002001001</td>
-<td>6</td>
-<td>0</td>
-<td>5</td>
-<td>1</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014002001002</td>
-<td>060014002001002</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
 <td>Alameda County, CA</td>
 <td>San Francisco-Oakland-Hayward, CA</td>
 </tr>
@@ -1041,7 +848,7 @@ JOIN ca_xwalk
 <span class="k">FROM</span><span class="w"> </span><span class="n">ca_wac_2015</span>
 <span class="k">JOIN</span><span class="w"> </span><span class="n">ca_xwalk</span>
 <span class="k">ON</span><span class="w"> </span><span class="n">ca_wac_2015</span><span class="p">.</span><span class="n">w_geocode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ca_xwalk</span><span class="p">.</span><span class="n">tabblk2010</span><span class="w"> </span>
-<span class="k">LIMIT</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -1154,206 +961,6 @@ JOIN ca_xwalk
 <td>0</td>
 <td>0</td>
 <td>1</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001036</td>
-<td>060014001001036</td>
-<td>14</td>
-<td>2</td>
-<td>9</td>
-<td>3</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001038</td>
-<td>060014001001038</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
-<td>3</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001041</td>
-<td>060014001001041</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001042</td>
-<td>060014001001042</td>
-<td>9</td>
-<td>0</td>
-<td>9</td>
-<td>0</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001043</td>
-<td>060014001001043</td>
-<td>3</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001044</td>
-<td>060014001001044</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001047</td>
-<td>060014001001047</td>
-<td>2</td>
-<td>0</td>
-<td>2</td>
-<td>0</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001049</td>
-<td>060014001001049</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001053</td>
-<td>060014001001053</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001054</td>
-<td>060014001001054</td>
-<td>7</td>
-<td>0</td>
-<td>4</td>
-<td>3</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001056</td>
-<td>060014001001056</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001057</td>
-<td>060014001001057</td>
-<td>2</td>
-<td>0</td>
-<td>2</td>
-<td>0</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001058</td>
-<td>060014001001058</td>
-<td>3</td>
-<td>2</td>
-<td>0</td>
-<td>1</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001060</td>
-<td>060014001001060</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001062</td>
-<td>060014001001062</td>
-<td>25</td>
-<td>3</td>
-<td>13</td>
-<td>9</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001065</td>
-<td>060014001001065</td>
-<td>72</td>
-<td>14</td>
-<td>48</td>
-<td>10</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001068</td>
-<td>060014001001068</td>
-<td>595</td>
-<td>87</td>
-<td>326</td>
-<td>182</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014001001074</td>
-<td>060014001001074</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>2</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014002001001</td>
-<td>060014002001001</td>
-<td>6</td>
-<td>0</td>
-<td>5</td>
-<td>1</td>
-<td>Alameda County, CA</td>
-<td>San Francisco-Oakland-Hayward, CA</td>
-</tr>
-<tr>
-<td>060014002001002</td>
-<td>060014002001002</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
 <td>Alameda County, CA</td>
 <td>San Francisco-Oakland-Hayward, CA</td>
 </tr>

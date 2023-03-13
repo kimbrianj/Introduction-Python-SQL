@@ -347,6 +347,16 @@ const thebe_selector_output = ".output, .cell_output"
      Reading SQL tables using Pandas
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-python-sql/03-to-sql.html">
+     Writing Data Frames to an SQL Database
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-python-sql/04-jobs-county-years.html">
+     Example: Finding Jobs by County over Years
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -590,7 +600,7 @@ title="Print to PDF"
 <p>So far, we’ve just looked at the data one at a time, exploring a state’s workplace area characteristics, residence area characteristics, origin-destination pair information, or descriptions of each census block. What if we wanted to look at the jobs dataset within the context of the county they were in? We have get information about jobs from the WAC, RAC, or OD tables, but we also have to use the geography crosswalk table, containing information about the census blocks such as county and zip codes. We’d need to somehow combine the information from these two datasets together. We do that using <code class="docutils literal notranslate"><span class="pre">JOIN</span></code>s.</p>
 <section id="motivating-question">
 <h2>Motivating Question<a class="headerlink" href="#motivating-question" title="Permalink to this headline">#</a></h2>
-<p>In the previous workbook, we explored a little bit of the Workplace Area Characteristic dataset as well as the Geography Crosswalk dataset. We were able to look at how jobs were in each census block, as well as how many census blocks there were in each county or metropolitan/micropolitan area. In this notebook, we’re going to explore deeper into the data available to us to try to answer the question:</p>
+<p>In the previous chapter, we explored a little bit of the Workplace Area Characteristic dataset as well as the Geography Crosswalk dataset. We were able to look at how jobs were in each census block, as well as how many census blocks there were in each county or metropolitan/micropolitan area. In this notebook, we’re going to explore deeper into the data available to us to try to answer the question:</p>
 <p><strong>What are the characteristics of the distribution of jobs by county and by metropolitan/micropolitan area?</strong></p>
 <p>To answer this, we’ll have to use data from multiple tables.</p>
 </section>

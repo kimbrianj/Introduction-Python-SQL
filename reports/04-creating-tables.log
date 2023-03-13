@@ -20,8 +20,7 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 CREATE TABLE joinedtable AS 
 SELECT * FROM ca_wac_2015
 LEFT JOIN ca_xwalk 
-ON ca_wac_2015.w_geocode = ca_xwalk.tabblk2010
-LIMIT 1000;
+ON ca_wac_2015.w_geocode = ca_xwalk.tabblk2010;
 ------------------
 
 

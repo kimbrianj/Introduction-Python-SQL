@@ -347,6 +347,16 @@ const thebe_selector_output = ".output, .cell_output"
      Reading SQL tables using Pandas
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-python-sql/03-to-sql.html">
+     Writing Data Frames to an SQL Database
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07-python-sql/04-jobs-county-years.html">
+     Example: Finding Jobs by County over Years
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -524,12 +534,38 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-counting-rows-using-conditional-statements-and-creating-variables-span">
+   <span style="color:red">
+    Checkpoint: Counting Rows, Using Conditional Statements and Creating Variables
+   </span>
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -541,6 +577,21 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#span-style-color-red-checkpoint-counting-rows-using-conditional-statements-and-creating-variables-span">
+   <span style="color:red">
+    Checkpoint: Counting Rows, Using Conditional Statements and Creating Variables
+   </span>
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -952,6 +1003,15 @@ title="Print to PDF"
 <blockquote>
 <div><p><strong>Building Up a Query</strong> Notice that we wanted to count the number of distinct rows, but we first started from querying the rows with distinct <code class="docutils literal notranslate"><span class="pre">w_geocode</span></code> first before adding in the <code class="docutils literal notranslate"><span class="pre">COUNT</span></code>. Though this is a simple example, this process of building up a query as we go is important, especially when we get to more complicated tasks. When writing a query, try to think about the basic parts first, and feel free to run intermediate steps (making sure to include <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code>) as you go.</p>
 </div></blockquote>
+<section id="span-style-color-red-checkpoint-counting-rows-using-conditional-statements-and-creating-variables-span">
+<h2><span style = "color:red">Checkpoint: Counting Rows, Using Conditional Statements and Creating Variables</span><a class="headerlink" href="#span-style-color-red-checkpoint-counting-rows-using-conditional-statements-and-creating-variables-span" title="Permalink to this headline">#</a></h2>
+<p>We’ve included the 2015 OD, RAC, WAC, and geography crosswalk data for both California and Illinois for you in tables. The Illinois data follow the same format as the California, except with <code class="docutils literal notranslate"><span class="pre">il</span></code> replacing <code class="docutils literal notranslate"><span class="pre">ca</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">il_wac_2015</span></code> for the Illinois 2015 WAC). Try using the methods described in this section to further explore the tables. Answer the questions below, making sure to write out the queries used to answer the questions.</p>
+<ul class="simple">
+<li><p>How many counties are there?</p></li>
+<li><p>How many total census blocks are there?</p></li>
+<li><p>How many Metropolitan/Micropolitan areas are there?</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
