@@ -352,12 +352,12 @@ const thebe_selector_output = ".output, .cell_output"
      Writing Data Frames to an SQL Database
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../07-python-sql/04-jobs-county-years.html">
-     Example: Finding Jobs by County over Years
-    </a>
-   </li>
   </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07-python-sql/04-jobs-county-years.html">
+   Example: Finding Jobs by County over Years
+  </a>
  </li>
 </ul>
 
@@ -667,7 +667,7 @@ title="Print to PDF"
 </table></div></div>
 </div>
 <p>But wait; what if there are duplicates in the data? We can check for them by using <code class="docutils literal notranslate"><span class="pre">DISTINCT</span></code>.</p>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">w_geocode</span><span class="w"> </span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">ca_wac_2015</span>
